@@ -45,6 +45,8 @@
         </div>
       </div>
     </div>
+      <TitlesH2 title="<span>Estudios</span> que avalan" />
+      <SectionStudies :studies="studies" />
 </template>
 <script setup>
 import { ref } from 'vue'
@@ -170,6 +172,42 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('resize', checkMobile)
 })
+
+const studies = ref([
+  {
+    institution: 'Universidad Politécnica de Quintana Roo',
+    degree: 'Ingeniería en Software',
+    year: '2020 - 2023',
+    photos: [
+      'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80',
+      'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&q=80'
+    ],
+    experience: [
+      'Expresión oral y escrita',
+      'Ingeniería de requerimientos de software',
+      'Habilidades cognitivas y de creatividad',
+      'Diseño de interfaces',
+    ]
+  },
+  {
+    institution: 'Google',
+    degree: 'Google UX Design Professional Certificate',
+    year: '2024',
+    photos: [
+      'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80',
+      'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&q=80'
+    ],
+    experience: [
+      'Foundations of User Experience (UX) Design',
+      'Start the UX Design Process: Empathize, Define, and Ideate',
+      'Build Wireframes and Low-Fidelity Prototypes',
+      'Conduct UX Research and Test Early Concepts',
+      'Create High-Fidelity Designs and Prototypes in Figma',
+      'Build Dynamic User Interfaces (UI) for Websites',
+      'Design a User Experience for Social Good & Prepare for Jobs',
+    ]
+  }
+])
 </script>
 <style scoped>
 .logo-carousel-container {
