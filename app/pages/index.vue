@@ -1,0 +1,249 @@
+<template>
+    <Header />
+    <ButtonFloat />
+    <Titles title="Diseñador UX Generalista y Desarrollador web en <span>Propiedades Cancún</span>" subtitle="Hi, I'm Isaac, a multidisciplinary <u>UI/UX Designer</u> & <u>Front-end Developer</u>. I Design, Code and Write." />
+    <BubbleImgs />
+    <Titles v-if="currentSection === 'Diseñador UI/UX'" title="Pongo mi <span>corazón</span> en todo lo que hago" subtitle="Te muestro una pequeña sección de <u>casos de estudio</u> que muestran mi trabajo y que disfruto mucho hacer" />
+    <Titles v-else title="Pongo mi <span>corazón</span> en todo lo que hago" subtitle="Te muestro una pequeña sección de <u>proyectos frontend</u> que muestran mi trabajo y que disfruto mucho hacer" />
+    <ButtonsSections @update:current-section="val => currentSection = val" />
+    <Carrousel :items="carouselItems" />
+    <Titles title="La <span>experiencia</span> que me respalda" subtitle="Descubre mi experiencia desde diferentes proyecto con los que he trabajado estos ultimos años" />
+    <ButtonsSections @update:current-section="val => currentSection = val" />
+    <div class="items-center justify-center">
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 w-fit mx-auto text-gray-700 my-8">
+          <li v-for="(place, index) in projects" :key="index" class="flex flex-col py-4 px-8 border border-gray-200 rounded-lg transition-shadow duration-300">
+            <div class="flex items-center space-x-2">
+              <Icon :name="place.icon" size="24px" class="text-[#304fff]" />
+              <h3 class="font-semibold">{{ place.site }}</h3>
+            </div>
+            <ul style="list-style-type:disc" class="ml-[50px] mt-2 space-y-2">
+              <li v-for="(project, pIndex) in place.projects" :key="pIndex">
+                <a :href="project.src" target="_blank" rel="noopener noreferrer">{{ project.title }}</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+    <TitlesH2 title="<span>Herramientas</span> que se utilizar" />
+         <ButtonsSections @update:current-section="val => currentSection = val" />
+        <!-- Carrousel de logos -->
+    <div class="logo-carousel-container py-12">
+      <div class="logo-carousel" :class="{ 'animate-scroll': isMobile }">
+        <div class="logo-track">
+          <div 
+            v-for="(logo, index) in displayLogos" 
+            :key="index" 
+            class="logo-item"
+          >
+            <img 
+              :src="logo.src" 
+              :alt="logo.alt" 
+              class="logo-image"
+            />
+            <span>{{ logo.alt }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+</template>
+<script setup>
+import { ref } from 'vue'
+const currentSection = ref('')
+const carouselItems = ref([
+  {
+    title: 'Rediseño Landing Otif',
+    description: 'Transformación de la navegación principal de una plataforma web de logística internacional',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80'
+  },
+  {
+    title: 'Dashboard Analytics',
+    description: 'Sistema de análisis de datos en tiempo real para toma de decisiones',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80'
+  },
+  {
+    title: 'E-commerce Platform',
+    description: 'Plataforma de comercio electrónico con integración de pagos',
+    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=500&q=80'
+  },
+  {
+    title: 'Mobile App Design',
+    description: 'Diseño de interfaz para aplicación móvil de delivery',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&q=80'
+  },
+  {
+    title: 'CRM System',
+    description: 'Sistema de gestión de relaciones con clientes',
+    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=500&q=80'
+  },
+  {
+    title: 'Social Media Dashboard',
+    description: 'Panel de control para gestión de redes sociales',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=500&q=80'
+  }
+])
+
+const projects = ref([
+  {
+    site: 'Universidad',
+    icon: 'ph:student',
+    projects: [
+      {
+        title: 'Sistema de Gestión Académica',
+        src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80'
+      },
+      {
+        title: 'Portal de Biblioteca Digital',
+        src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80'
+      }
+    ]
+  },
+   {
+    site: 'Personal Projects',
+    icon: 'ph:laptop',
+    projects: [
+      {
+        title: 'Sistema de Gestión Académica',
+        src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80'
+      },
+      {
+        title: 'Portal de Biblioteca Digital',
+        src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80'
+      }
+    ]
+  },
+     {
+    site: 'Wizeline',
+    icon: 'ph:building-office',
+    projects: [
+      {
+        title: 'Sistema de Gestión Académica',
+        src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80'
+      },
+      {
+        title: 'Portal de Biblioteca Digital',
+        src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80'
+      }
+    ]
+  },
+     {
+    site: 'WayaWeb Propiedades Cancun',
+    icon: 'ph:building-office',
+    projects: [
+      {
+        title: 'Sistema de Gestión Académica',
+        src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80'
+      },
+      {
+        title: 'Portal de Biblioteca Digital',
+        src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80'
+      }
+    ]
+  }
+])
+const isMobile = ref(false)
+
+// Define tus logos aquí
+const logos = ref([
+  { src: '/adobeXd.png', alt: 'Figma' },
+  { src: '/framex.jpg', alt: 'framex' },
+  { src: '/figma.png', alt: 'figma' },
+  { src: '/balsamiq.png', alt: 'balsamiq' },
+  { src: '/photoshop.png', alt: 'Photoshop' },
+  { src: '/lightroom.png', alt: 'lightroom' },
+  // Agrega más logos según necesites
+])
+
+// Duplica los logos para el efecto infinito en móvil
+const displayLogos = computed(() => {
+  return isMobile.value ? [...logos.value, ...logos.value] : logos.value
+})
+
+const checkMobile = () => {
+  isMobile.value = window.innerWidth < 768
+}
+
+onMounted(() => {
+  checkMobile()
+  window.addEventListener('resize', checkMobile)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', checkMobile)
+})
+</script>
+<style scoped>
+.logo-carousel-container {
+  width: 100%;
+  overflow: hidden;
+
+}
+
+.logo-carousel {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+/* En desktop: logos centrados sin animación */
+@media (min-width: 768px) {
+  .logo-track {
+    flex-wrap: wrap;
+  }
+}
+
+/* En móvil: animación infinita */
+@media (max-width: 767px) {
+  .logo-carousel.animate-scroll .logo-track {
+    animation: scroll 20s linear infinite;
+    flex-wrap: nowrap;
+  }
+}
+
+.logo-item {
+  flex-shrink: 0;
+  width: 120px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(1.2);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.logo-image:hover {
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pausa la animación al hacer hover en móvil */
+@media (max-width: 767px) {
+  .logo-carousel.animate-scroll:hover .logo-track {
+    animation-play-state: paused;
+  }
+}
+</style>
