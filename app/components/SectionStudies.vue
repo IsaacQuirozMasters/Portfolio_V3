@@ -16,12 +16,14 @@
                 </li>
             </ul>
             </div>
-                        <img 
-            v-if="study.photos.length > index" 
-            :src="study.photos[index]" 
+            <div class="flex flex-col md:flex-row gap-4">
+            <img 
+            v-for="(photos, indice) in study.photos"
+            :src="photos" 
             :alt="study.institution" 
             class="study-photo"
             />
+            </div>
         </div>
         </div>
     </div>
@@ -51,13 +53,13 @@
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 250px;
+    width: auto;
     text-align: center;
     padding: 1rem;
 }
 
 .study-photo {
-    width: 100%;
+    width: 300px;
     height: auto;
     border-bottom: 1px solid #eee;
     margin-bottom: 1rem;

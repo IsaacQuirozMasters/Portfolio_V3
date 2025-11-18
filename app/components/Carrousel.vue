@@ -10,15 +10,17 @@
           :key="index"
           class="carousel-slide"
         >
-          <div class="card">
-            <div class="card-image">
-              <img :src="item.image" :alt="item.title" />
+          <NuxtLink :to="item.route" class="card-link">
+            <div class="card">
+              <div class="card-image">
+                <img :src="item.image" :alt="item.title" />
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">{{ item.title }}</h3>
+                <p class="card-description">{{ item.description }}</p>
+              </div>
             </div>
-            <div class="card-content">
-              <h3 class="card-title">{{ item.title }}</h3>
-              <p class="card-description">{{ item.description }}</p>
-            </div>
-          </div>
+          </NuxtLink>
         </div>
       </div>
 
@@ -65,7 +67,6 @@
     </div>
   </div>
 </template>
-
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
@@ -351,5 +352,21 @@ onUnmounted(() => {
   background: #3b82f6;
   width: 24px;
   border-radius: 4px;
+}
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  cursor: pointer; /* ✅ Mostrar que es clickeable */
 }
 </style>
