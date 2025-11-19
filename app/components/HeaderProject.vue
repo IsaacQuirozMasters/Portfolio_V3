@@ -6,24 +6,24 @@
    <section class="header">
      <div class="historyBase">
         <div>
-            <h2 class="text-xl font-semibold my-2">Tipo de Proyecto</h2>
-            <p class="text-md">{{ infoProject.projectType }}</p>
+            <h2 class="text-regular font-semibold my-2">Tipo de Proyecto</h2>
+            <p class="text-sm text-gray-500">{{ infoProject.projectType }}</p>
         </div>
         <div>
-            <h2 class="text-xl font-semibold my-2">Mi Rol</h2>
-            <p class="text-md">{{ infoProject.myRole }}</p>
+            <h2 class="text-regular font-semibold my-2">Mi Rol</h2>
+            <p class="text-sm text-gray-500">{{ infoProject.myRole }}</p>
         </div>
         <div>
-            <h2 class="text-xl font-semibold my-2">Contribución</h2>
-            <p class="text-md">{{ infoProject.contribution }}</p>
+            <h2 class="text-regular font-semibold my-2">Contribución</h2>
+            <p class="text-sm text-gray-500">{{ infoProject.contribution }}</p>
         </div>
         <div>
-            <h2 class="text-xl font-semibold my-2">Resultado</h2>
-            <p class="text-md">{{ infoProject.outCome }}</p>
+            <h2 class="text-regular font-semibold my-2">Resultado</h2>
+            <p class="text-sm text-gray-500">{{ infoProject.outCome }}</p>
         </div>
         <div>
-            <h2 class="text-xl font-semibold my-2">Línea de Tiempo</h2>
-            <p class="text-md">{{ infoProject.timeline }}</p>
+            <h2 class="text-regular font-semibold my-2">Línea de Tiempo</h2>
+            <p class="text-sm text-gray-500">{{ infoProject.timeline }}</p>
         </div>
     </div>
     <div>
@@ -40,7 +40,7 @@
 </p>
 </div>
 </template>
-<script>
+<script setup>
 import { defineProps } from 'vue';
 
 const props = defineProps({
@@ -53,13 +53,13 @@ const props = defineProps({
 <style scoped>
 
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 4rem auto;
     padding: 20px;
 }
 .historyBase {
     display: grid;
-    grid-template-columns: 100px 100px;
+    grid-template-columns: auto auto;
     gap: 10px;
 }
 .header {
