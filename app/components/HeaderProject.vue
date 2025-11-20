@@ -1,5 +1,4 @@
 <template>
-<div class="container">
     <h1 class="text-bold text-5xl">
     YiApp e-commerce of clothing and accessories
     </h1>
@@ -38,7 +37,7 @@
 <p class="description sr-only">
     YiApp es una aplicación móvil de comercio electrónico especializada en ropa y accesorios. La plataforma ofrece una experiencia de compra intuitiva y segura, permitiendo a los usuarios explorar una amplia variedad de productos, realizar compras rápidas y gestionar sus pedidos de manera eficiente. Con un diseño atractivo y funcionalidades avanzadas, YiApp se posiciona como una opción ideal para los amantes de la moda que buscan conveniencia y estilo en un solo lugar.   
 </p>
-</div>
+
 </template>
 <script setup>
 import { defineProps } from 'vue';
@@ -51,12 +50,6 @@ const props = defineProps({
 
 </script>
 <style scoped>
-
-.container {
-    max-width: 900px;
-    margin: 4rem auto;
-    padding: 20px;
-}
 .historyBase {
     display: grid;
     grid-template-columns: auto auto;
@@ -67,4 +60,15 @@ const props = defineProps({
     grid-template-columns: 1fr 2fr;
     gap: 20px;
 }
+
+@media (max-width: 640px) {
+    .historyBase {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        grid-template-columns: 1fr;
+    }
+}
+
 </style>
