@@ -4,23 +4,23 @@
     </h1>
    <section class="header">
      <div class="historyBase">
-        <div>
+        <div v-if="infoProject.projectType">
             <h2 class="text-regular font-semibold my-2">Tipo de Proyecto</h2>
             <p class="text-sm text-gray-500">{{ infoProject.projectType }}</p>
         </div>
-        <div>
+        <div v-if="infoProject.myRole">
             <h2 class="text-regular font-semibold my-2">Mi Rol</h2>
             <p class="text-sm text-gray-500">{{ infoProject.myRole }}</p>
         </div>
-        <div>
+        <div v-if="infoProject.contribution">
             <h2 class="text-regular font-semibold my-2">Contribución</h2>
             <p class="text-sm text-gray-500">{{ infoProject.contribution }}</p>
         </div>
-        <div>
+        <div v-if="infoProject.outCome">
             <h2 class="text-regular font-semibold my-2">Resultado</h2>
             <p class="text-sm text-gray-500">{{ infoProject.outCome }}</p>
         </div>
-        <div>
+        <div v-if="infoProject.timeline">
             <h2 class="text-regular font-semibold my-2">Línea de Tiempo</h2>
             <p class="text-sm text-gray-500">{{ infoProject.timeline }}</p>
         </div>
