@@ -7,14 +7,14 @@
     <div id="projects" ref="projectsRef">
       <Titles v-if="currentSection === 'Diseñador UI/UX'" title="Pongo mi <span>corazón</span> en todo lo que hago" subtitle="Te muestro una pequeña sección de <u>casos de estudio</u> que muestran mi trabajo y que disfruto mucho hacer" />
       <Titles v-else title="Pongo mi <span>corazón</span> en todo lo que hago" subtitle="Te muestro una pequeña sección de <u>proyectos frontend</u> que muestran mi trabajo y que disfruto mucho hacer" />
-      <ButtonsSections @update:current-section="val => currentSection = val" />
+      <!-- <ButtonsSections @update:current-section="val => currentSection = val" /> -->
       <Carrousel :items="carouselItems" />
     </div>
     
     <!-- SECCIÓN ABOUT -->
     <div id="about" ref="aboutRef">
       <Titles title="La <span>experiencia</span> que me respalda" subtitle="Descubre mi experiencia desde diferentes proyecto con los que he trabajado estos ultimos años" />
-      <ButtonsSections @update:current-section="val => currentSection = val" />
+      <!-- <ButtonsSections @update:current-section="val => currentSection = val" /> -->
       <div class="items-center justify-center">
           <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 w-fit mx-auto text-gray-700 dark:text-white my-8">
             <li v-for="(place, index) in projects" :key="index" class="flex flex-col py-4 px-8 border border-gray-200 dark:border-gray-800 rounded-lg transition-shadow duration-300">
@@ -31,7 +31,7 @@
           </ul>
       </div>
       <TitlesH2 title="<span>Herramientas</span> que se utilizar" />
-      <ButtonsSections @update:current-section="val => currentSection = val" />
+      <!-- <ButtonsSections @update:current-section="val => currentSection = val" /> -->
       <div class="logo-carousel-container py-12">
         <div class="logo-carousel" :class="{ 'animate-scroll': isMobile }">
           <div class="logo-track">
@@ -68,37 +68,6 @@ const aboutRef = ref(null)
 const contactRef = ref(null)
 const mainRef = ref(null)
 
-// Función para hacer scroll
-const scrollToSection = (sectionId) => {
-  let element = null
-  
-  switch(sectionId) {
-    case 'projects':
-      element = projectsRef.value
-      break
-    case 'about':
-      element = aboutRef.value
-      break
-    case 'contact':
-      element = contactRef.value
-      break
-    case 'main':
-      element = mainRef.value
-      break
-  }
-  
-  if (element) {
-    const headerOffset = 80 // altura de tu header sticky
-    const elementPosition = element.offsetTop
-    const offsetPosition = elementPosition - headerOffset
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
-    })
-  }
-}
-
 const carouselItems = ref([
     {
     title: 'YiApp e-commerce',
@@ -133,18 +102,35 @@ const carouselItems = ref([
   },
 ])
 
+const carrouselItemsDevelopment = ref([
+    {
+    title: 'Propiedades Cancún Landing',
+    description: 'Desarrollo de landing page para agencia inmobiliaria en Cancún',
+    image: '/img/propiedades/nvifz5egnosguvd2tmgp.webp',
+    route: '/projects/propiedades'
+  }
+])
+
+
+const listOfExperienceUX = ref([
+    {
+    title: 'Propiedades Cancún Landing',
+    description: 'Desarrollo de landing page para agencia inmobiliaria en Cancún',
+    image: '/img/propiedades/nvifz5egnosguvd2tmgp.webp',
+    route: '/projects/propiedades'
+  }
+])
 const projects = ref([
   {
     site: 'Universidad',
     icon: 'ph:student',
     projects: [
       {
-        title: 'Sistema de Gestión Académica',
-        src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80'
+        title: 'Reptiles App',
+        src: 'https://www.figma.com/design/D8iCgvKvfDTVVTFbvEkZeh/Borrador-inicial?node-id=0-1&t=fX6tJ7IFU9mERCEc-1'
       },
       {
-        title: 'Portal de Biblioteca Digital',
-        src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80'
+        title: 'Plataforma de documentación de estadias',
       }
     ]
   },
@@ -153,12 +139,24 @@ const projects = ref([
     icon: 'ph:laptop',
     projects: [
       {
-        title: 'Sistema de Gestión Académica',
-        src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80'
+        title: 'YiApp',
+        src: 'https://www.figma.com/design/MqMinzwnlInoVGTHbYEH0w/Bengala-Mockup?node-id=911-3954&t=Ebh3NoYZ8DaWI7wv-1'
       },
       {
-        title: 'Portal de Biblioteca Digital',
-        src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80'
+        title: 'FreeLearn',
+        src: 'https://www.figma.com/design/pz1NeJwJIvXhYlEshiyBTl/Free-Learn?node-id=311-3301&t=Ebh3NoYZ8DaWI7wv-1'
+      },
+      {
+        title: 'Citizen',
+        src: 'https://www.figma.com/design/o8bemR8kKFtZxh66cCcxFU/Denuncia-ciudadana?node-id=0-1&t=Ebh3NoYZ8DaWI7wv-1'
+      },
+      {
+        title: 'Rosas Eterns Nineth',
+        src: 'https://www.figma.com/design/5VhB1OLm2KvtMxQkppfClZ/Nineth-Sale?t=biIL6hpsxitsh47H-1'
+      },
+      {
+        title: 'Otif - Rediseño Landing',
+        src: 'https://www.figma.com/design/ZozY2Lo9gmLmO4IeK4Of1e/Otif-Mini-Redise%C3%B1o-UX?node-id=0-1&t=biIL6hpsxitsh47H-1'
       }
     ]
   },
@@ -167,12 +165,7 @@ const projects = ref([
     icon: 'ph:building-office',
     projects: [
       {
-        title: 'Sistema de Gestión Académica',
-        src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80'
-      },
-      {
-        title: 'Portal de Biblioteca Digital',
-        src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80'
+        title: 'Plataforma de PATIO for Kudos',
       }
     ]
   },
@@ -181,12 +174,12 @@ const projects = ref([
     icon: 'ph:building-office',
     projects: [
       {
-        title: 'Sistema de Gestión Académica',
-        src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80'
+        title: 'Propiedades Cancun Landing',
+        src: 'https://www.figma.com/design/Dd72HXnjoEAyoNxlNJWB5V/Propiedades-Canc%C3%BAn?node-id=0-1&t=WhZY8LFASa4EtrxM-1'
       },
       {
-        title: 'Portal de Biblioteca Digital',
-        src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80'
+        title: 'Virture App and CRM',
+        src: 'https://www.figma.com/design/RDYH5lbQMg2LrcocLxEPqe/Virture-web?node-id=0-1&t=AvXCTcIAVcChWyZI-1'
       }
     ]
   }
