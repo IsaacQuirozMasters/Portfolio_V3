@@ -1,7 +1,7 @@
 <template>
     <section>
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-700 mb-4 titles-with-blue-color" v-html="props.title"></h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-700 dark:text-white mb-4 titles-with-blue-color" v-html="props.title"></h2>
       </div>
     </section>
 </template>

@@ -16,15 +16,15 @@
       <Titles title="La <span>experiencia</span> que me respalda" subtitle="Descubre mi experiencia desde diferentes proyecto con los que he trabajado estos ultimos años" />
       <ButtonsSections @update:current-section="val => currentSection = val" />
       <div class="items-center justify-center">
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 w-fit mx-auto text-gray-700 my-8">
-            <li v-for="(place, index) in projects" :key="index" class="flex flex-col py-4 px-8 border border-gray-200 rounded-lg transition-shadow duration-300">
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 w-fit mx-auto text-gray-700 dark:text-white my-8">
+            <li v-for="(place, index) in projects" :key="index" class="flex flex-col py-4 px-8 border border-gray-200 dark:border-gray-800 rounded-lg transition-shadow duration-300">
               <div class="flex items-center space-x-2">
-                <Icon :name="place.icon" size="24px" class="text-[#304fff]" />
+                <Icon :name="place.icon" size="24px" class="text-[#304fff] dark:text-blue-500" />
                 <h3 class="font-semibold">{{ place.site }}</h3>
               </div>
               <ul style="list-style-type:disc" class="ml-[50px] mt-2 space-y-2">
                 <li v-for="(project, pIndex) in place.projects" :key="pIndex">
-                  <a :href="project.src" target="_blank" rel="noopener noreferrer">{{ project.title }}</a>
+                  <a :href="project.src" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-gray-400">{{ project.title }}</a>
                 </li>
               </ul>
             </li>
@@ -100,32 +100,36 @@ const scrollToSection = (sectionId) => {
 }
 
 const carouselItems = ref([
+    {
+    title: 'YiApp e-commerce',
+    description: 'Aplicación móvil de comercio electrónico para ropa y accesorios',
+    image: '/img/yiapp/yofrzpjwfxwjao7e2jub.webp',
+    route: '/projects/yiapp'
+  },
+    {
+    title: 'Free Learn',
+    description: 'Plataforma educativa en línea para cursos gratuitos',
+    image: '/img/free/lqgrculfmexx2betqcuw.webp',
+    route: '/projects/freelearn'
+  }, 
+
   {
+    title: 'Propiedades Cancún Landing',
+    description: 'Desarrollo de landing page para agencia inmobiliaria en Cancún',
+    image: '/img/propiedades/nvifz5egnosguvd2tmgp.webp',
+    route: '/projects/propiedades'
+  },
+ {
     title: 'Rediseño Landing Otif',
     description: 'Transformación de la navegación principal de una plataforma web de logística internacional',
     image: '/img/otif/1.webp',
     route: '/projects/otif'
   },
   {
-    title: 'YiApp e-commerce',
-    description: 'Aplicación móvil de comercio electrónico para ropa y accesorios',
-    image: '/img/yiapp/yofrzpjwfxwjao7e2jub.webp',
-    route: '/projects/yiapp'
-  },
-  {
-    title: 'Propiedades Cancún Landing',
-    description: 'Desarrollo de landing page para agencia inmobiliaria en Cancún',
-    image: '/img/propiedades/nvifz5egnosguvd2tmgp.webp'
-  },
-  {
-    title: 'Free Learn',
-    description: 'Plataforma educativa en línea para cursos gratuitos',
-    image: '/img/free/lqgrculfmexx2betqcuw.webp'
-  },
-  {
     title: 'Denuncia Ciudadana',
     description: 'Aplicación para reportar incidencias en la vía pública',
-    image: '/img/citizen/955shots_so.webp'
+    image: '/img/citizen/955shots_so.webp',
+    route: '/projects/citizen'
   },
 ])
 

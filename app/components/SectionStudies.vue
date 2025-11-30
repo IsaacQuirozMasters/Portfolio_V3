@@ -1,18 +1,18 @@
 <template>
-    <div class="section-studies">
-        <div class="studies-list">
+    <div class="section-studies dark:bg-gray-700 bg-gray-100">
+        <div class="studies-list ">
         <div 
             v-for="(study, index) in studies" 
             :key="index" 
-            class="study-item"
+            class="study-item dark:bg-gray-900 bg-white"
         >
-            <div class="study-info">
-            <h3 class="study-institution">{{ study.institution }}</h3>
-            <p class="study-degree">{{ study.degree }}</p>
-            <p class="study-year">{{ study.year }}</p>
+            <div class="study-info dark:text-white">
+            <h3 class="study-institution dark:text-white dark:border-white text-gray-700">{{ study.institution }}</h3>
+            <p class="study-degree dark:text-white dark:border-white text-gray-700">{{ study.degree }}</p>
+            <p class="study-year dark:text-white dark:border-white text-gray-700">{{ study.year }}</p>
             <ul>
-                <li class="list-experience" v-for="(experience, index) in study.experience" :key="index" style="list-style-type:disc;" >
-                    <p class="study-experience">{{ experience }}</p>
+                <li class="list-experience dark:text-white dark:border-white" v-for="(experience, index) in study.experience" :key="index" style="list-style-type:disc;" >
+                    <p class="study-experience dark:text-white dark:border-white text-gray-700">{{ experience }}</p>
                 </li>
             </ul>
             </div>
@@ -21,7 +21,7 @@
             v-for="(photos, indice) in study.photos"
             :src="photos" 
             :alt="study.institution" 
-            class="study-photo"
+            class="study-photo dark:border-white dark:border-2"
             />
             </div>
         </div>
@@ -39,7 +39,6 @@
 <style scoped>
 .section-studies {
     padding: 2rem;
-    background-color: #f9f9f9;
 }
 .studies-list {
     display: flex;
@@ -49,7 +48,6 @@
     align-items: center;
 }
 .study-item {
-    background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
