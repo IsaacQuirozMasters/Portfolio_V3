@@ -2,10 +2,10 @@
     <div class="container">
         <header-project :infoProject="aboutProject" />
         <section>
-            <NuxtImg src="/img/free/eqnmt3a7p47ylkg8bfoq.webp" alt="High Fidelity Prototype" class="w-full h-auto my-4"
-                format="webp" />
-            <NuxtImg src="/img/free/uhvjq2jvkghmeqmhj1dc.webp" alt="High Fidelity Prototype" class="w-full h-auto my-4"
-                format="webp" />
+            <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                src="/img/free/eqnmt3a7p47ylkg8bfoq.webp" alt="High Fidelity Prototype" class="w-full h-auto my-4" />
+            <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                src="/img/free/uhvjq2jvkghmeqmhj1dc.webp" alt="High Fidelity Prototype" class="w-full h-auto my-4" />
         </section>
         <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-4">Overview</h2>
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
@@ -62,10 +62,11 @@
                     share their learning in WhatsApp groups.
                 </p>
 
-                <NuxtImg src="/img/free/xir7yvnheqynkrua50eu.webp" alt="Case study of online clothing sales application"
-                    class="w-full h-auto my-4" loading="lazy" />
-                <NuxtImg src="/img/free/ra1b3ufkgekxtjp2zvvh.webp" alt="Research result" class="w-full h-auto my-4"
-                    loading="lazy" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/free/xir7yvnheqynkrua50eu.webp" alt="Case study of online clothing sales application"
+                    class="w-full h-auto my-4" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/free/ra1b3ufkgekxtjp2zvvh.webp" alt="Research result" class="w-full h-auto my-4" />
             </section>
         </section>
 
@@ -74,10 +75,10 @@
                 <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">Persona Creation</h2>
             </section>
             <section class="grid-2fr">
-                <NuxtImg src="/img/free/wojo4wqx9s1dp2ysj1xh.webp" alt="Persona Creation 1" class="w-full h-auto my-4"
-                    loading="lazy" />
-                <NuxtImg src="/img/free/s1tpwi8renst37hje4hc.webp" alt="Persona Creation 2" class="w-full h-auto my-4"
-                    loading="lazy" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/free/wojo4wqx9s1dp2ysj1xh.webp" alt="Persona Creation 1" class="w-full h-auto my-4" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/free/s1tpwi8renst37hje4hc.webp" alt="Persona Creation 2" class="w-full h-auto my-4" />
             </section>
         </section>
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
@@ -89,8 +90,8 @@
                     To empathize with users, we also create empathy maps and a user journey map to delve into each stage
                     that our personas go through when evaluating and finding the information they need.
                 </p>
-                <NuxtImg src="/img/free/eclu86q5sjhdlraqtzqy.webp" alt="User Journey Map" class="w-full h-auto my-4"
-                    loading="lazy" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/free/eclu86q5sjhdlraqtzqy.webp" alt="User Journey Map" class="w-full h-auto my-4" />
             </section>
         </section>
 
@@ -104,8 +105,8 @@
                     information, based on the discovery through user flow we could see how the views are linked in this
                     way.
                 </p>
-                <NuxtImg src="/img/free/ycwhivzm2bhffwfl27dx.webp" alt="User Flow" class="w-full h-auto my-4"
-                    loading="lazy" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/free/ycwhivzm2bhffwfl27dx.webp" alt="User Flow" class="w-full h-auto my-4" />
             </section>
         </section>
 
@@ -117,8 +118,9 @@
                 <p class="text-base text-gray-600 dark:text-white my-2">
                     The information architecture design was easy to create because we knew the user flow, it was also
                     accessible because from the beginning we thought of an amburguesa menu or side menu.</p>
-                <NuxtImg src="/img/free/lkkh2ea8uu0esfnvjhos.webp" alt="Architecture Design Brainstorming"
-                    class="w-full h-auto my-4" loading="lazy" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/free/lkkh2ea8uu0esfnvjhos.webp" alt="Architecture Design Brainstorming"
+                    class="w-full h-auto my-4" />
             </section>
         </section>
 
@@ -133,10 +135,10 @@
                     refined based on the user experience parameters (Accessibility, Simplicity, Intuitive and
                     Inclusiveness).
                 </p>
-                <NuxtImg src="/img/free/biewj4dnwgbmjtbhku6g.webp" alt="Crazy Eight" class="w-full h-auto my-4"
-                    loading="lazy" />
-                <NuxtImg src="/img/free/xpaufvkh01dgdtyjmrd1.webp" alt="Crazy Eight" class="w-full h-auto my-4"
-                    loading="lazy" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/free/biewj4dnwgbmjtbhku6g.webp" alt="Crazy Eight" class="w-full h-auto my-4" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/free/xpaufvkh01dgdtyjmrd1.webp" alt="Crazy Eight" class="w-full h-auto my-4" />
             </section>
         </section>
 
@@ -152,12 +154,12 @@
                 </p>
             </section>
         </section>
-        <NuxtImg src="/img/free/mwxccbtzsd9xtirpa1lp.webp" alt="Wireframes Portrait" class="w-full h-auto my-4"
-            loading="lazy" />
-        <NuxtImg src="/img/free/t5ljsub7ldehnk1ap9jl.webp" alt="Wireframes Landscape" class="w-full h-auto my-4"
-            loading="lazy" />
-        <NuxtImg src="/img/free/c5pztjqym8fy5vmgqsmu.webp" alt="Wireframes Landscape" class="w-full h-auto my-4"
-            loading="lazy" />
+        <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+            src="/img/free/mwxccbtzsd9xtirpa1lp.webp" alt="Wireframes Portrait" class="w-full h-auto my-4" />
+        <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+            src="/img/free/t5ljsub7ldehnk1ap9jl.webp" alt="Wireframes Landscape" class="w-full h-auto my-4" />
+        <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+            src="/img/free/c5pztjqym8fy5vmgqsmu.webp" alt="Wireframes Landscape" class="w-full h-auto my-4" />
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
                 <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">Low Fidelity Prototype</h2>
@@ -168,8 +170,8 @@
                     internal linking logic worked well, to create more accesses to the same place and to discard what
                     did not work.
                 </p>
-                <NuxtImg src="/img/free/tnrp9icg2ct4ps85inno.webp" alt="Low Fidelity Prototype"
-                    class="w-full h-auto my-4" format="gif" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/free/tnrp9icg2ct4ps85inno.webp" alt="Low Fidelity Prototype" class="w-full h-auto my-4" />
             </section>
         </section>
 
@@ -199,20 +201,27 @@
                     <li>How often do you use online course and social networking apps?</li>
                     <li> Have you previously used apps that combine both functionalities? </li>
                 </ul>
-                  <p class="text-base text-gray-600 dark:text-white my-2 font-semibold text-center mt-4">
-                    Experience with the application:  </p>
+                <p class="text-base text-gray-600 dark:text-white my-2 font-semibold text-center mt-4">
+                    Experience with the application: </p>
                 <ul class="list-disc space-y-2 mt-2 text-gray-600 dark:text-white">
-                    <li>Could you briefly introduce yourself and tell me about your experience with the application?</li>
+                    <li>Could you briefly introduce yourself and tell me about your experience with the application?
+                    </li>
                     <li>Could you describe your overall experience using the app so far?</li>
                     <li>What aspects of the application have you found easiest to use? </li>
-                    <li>Have you encountered any difficulties or problems using the application? If so, could you describe them in detail? </li>
-                    <li>How would you rate the overall ease of use of the app on a scale of 1 to 5 (1 being "very difficult" and 5 being "very easy")? </li>
+                    <li>Have you encountered any difficulties or problems using the application? If so, could you
+                        describe them in detail? </li>
+                    <li>How would you rate the overall ease of use of the app on a scale of 1 to 5 (1 being "very
+                        difficult" and 5 being "very easy")? </li>
                     <li>Have you used the application to search for and take online courses? </li>
-                    <li>Could you describe the process of searching for a specific course? Did you find it easy to find what you were looking for?</li>
+                    <li>Could you describe the process of searching for a specific course? Did you find it easy to find
+                        what you were looking for?</li>
                     <li>How would you rate the ease of use of the online course section on a scale of 1 to 5?</li>
-                    <li>Have you completed any lessons or activities within a course, and could you describe your experience in that process?</li>
-                    <li>How would you rate the ease of use of the lessons and activities section on a scale of 1 to 5?</li>
-                    <li>Have you interacted with the teacher or partner in any course, and could you describe your experience in that case?</li>
+                    <li>Have you completed any lessons or activities within a course, and could you describe your
+                        experience in that process?</li>
+                    <li>How would you rate the ease of use of the lessons and activities section on a scale of 1 to 5?
+                    </li>
+                    <li>Have you interacted with the teacher or partner in any course, and could you describe your
+                        experience in that case?</li>
                     <li>What aspects of the online course section could you improve?</li>
                 </ul>
             </section>
@@ -224,13 +233,17 @@
             </section>
             <section class="grid-2fr">
                 <p class="text-base text-gray-600 dark:text-white my-2">
-                   Once the Wireframes are fine-tuned, we dedicate ourselves to layout all the elements adding colors, weights, shadows, typographies, etc.
+                    Once the Wireframes are fine-tuned, we dedicate ourselves to layout all the elements adding colors,
+                    weights, shadows, typographies, etc.
                 </p>
             </section>
         </section>
-        <NuxtImg src="/img/free/q3ymrgabsxd6ugwpv6pa.webp" alt="Mockups" class="w-full h-auto my-4" loading="lazy" />
-        <NuxtImg src="/img/free/c0qx5002gu4kaf9r3ni9.webp" alt="Mockups" class="w-full h-auto my-4" loading="lazy" />
-        <NuxtImg src="/img/free/uvztnmfvu6r5b53mzijw.webp" alt="Mockups" class="w-full h-auto my-4" loading="lazy" />
+        <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+            src="/img/free/q3ymrgabsxd6ugwpv6pa.webp" alt="Mockups" class="w-full h-auto my-4" />
+        <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+            src="/img/free/c0qx5002gu4kaf9r3ni9.webp" alt="Mockups" class="w-full h-auto my-4" />
+        <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+            src="/img/free/uvztnmfvu6r5b53mzijw.webp" alt="Mockups" class="w-full h-auto my-4" />
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
                 <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">Design System</h2>
@@ -238,12 +251,14 @@
             <section class="grid-2fr">
                 <h4 class="text-lg text-black-700 font-bold mt-2">Technological & Futuristic</h4>
                 <p class="text-base text-gray-600 dark:text-white my-2">
-                   The combination of blue and turquoise under a black background to give contrast to something new and futuristic, the Roboto typography to give an elegant and technological tone, the sizes in buttons and the contrast in them so that people with chromatic vision can easily differentiate it.
+                    The combination of blue and turquoise under a black background to give contrast to something new and
+                    futuristic, the Roboto typography to give an elegant and technological tone, the sizes in buttons
+                    and the contrast in them so that people with chromatic vision can easily differentiate it.
                 </p>
             </section>
         </section>
-        <NuxtImg src="/img/free/yr7ufni9iuykte2cykqy.webp" alt="Design System" class="w-full h-auto my-4"
-            loading="lazy" />
+        <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+            src="/img/free/yr7ufni9iuykte2cykqy.webp" alt="Design System" class="w-full h-auto my-4" />
 
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
@@ -251,7 +266,8 @@
             </section>
             <section class="grid-2fr">
                 <p class="text-base text-gray-600 dark:text-white my-2">
-                    The product is Free Learn a social network for everyone to learn easy and free, we are still working on the views and components to show the final product.
+                    The product is Free Learn a social network for everyone to learn easy and free, we are still working
+                    on the views and components to show the final product.
                 </p>
             </section>
         </section>
@@ -261,7 +277,24 @@
 <script setup>
 import HeaderProject from '@/components/HeaderProject.vue'
 import { ref } from 'vue';
+useSeoMeta({
+    title: 'Free Learn - UX Case Study',
+    titleTemplate: '%s | Isaac Quiroz Portfolio',
+    description: 'Estudio de caso UX/UI para "Free Learn", una plataforma para aprender de forma gratuita y fácil.',
 
+    // Open Graph (Para cuando se comparte en Facebook/LinkedIn/WhatsApp)
+    ogTitle: 'Free Learn - UX/UI Case Study',
+    ogDescription: 'Diseño de aplicación para aprender de forma gratuita y fácil.',
+    ogImage: 'https://isaacquirozmadrigal.dev/img/free/eqnmt3a7p47ylkg8bfoq.webp', // IMPORTANTE: Usa URL absoluta en producción
+    ogUrl: 'https://isaacquirozmadrigal.dev/projects/freelearn',
+    ogType: 'article',
+
+    // Twitter Card
+    twitterCard: 'summary_large_image',
+    twitterTitle: 'Free Learn App Design',
+    twitterDescription: 'UX Case Study sobre una plataforma para aprender de forma gratuita y fácil.',
+    twitterImage: 'https://isaacquirozmadrigal.dev/img/free/eqnmt3a7p47ylkg8bfoq.webp',
+})
 const aboutProject = ref({
     projectType: 'Create an application that facilitates the interaction between students and teachers online, where the student can find all the information in the desired format.',
     contribution: 'UI/UX Design, Prototipado, Investigación de usuarios',

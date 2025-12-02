@@ -8,9 +8,11 @@
             </section>
             <section class="grid-2fr">
                 <h3 class="text-xl text-blue-700 dark:text-blue-500">
-                    <nuxt-img src="/img/yiapp/firjjiyx6rihyzbici9m.webp" alt="imagen de yiapp" :width="'800'"
-                        :height="'450'" class="w-full h-auto my-4" loading="lazy"></nuxt-img>
-                    <NuxtImg src="/img/yiapp/p2yi.gif" alt="imagen de yiapp" format="gif"></NuxtImg>
+                    <nuxt-img format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                        src="/img/yiapp/firjjiyx6rihyzbici9m.webp" alt="imagen de yiapp" :width="'800'" :height="'450'"
+                        class="w-full h-auto my-4"></nuxt-img>
+                    <NuxtImg loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                        src="/img/yiapp/p2yi.gif" alt="imagen de yiapp" format="gif"></NuxtImg>
                 </h3>
             </section>
         </section>
@@ -20,9 +22,10 @@
                 <h3 class="text-2xl text-black-700 font-semibold">The Process</h3>
             </section>
             <section class="grid-2fr">
-                <nuxt-img src="/img/yiapp/p3yi.gif" alt="process of project" class="w-full h-auto my-4" format="gif" />
-                <NuxtImg src="/img/yiapp/qmntwea0jfrg840wtfrn.webp" alt="process of project" class="w-full h-auto my-4"
-                    format="webp" />
+                <nuxt-img loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/yiapp/p3yi.gif" alt="process of project" class="w-full h-auto my-4" format="gif" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/yiapp/qmntwea0jfrg840wtfrn.webp" alt="process of project" class="w-full h-auto my-4" />
             </section>
         </section>
 
@@ -58,10 +61,11 @@
                     the whole multi-click checkout process could be simplified into a single view.
                 </p>
 
-                <NuxtImg src="/img/yiapp/wumzenzxgcz6sddpewis.webp"
-                    alt="Case study of online clothing sales application" class="w-full h-auto my-4" loading="lazy" />
-                <NuxtImg src="/img/yiapp/ppcamo0nasqajxby72v1.webp" alt="Research result" class="w-full h-auto my-4"
-                    loading="lazy" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/yiapp/wumzenzxgcz6sddpewis.webp" alt="Case study of online clothing sales application"
+                    class="w-full h-auto my-4" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/yiapp/ppcamo0nasqajxby72v1.webp" alt="Research result" class="w-full h-auto my-4" />
             </section>
         </section>
 
@@ -70,10 +74,10 @@
                 <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">Persona Creation</h2>
             </section>
             <section class="grid-2fr">
-                <NuxtImg src="/img/yiapp/mzzbv70ubn4qneqxknzg.webp"
-                    alt="Persona Creation 1" class="w-full h-auto my-4" loading="lazy" />
-                <NuxtImg src="/img/yiapp/isbrnrbgcfa6i0tdpbaz.webp"
-                    alt="Persona Creation 2" class="w-full h-auto my-4" loading="lazy" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/yiapp/mzzbv70ubn4qneqxknzg.webp" alt="Persona Creation 1" class="w-full h-auto my-4" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/yiapp/isbrnrbgcfa6i0tdpbaz.webp" alt="Persona Creation 2" class="w-full h-auto my-4" />
             </section>
         </section>
 
@@ -86,8 +90,8 @@
                     To empathize with users, we also create empathy maps and a user journey map to delve into each stage
                     our personas go through when buying a product.
                 </p>
-                <NuxtImg src="/img/yiapp/kjw9wrzk4ofhga5k1se1.webp" alt="User Journey Map" class="w-full h-auto my-4"
-                    loading="lazy" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/yiapp/kjw9wrzk4ofhga5k1se1.webp" alt="User Journey Map" class="w-full h-auto my-4" />
             </section>
         </section>
 
@@ -101,7 +105,8 @@
                     application, The user flow allowed us to see the whole application experience on a holistic level
                     and thus make decisions
                 </p>
-                <NuxtImg src="/img/yiapp/ppcamo0nasqajxby72v1.webp" alt="User Flow" class="w-full h-auto my-4" loading="lazy" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/yiapp/ppcamo0nasqajxby72v1.webp" alt="User Flow" class="w-full h-auto my-4" />
             </section>
         </section>
 
@@ -115,15 +120,16 @@
                     architecture map of how the information would be organized in the design, we brainstormed ideas,
                     separating what did not meet the objectives and saving it for future ideas.
                 </p>
-                <NuxtImg src="/img/yiapp/acebs7prldg43oi1u0ds.webp" alt="Architecture Design Brainstorming"
-                    class="w-full h-auto my-4" loading="lazy" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/yiapp/acebs7prldg43oi1u0ds.webp" alt="Architecture Design Brainstorming"
+                    class="w-full h-auto my-4" />
                 <p class="text-base text-gray-600 dark:text-white my-2">
                     After the brainstorming we could clearly complete the information architecture by organizing each
                     view according to its data, this also allows us to scale the application in the future and divide it
                     into components making it easier to iterate and improve if required.
                 </p>
-                <NuxtImg src="/img/yiapp/English.svg" alt="Information Architecture" class="w-full h-auto my-4"
-                    loading="lazy" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/yiapp/English.svg" alt="Information Architecture" class="w-full h-auto my-4" />
             </section>
         </section>
 
@@ -138,8 +144,8 @@
                     views and based on that to choose a final design gathering elements from the other views evaluating
                     simplicity, accessibility, inclusiveness and finally the design.
                 </p>
-                <NuxtImg src="/img/yiapp/ucye57h5arwlad59kssg.webp" alt="Crazy Eight"
-                    class="w-full h-auto my-4" loading="lazy" />
+                <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/yiapp/ucye57h5arwlad59kssg.webp" alt="Crazy Eight" class="w-full h-auto my-4" />
             </section>
         </section>
 
@@ -156,10 +162,10 @@
                 </p>
             </section>
         </section>
-        <NuxtImg src="/img/yiapp/ehsyzoprlpi8q0e5fvba.webp" alt="Wireframes Portrait" class="w-full h-auto my-4"
-            loading="lazy" />
-        <NuxtImg src="/img/yiapp/Wireframe.png" alt="Wireframes Landscape" class="w-full h-auto my-4"
-            loading="lazy" />
+        <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+            src="/img/yiapp/ehsyzoprlpi8q0e5fvba.webp" alt="Wireframes Portrait" class="w-full h-auto my-4" />
+        <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+            src="/img/yiapp/Wireframe.png" alt="Wireframes Landscape" class="w-full h-auto my-4" />
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
                 <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">Low Fidelity Prototype</h2>
@@ -171,7 +177,8 @@
                     low fidelity wireframes helped us rule out some features that were not as fundamental as the
                     shopping cart search.
                 </p>
-                <NuxtImg src="/img/yiapp/prototypeLow.gif" alt="Low Fidelity Prototype" class="w-full h-auto my-4"
+                <NuxtImg loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/yiapp/prototypeLow.gif" alt="Low Fidelity Prototype" class="w-full h-auto my-4"
                     format="gif" />
             </section>
         </section>
@@ -220,7 +227,8 @@
                 </p>
             </section>
         </section>
-                <NuxtImg src="/img/yiapp/dac8tpkejvrr86z1nvpi.webp" alt="Mockups" class="w-full h-auto my-4" loading="lazy" />
+        <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+            src="/img/yiapp/dac8tpkejvrr86z1nvpi.webp" alt="Mockups" class="w-full h-auto my-4" />
 
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
@@ -239,14 +247,15 @@
                 </p>
             </section>
         </section>
- <NuxtImg src="/img/yiapp/yzwtywyema8uvmztgj3a.webp" alt="Design System" class="w-full h-auto my-4"
-                    loading="lazy" />
+        <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+            src="/img/yiapp/yzwtywyema8uvmztgj3a.webp" alt="Design System" class="w-full h-auto my-4" />
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
                 <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">High Fidelity Prototype</h2>
             </section>
             <section class="grid-2fr">
-                <NuxtImg src="/img/yiapp/202402102303.gif" alt="High Fidelity Prototype" class="w-1/2 h-auto my-4"
+                <NuxtImg loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
+                    src="/img/yiapp/202402102303.gif" alt="High Fidelity Prototype" class="w-1/2 h-auto my-4"
                     format="gif" />
             </section>
         </section>
@@ -268,6 +277,24 @@
 import HeaderProject from '@/components/HeaderProject.vue'
 import { ref } from 'vue';
 
+useSeoMeta({
+    title: 'YiApp e-commerce of clothing and accessories',
+    titleTemplate: '%s | Isaac Quiroz Portfolio',
+    description: 'Yi is a multi-brand, multi-payment, multi-shipping address, multi-packaging apparel retail app.',
+    keywords: ['ecommerce', 'yiapp', 'multi-brand', 'multi-payment', 'multi-shipping address', 'multi-packaging', 'apparel retail app', 'ui/ux', 'prototipado', 'investigación de usuarios'],
+    // Open Graph (Para cuando se comparte en Facebook/LinkedIn/WhatsApp)
+    ogTitle: 'YiApp e-commerce of clothing and accessories',
+    ogDescription: 'Yi is a multi-brand, multi-payment, multi-shipping address, multi-packaging apparel retail app.',
+    ogImage: 'https://isaacquirozmadrigal.dev/img/yiapp/yofrzpjwfxwjao7e2jub.webp', // IMPORTANTE: Usa URL absoluta en producción
+    ogUrl: 'https://isaacquirozmadrigal.dev/projects/yiapp',
+    ogType: 'article',
+
+    // Twitter Card
+    twitterCard: 'summary_large_image',
+    twitterTitle: 'YiApp e-commerce of clothing and accessories',
+    twitterDescription: 'Yi is a multi-brand, multi-payment, multi-shipping address, multi-packaging apparel retail app.',
+    twitterImage: 'https://isaacquirozmadrigal.dev/img/yiapp/yofrzpjwfxwjao7e2jub.webp',
+})
 const aboutProject = ref({
     projectType: 'Mobile App - This design is a multi-brand and multi-delivery online clothing store application for the general public.',
     contribution: 'UI/UX Design, Prototipado, Investigación de usuarios',

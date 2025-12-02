@@ -1,66 +1,67 @@
 <template>
-    <ButtonFloat />
-    <Titles id="main" ref="mainRef" title="Diseñador UX Generalista y Desarrollador web en <span>Propiedades Cancún</span>" subtitle="Hi, I'm Isaac, a multidisciplinary <u>UI/UX Designer</u> & <u>Front-end Developer</u>. I Design, Code and Write." />
-    <BubbleImgs />
-    
-    <!-- SECCIÓN PROJECTS -->
-    <div id="projects" ref="projectsRef">
-      <Titles v-if="currentSection === 'Diseñador UI/UX'" title="Pongo mi <span>corazón</span> en todo lo que hago" subtitle="Te muestro una pequeña sección de <u>casos de estudio</u> que muestran mi trabajo y que disfruto mucho hacer" />
-      <Titles v-else title="Pongo mi <span>corazón</span> en todo lo que hago" subtitle="Te muestro una pequeña sección de <u>proyectos frontend</u> que muestran mi trabajo y que disfruto mucho hacer" />
+  <ButtonFloat />
+
+  <main>
+    <section id="main" ref="mainRef" aria-label="Introducción">
+      <Titles title="Diseñador UX Generalista y Desarrollador web en <span>Propiedades Cancún</span>"
+        subtitle="Hi, I'm Isaac, a multidisciplinary <u>UI/UX Designer</u> & <u>Front-end Developer</u>. I Design, Code and Write." />
+      <BubbleImgs />
+    </section>
+
+    <section id="projects" ref="projectsRef" aria-label="Portafolio de Proyectos">
+      <Titles v-if="currentSection === 'Diseñador UI/UX'" title="Pongo mi <span>corazón</span> en todo lo que hago"
+        subtitle="Te muestro una pequeña sección de <u>casos de estudio</u> que muestran mi trabajo y que disfruto mucho hacer" />
+      <Titles v-else title="Pongo mi <span>corazón</span> en todo lo que hago"
+        subtitle="Te muestro una pequeña sección de <u>proyectos frontend</u> que muestran mi trabajo y que disfruto mucho hacer" />
       <!-- <ButtonsSections @update:current-section="val => currentSection = val" /> -->
       <Carrousel :items="carouselItems" />
-    </div>
-    
-    <!-- SECCIÓN ABOUT -->
-    <div id="about" ref="aboutRef">
-      <Titles title="La <span>experiencia</span> que me respalda" subtitle="Descubre mi experiencia desde diferentes proyecto con los que he trabajado estos ultimos años" />
-      <!-- <ButtonsSections @update:current-section="val => currentSection = val" /> -->
+    </section>
+
+    <section id="about" ref="aboutRef" aria-label="Sobre mí y Experiencia">
+      <Titles title="La <span>experiencia</span> que me respalda"
+        subtitle="Descubre mi experiencia desde diferentes proyecto con los que he trabajado estos ultimos años" />
+
       <div class="items-center justify-center">
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 w-fit mx-auto text-gray-700 dark:text-white my-8">
-            <li v-for="(place, index) in projects" :key="index" class="flex flex-col py-4 px-8 border border-gray-200 dark:border-gray-800 rounded-lg transition-shadow duration-300">
-              <div class="flex items-center space-x-2">
-                <Icon :name="place.icon" size="24px" class="text-[#304fff] dark:text-blue-500" />
-                <h3 class="font-semibold">{{ place.site }}</h3>
-              </div>
-              <ul style="list-style-type:disc" class="ml-[50px] mt-2 space-y-2">
-                <li v-for="(project, pIndex) in place.projects" :key="pIndex">
-                  <a :href="project.src" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-gray-400">{{ project.title }}</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+        <ul class="grid grid-cols-1 md:grid-cols-2 ...">
+        </ul>
       </div>
-      <TitlesH2 title="<span>Herramientas</span> que se utilizar" />
-      <!-- <ButtonsSections @update:current-section="val => currentSection = val" /> -->
-      <div class="logo-carousel-container py-12">
-        <div class="logo-carousel" :class="{ 'animate-scroll': isMobile }">
-          <div class="logo-track">
-            <div 
-              v-for="(logo, index) in displayLogos" 
-              :key="index" 
-              class="logo-item"
-            >
-              <img 
-                :src="logo.src" 
-                :alt="logo.alt" 
-                class="logo-image"
-              />
-              <span>{{ logo.alt }}</span>
-            </div>
-          </div>
+
+      <article class="tools-section">
+        <TitlesH2 title="<span>Herramientas</span> que se utilizar" />
+        <div class="logo-carousel-container py-12">
         </div>
-      </div>
-      <TitlesH2 title="<span>Estudios</span> que avalan" />
-      <SectionStudies :studies="studies" />
-    </div>
-    
-    <!-- SECCIÓN CONTACT -->
-    <div id="contact" ref="contactRef">
-      <!-- Aquí irá tu formulario de contacto o información -->
-    </div>
+      </article>
+
+      <article class="studies-section">
+        <TitlesH2 title="<span>Estudios</span> que avalan" />
+        <SectionStudies :studies="studies" />
+      </article>
+    </section>
+  </main>
+
+  <footer id="contact" ref="contactRef">
+  </footer>
 </template>
 <script setup>
 import { ref } from 'vue'
+useSeoMeta({
+  title: 'Isaac Quiroz Portfolio',
+  titleTemplate: '%s | Isaac Quiroz Portfolio',
+  description: 'Isaac Quiroz Portfolio',
+  keywords: ['Isaac Quiroz', 'Portfolio', 'UI/UX Designer', 'Front-end Developer', 'Propiedades Cancún', 'YiApp', 'Free Learn', 'Citizen', 'Otif', 'WayaWeb', 'Wizeline'],
+  // Open Graph (Para cuando se comparte en Facebook/LinkedIn/WhatsApp)
+  ogTitle: 'Isaac Quiroz Portfolio',
+  ogDescription: 'Isaac Quiroz Portfolio',
+  ogImage: 'https://isaacquirozmadrigal.dev/img/group.png', // IMPORTANTE: Usa URL absoluta en producción
+  ogUrl: 'https://isaacquirozmadrigal.dev',
+  ogType: 'website',
+
+  // Twitter Card
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Isaac Quiroz Portfolio',
+  twitterDescription: 'Isaac Quiroz Portfolio',
+  twitterImage: 'https://isaacquirozmadrigal.dev/img/group.png',
+})
 const currentSection = ref('')
 // Refs para las secciones
 const projectsRef = ref(null)
@@ -69,18 +70,18 @@ const contactRef = ref(null)
 const mainRef = ref(null)
 
 const carouselItems = ref([
-    {
+  {
     title: 'YiApp e-commerce',
     description: 'Aplicación móvil de comercio electrónico para ropa y accesorios',
     image: '/img/yiapp/yofrzpjwfxwjao7e2jub.webp',
     route: '/projects/yiapp'
   },
-    {
+  {
     title: 'Free Learn',
     description: 'Plataforma educativa en línea para cursos gratuitos',
     image: '/img/free/lqgrculfmexx2betqcuw.webp',
     route: '/projects/freelearn'
-  }, 
+  },
 
   {
     title: 'Propiedades Cancún Landing',
@@ -88,7 +89,7 @@ const carouselItems = ref([
     image: '/img/propiedades/nvifz5egnosguvd2tmgp.webp',
     route: '/projects/propiedades'
   },
- {
+  {
     title: 'Rediseño Landing Otif',
     description: 'Transformación de la navegación principal de una plataforma web de logística internacional',
     image: '/img/otif/1.webp',
@@ -103,7 +104,7 @@ const carouselItems = ref([
 ])
 
 const carrouselItemsDevelopment = ref([
-    {
+  {
     title: 'Propiedades Cancún Landing',
     description: 'Desarrollo de landing page para agencia inmobiliaria en Cancún',
     image: '/img/propiedades/nvifz5egnosguvd2tmgp.webp',
@@ -113,7 +114,7 @@ const carrouselItemsDevelopment = ref([
 
 
 const listOfExperienceUX = ref([
-    {
+  {
     title: 'Propiedades Cancún Landing',
     description: 'Desarrollo de landing page para agencia inmobiliaria en Cancún',
     image: '/img/propiedades/nvifz5egnosguvd2tmgp.webp',
@@ -134,7 +135,7 @@ const projects = ref([
       }
     ]
   },
-   {
+  {
     site: 'Personal Projects',
     icon: 'ph:laptop',
     projects: [
@@ -160,7 +161,7 @@ const projects = ref([
       }
     ]
   },
-     {
+  {
     site: 'Wizeline',
     icon: 'ph:building-office',
     projects: [
@@ -169,7 +170,7 @@ const projects = ref([
       }
     ]
   },
-     {
+  {
     site: 'WayaWeb Propiedades Cancun',
     icon: 'ph:building-office',
     projects: [
@@ -314,6 +315,7 @@ const studies = ref([
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }

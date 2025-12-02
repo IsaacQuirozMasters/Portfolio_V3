@@ -30,7 +30,10 @@
             :src="infoProject.image"
             alt="portada de proyecto"
             class="w-full h-auto my-4"
+            format="webp" 
             loading="lazy"
+            sizes="100vw sm:100vw md:800px lg:1000px" 
+            quality="80"
         />
     </div>
    </section>

@@ -1,47 +1,31 @@
 <template>
   <div class="carousel-container">
     <div class="carousel-wrapper">
-      <div 
-        class="carousel-track"
-        :style="{ transform: `translateX(-${currentIndex * slideWidth}%)` }"
-      >
-        <div 
-          v-for="(item, index) in items" 
-          :key="index"
-          class="carousel-slide"
-        >
-          <NuxtLink :to="item.route" class="card-link">
-            <div class="card">
+      <div class="carousel-track" :style="{ transform: `translateX(-${currentIndex * slideWidth}%)` }">
+        <div v-for="(item, index) in items" :key="index" class="carousel-slide">
+          <NuxtLink :to="item.route" class="card-link" :aria-label="'Ver caso de estudio: ' + item.title">
+            <article class="card">
               <div class="card-image">
-                <img :src="item.image" :alt="item.title" />
+                <NuxtImg :src="item.image" :alt="item.title" sizes="sm:100vw md:50vw lg:300px" loading="lazy" />
               </div>
               <div class="card-content">
                 <h3 class="card-title">{{ item.title }}</h3>
                 <p class="card-description">{{ item.description }}</p>
               </div>
-            </div>
+            </article>
           </NuxtLink>
         </div>
       </div>
 
       <!-- Navigation Arrows -->
-      <button 
-        v-if="showNavigation"
-        class="carousel-btn carousel-btn-prev" 
-        @click="prev"
-        :disabled="currentIndex === 0"
-      >
+      <button v-if="showNavigation" class="carousel-btn carousel-btn-prev" @click="prev" :disabled="currentIndex === 0">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
       </button>
-      
-      <button 
-        v-if="showNavigation"
-        class="carousel-btn carousel-btn-next" 
-        @click="next"
-        :disabled="currentIndex >= maxIndex"
-      >
+
+      <button v-if="showNavigation" class="carousel-btn carousel-btn-next" @click="next"
+        :disabled="currentIndex >= maxIndex">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
@@ -53,16 +37,10 @@
       <div class="carousel-counter">
         {{ currentIndex + 1 }} de {{ totalSlides }}
       </div>
-      
+
       <div class="carousel-dots">
-        <button
-          v-for="(dot, index) in totalSlides"
-          :key="index"
-          class="dot"
-          :class="{ active: index === currentIndex }"
-          @click="goToSlide(index)"
-          :aria-label="`Ir a diapositiva ${index + 1}`"
-        ></button>
+        <button v-for="(dot, index) in totalSlides" :key="index" class="dot" :class="{ active: index === currentIndex }"
+          @click="goToSlide(index)" :aria-label="`Ir a diapositiva ${index + 1}`"></button>
       </div>
     </div>
   </div>
@@ -170,7 +148,7 @@ const handleSwipe = () => {
 onMounted(() => {
   checkMobile()
   window.addEventListener('resize', checkMobile)
-  
+
   const track = document.querySelector('.carousel-track')
   if (track) {
     track.addEventListener('touchstart', handleTouchStart)
@@ -180,7 +158,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('resize', checkMobile)
-  
+
   const track = document.querySelector('.carousel-track')
   if (track) {
     track.removeEventListener('touchstart', handleTouchStart)
@@ -306,7 +284,7 @@ onUnmounted(() => {
   .carousel-btn-prev {
     left: 10px;
   }
-  
+
   .carousel-btn-next {
     right: 10px;
   }
@@ -367,6 +345,7 @@ onUnmounted(() => {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
-  cursor: pointer; /* ✅ Mostrar que es clickeable */
+  cursor: pointer;
+  /* ✅ Mostrar que es clickeable */
 }
 </style>
