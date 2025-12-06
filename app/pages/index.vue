@@ -3,23 +3,20 @@
 
   <main>
     <section id="main" ref="mainRef" aria-label="Introducción">
-      <Titles title="Diseñador UX Generalista y Desarrollador web en <span>Propiedades Cancún</span>"
-        subtitle="Hi, I'm Isaac, a multidisciplinary <u>UI/UX Designer</u> & <u>Front-end Developer</u>. I Design, Code and Write." />
+      <Titles :title="$t('home.hero.title')" :subtitle="$t('home.hero.subtitle')" />
       <BubbleImgs />
     </section>
 
     <section id="projects" ref="projectsRef" aria-label="Portafolio de Proyectos">
-      <Titles v-if="currentSection === 'Diseñador UI/UX'" title="Pongo mi <span>corazón</span> en todo lo que hago"
-        subtitle="Te muestro una pequeña sección de <u>casos de estudio</u> que muestran mi trabajo y que disfruto mucho hacer" />
-      <Titles v-else title="Pongo mi <span>corazón</span> en todo lo que hago"
-        subtitle="Te muestro una pequeña sección de <u>proyectos frontend</u> que muestran mi trabajo y que disfruto mucho hacer" />
+      <Titles v-if="currentSection === 'Diseñador UI/UX'" :title="$t('home.projects.title')"
+        :subtitle="$t('home.projects.subtitleUX')" />
+      <Titles v-else :title="$t('home.projects.title')" :subtitle="$t('home.projects.subtitleDev')" />
       <!-- <ButtonsSections @update:current-section="val => currentSection = val" /> -->
       <Carrousel :items="carouselItems" />
     </section>
 
     <section id="about" ref="aboutRef" aria-label="Sobre mí y Experiencia">
-      <Titles title="La <span>experiencia</span> que me respalda"
-        subtitle="Descubre mi experiencia desde diferentes proyecto con los que he trabajado estos ultimos años" />
+      <Titles :title="$t('home.about.title')" :subtitle="$t('home.about.subtitle')" />
 
       <div class="items-center justify-center">
         <ul class="grid grid-cols-1 md:grid-cols-2 ...">
@@ -27,13 +24,13 @@
       </div>
 
       <article class="tools-section">
-        <TitlesH2 title="<span>Herramientas</span> que se utilizar" />
+        <TitlesH2 :title="$t('home.about.tools.title')" />
         <div class="logo-carousel-container py-12">
         </div>
       </article>
 
       <article class="studies-section">
-        <TitlesH2 title="<span>Estudios</span> que avalan" />
+        <TitlesH2 :title="$t('home.about.studies.title')" />
         <SectionStudies :studies="studies" />
       </article>
     </section>
@@ -43,7 +40,10 @@
   </footer>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t: $t, tm: $tm, locale } = useI18n()
 useSeoMeta({
   title: 'Isaac Quiroz Portfolio',
   titleTemplate: '%s | Isaac Quiroz Portfolio',
@@ -69,35 +69,35 @@ const aboutRef = ref(null)
 const contactRef = ref(null)
 const mainRef = ref(null)
 
-const carouselItems = ref([
+const carouselItems = computed(() => [
   {
-    title: 'YiApp e-commerce',
-    description: 'Aplicación móvil de comercio electrónico para ropa y accesorios',
+    title: $t('home.carousel.yiapp.title'),
+    description: $t('home.carousel.yiapp.description'),
     image: '/img/yiapp/yofrzpjwfxwjao7e2jub.webp',
     route: '/projects/yiapp'
   },
   {
-    title: 'Free Learn',
-    description: 'Plataforma educativa en línea para cursos gratuitos',
+    title: $t('home.carousel.freelearn.title'),
+    description: $t('home.carousel.freelearn.description'),
     image: '/img/free/lqgrculfmexx2betqcuw.webp',
     route: '/projects/freelearn'
   },
 
   {
-    title: 'Propiedades Cancún Landing',
-    description: 'Desarrollo de landing page para agencia inmobiliaria en Cancún',
+    title: $t('home.carousel.propiedades.title'),
+    description: $t('home.carousel.propiedades.description'),
     image: '/img/propiedades/nvifz5egnosguvd2tmgp.webp',
     route: '/projects/propiedades'
   },
   {
-    title: 'Rediseño Landing Otif',
-    description: 'Transformación de la navegación principal de una plataforma web de logística internacional',
+    title: $t('home.carousel.otif.title'),
+    description: $t('home.carousel.otif.description'),
     image: '/img/otif/1.webp',
     route: '/projects/otif'
   },
   {
-    title: 'Denuncia Ciudadana',
-    description: 'Aplicación para reportar incidencias en la vía pública',
+    title: $t('home.carousel.citizen.title'),
+    description: $t('home.carousel.citizen.description'),
     image: '/img/citizen/955shots_so.webp',
     route: '/projects/citizen'
   },
@@ -216,38 +216,25 @@ onUnmounted(() => {
   window.removeEventListener('resize', checkMobile)
 })
 
-const studies = ref([
+const studies = computed(() => [
   {
-    institution: 'Universidad Politécnica de Quintana Roo',
-    degree: 'Ingeniería en Software',
-    year: '2020 - 2023',
+    institution: $t('home.studies.upqroo.institution'),
+    degree: $t('home.studies.upqroo.degree'),
+    year: $t('home.studies.upqroo.year'),
     photos: [
       '/certificado_de_estudios.jpg',
       '/titulo.jpg'
     ],
-    experience: [
-      'Expresión oral y escrita',
-      'Ingeniería de requerimientos de software',
-      'Habilidades cognitivas y de creatividad',
-      'Diseño de interfaces',
-    ]
+    experience: $tm('home.studies.upqroo.experience')
   },
   {
-    institution: 'Google',
-    degree: 'Google UX Design Professional Certificate',
-    year: '2024',
+    institution: $t('home.studies.google.institution'),
+    degree: $t('home.studies.google.degree'),
+    year: $t('home.studies.google.year'),
     photos: [
       '/coursera.jpg',
     ],
-    experience: [
-      'Foundations of User Experience (UX) Design',
-      'Start the UX Design Process: Empathize, Define, and Ideate',
-      'Build Wireframes and Low-Fidelity Prototypes',
-      'Conduct UX Research and Test Early Concepts',
-      'Create High-Fidelity Designs and Prototypes in Figma',
-      'Build Dynamic User Interfaces (UI) for Websites',
-      'Design a User Experience for Social Good & Prepare for Jobs',
-    ]
+    experience: $tm('home.studies.google.experience')
   }
 ])
 </script>

@@ -1,0 +1,195 @@
+{
+    "header": {
+        "name": "Isaac Quiroz",
+        "subtitle": "Designer UI/UX e Desenvolvedor Web",
+        "nav": {
+            "home": "Início",
+            "about": "Sobre Mim",
+            "projects": "Projetos",
+            "contact": "Contato"
+        }
+    },
+    "home": {
+        "hero": {
+            "title": "Designer UX Generalista e Desenvolvedor web em Propiedades Cancún",
+            "subtitle": "Olá, sou Isaac, um Designer UI/UX & Desenvolvedor Front-end multidisciplinar. Eu Desenho, Codifico e Escrevo."
+        },
+        "projects": {
+            "title": "Coloco meu coração em tudo que faço",
+            "subtitleUX": "Mostro-lhe uma pequena seção de estudos de caso que mostram meu trabalho e que gosto muito de fazer",
+            "subtitleDev": "Mostro-lhe uma pequena seção de projetos frontend que mostram meu trabalho e que gosto muito de fazer"
+        },
+        "about": {
+            "title": "A experiência que me apoia",
+            "subtitle": "Descubra minha experiência de diferentes projetos nos quais trabalhei nos últimos anos",
+            "tools": {
+                "title": "Ferramentas que sei usar"
+            },
+            "studies": {
+                "title": "Estudos que endossam"
+            }
+        },
+        "carousel": {
+            "yiapp": {
+                "title": "YiApp e-commerce",
+                "description": "Aplicativo móvel de comércio eletrônico para roupas e acessórios"
+            },
+            "freelearn": {
+                "title": "Free Learn",
+                "description": "Plataforma educacional online para cursos gratuitos"
+            },
+            "propiedades": {
+                "title": "Propiedades Cancún Landing",
+                "description": "Desenvolvimento de landing page para agência imobiliária em Cancún"
+            },
+            "otif": {
+                "title": "Redesign Landing Otif",
+                "description": "Transformação da navegação principal de uma plataforma web de logística internacional"
+            },
+            "citizen": {
+                "title": "Denúncia Cidadã",
+                "description": "Aplicativo para relatar incidentes em vias públicas"
+            }
+        },
+        "experience": {
+            "university": {
+                "site": "Universidade",
+                "projects": {
+                    "reptiles": "Reptiles App",
+                    "platform": "Plataforma de documentação de estágios"
+                }
+            },
+            "personal": {
+                "site": "Projetos Pessoais"
+            },
+            "wizeline": {
+                "site": "Wizeline",
+                "projects": {
+                    "patio": "Plataforma PATIO para Kudos"
+                }
+            },
+            "wayaweb": {
+                "site": "WayaWeb Propiedades Cancun",
+                "projects": {
+                    "landing": "Propiedades Cancun Landing",
+                    "virture": "Virture App e CRM"
+                }
+            }
+        },
+        "studies": {
+            "upqroo": {
+                "institution": "Universidade Politécnica de Quintana Roo",
+                "degree": "Engenharia de Software",
+                "year": "2020 - 2023",
+                "experience": [
+                    "Expressão oral e escrita",
+                    "Engenharia de requisitos de software",
+                    "Habilidades cognitivas e de criatividade",
+                    "Design de interfaces"
+                ]
+            },
+            "google": {
+                "institution": "Google",
+                "degree": "Certificado Profissional de Design UX do Google",
+                "year": "2024",
+                "experience": [
+                    "Fundamentos do Design de Experiência do Usuário (UX)",
+                    "Iniciar o Processo de Design UX: Empatizar, Definir e Idealizar",
+                    "Construir Wireframes e Protótipos de Baixa Fidelidade",
+                    "Realizar Pesquisa UX e Testar Conceitos Iniciais",
+                    "Criar Designs e Protótipos de Alta Fidelidade no Figma",
+                    "Construir Interfaces de Usuário (UI) Dinâmicas para Sites",
+                    "Projetar uma Experiência do Usuário para o Bem Social e Preparar-se para Empregos"
+                ]
+            }
+        }
+    },
+    "projects": {
+        "yiapp": {
+            "title": "YiApp e-commerce de roupas e acessórios",
+            "seo": {
+                "description": "Yi é um aplicativo de varejo de roupas multimarca, multipagamento, multiendereço de envio e multiembalagem."
+            },
+            "meta": {
+                "projectType": "Aplicativo Móvel - Este design é um aplicativo de loja de roupas online multimarca e multientrega para o público em geral.",
+                "contribution": "Design UI/UX, Prototipagem, Pesquisa de usuários",
+                "myRole": "Designer UI/UX",
+                "timeline": "Janeiro de 2023 - Abril de 2023",
+                "description": "YiApp é um aplicativo móvel de comércio eletrônico especializado em roupas e acessórios. A plataforma oferece uma experiência de compra intuitiva e segura, permitindo aos usuários explorar uma ampla variedade de produtos, fazer compras rápidas e gerenciar seus pedidos de forma eficiente. Com um design atraente e funcionalidades avançadas, o YiApp se posiciona como uma opção ideal para os amantes da moda que buscam conveniência e estilo em um só lugar."
+            },
+            "sections": {
+                "overview": "Visão Geral",
+                "background": "Contexto",
+                "process": "O Processo",
+                "research": "Pesquisa",
+                "method": "MÉTODO",
+                "goals": "Objetivos",
+                "result": "Resultado",
+                "personaCreation": "Criação de Persona",
+                "userJourney": "Mapa de Jornada do Usuário",
+                "userFlow": "Fluxo do Usuário",
+                "architecture": "Design de Arquitetura",
+                "crazyEight": "Crazy Eight",
+                "wireframes": "Wireframes",
+                "lowFidelity": "Protótipo de Baixa Fidelidade",
+                "usabilityTesting": "Plano de Teste de Usabilidade",
+                "mockups": "Mockups",
+                "designSystem": "Sistema de Design",
+                "highFidelity": "Protótipo de Alta Fidelidade",
+                "conclusion": "Conclusão"
+            },
+            "content": {
+                "researchIntro": "Qual é o sentido de explorar esta solução? Quais interações do usuário estão envolvidas? Vamos ver como comportamentos e padrões comuns do usuário podem ajudar a reforçar esses conceitos de design.",
+                "methodItems": [
+                    "ENTREVISTAS COM USUÁRIOS",
+                    "PESQUISA DE CAMPO"
+                ],
+                "goalsText": "Para entender as necessidades do usuário, realizamos uma entrevista com o usuário para identificar seu fluxo normal em um aplicativo, descobrir qual problema eles gostariam de resolver e entender como um aplicativo wearable aprimorado pode ajudar. Com a pesquisa, tentamos identificar áreas de oportunidade para criar em nosso aplicativo.",
+                "resultText": "Graças a essa pesquisa, conseguimos identificar o caminho comum de um usuário para atingir seu objetivo de compra. Com a pesquisa de campo, conseguimos identificar as áreas de oportunidade e, a partir do resultado, chegamos a temas como Múltiplos Endereços, Múltiplos Métodos de Pagamento e descobrimos que todo o processo de checkout de vários cliques poderia ser simplificado em uma única visualização.",
+                "userJourneyText": "Para empatizar com os usuários, também criamos mapas de empatia e um mapa de jornada do usuário para nos aprofundarmos em cada etapa pela qual nossas personas passam ao comprar um produto.",
+                "userFlowText": "Para entender como construiríamos a experiência, projetamos os principais fluxos de usuário para o aplicativo Yi. O fluxo de usuário nos permitiu ver toda a experiência do aplicativo em um nível holístico e, assim, tomar decisões",
+                "architectureBrainstorm": "Uma vez que tínhamos reunido os tópicos e identificado os fluxos de usuário, era hora de começar a criar um mapa de arquitetura de como a informação seria organizada no design, debatemos ideias, separando o que não atendia aos objetivos e economizando para ideias futuras.",
+                "architectureComplete": "Após o brainstorming, pudemos completar claramente a arquitetura da informação organizando cada visualização de acordo com seus dados, isso também nos permite escalar o aplicativo no futuro e dividi-lo em componentes, facilitando a iteração e melhoria, se necessário.",
+                "crazyEightText": "Uma vez que tínhamos toda a informação pronta e organizada, começamos a criar nossos mockups com base em um exercício chamado \"Crazy Eight\", isso nos ajudou a estender o panorama de identificar diferentes formas de visualizações e, com base nisso, escolher um design final reunindo elementos das outras visualizações avaliando simplicidade, acessibilidade, inclusão e, finalmente, o design.",
+                "wireframesText": "Iterando nos wireframes de papel, começamos a criar os wireframes digitais, isso nos ajudou a identificar espaços reais dentro de um dispositivo, também esclareceu nossas ideias de para onde o design final estava indo, nesta etapa aprendi que os elementos devem ser compreensíveis para todas as pessoas e não apenas para mim, então tudo o que as pessoas não entendiam tinha um rótulo.",
+                "lowFidelityText": "Depois de confirmar nossos cenários, começamos a reunir alguns fundamentos do Yi, queríamos que o usuário escolhesse seu produto e o comprasse, como se cada passo fosse uma pequena parte de toda a coisa. Os wireframes de baixa fidelidade nos ajudaram a descartar alguns recursos que não eram tão fundamentais quanto a pesquisa do carrinho de compras.",
+                "usabilityTestingIntro": "Executamos vários participantes através de nosso protótipo de baixa fidelidade para entender melhor seus padrões de padrões de interação. Cada um deles recebeu a tarefa simples de comprar um produto. Não era a tarefa difícil, mas era como eles pensavam no processo de compra de um produto que nos interessava.",
+                "usabilityTestingSurvey": "📝 Pesquisa de estudo de usabilidade de design",
+                "usabilityQuestions": [
+                    "❓ Você achou fácil ou difícil comprar um produto? Se sua resposta for muito difícil ou moderadamente difícil, o que tornou difícil para você",
+                    "❓ Se você pudesse mudar alguma coisa sobre o processo, o que você mudaria?",
+                    "❓ Você achou fácil ou difícil adicionar o produto à sua lista de desejos?",
+                    "❓ Acho fácil navegar no aplicativo. KPI",
+                    "❓ Há inconsistências no aplicativo. KPI",
+                    "❓ Eu imaginaria que a maioria das pessoas aprenderia a usar este aplicativo rapidamente. KPI",
+                    "❓ Acho que usaria este aplicativo com frequência. KPI"
+                ],
+                "usabilityResult": "Durante a pesquisa, aprendemos que o usuário esperava uma acessibilidade mais profunda que se traduz em navegação fácil e, graças a isso, chegamos a temas e, em seguida, as seguintes soluções até que tenhamos resolvido o problema.",
+                "mockupsText": "Depois de solidificar a estrutura fundamental, pudemos pegar o feedback de nossas sessões de teste e começar a formar nossos comps finais. Usamos a cor com moderação em todo o produto para ajudar a comunicar elementos interativos ao usuário e guiá-lo sequencialmente para o objetivo principal.",
+                "designSystemSubtitle": "Criatividade, Dinheiro e Frescor",
+                "designSystemText1": "A cor verde foi selecionada para mostrar criatividade e inovação em cada produto vendido, os cantos semicirculares representam diversão, mas confiança por não serem tão circulares.",
+                "designSystemText2": "O logotipo da marca é uma criação de dois nomes Yohana Isaac, a sacola no carrinho é a identidade da marca, pois objetivamente as compras no aplicativo podem ser organizadas por sacolas e depois adicionadas ao carrinho, mas você também pode adicionar os produtos individualmente.",
+                "conclusionText": "Yi é um aplicativo de varejo de roupas multimarca, multipagamento, multiendereço de envio e multiembalagem."
+            }
+        }
+    },
+    "seo": {
+        "home": {
+            "title": "Portfólio de Isaac Quiroz",
+            "description": "Portfólio de Isaac Quiroz"
+        }
+    },
+    "common": {
+        "viewProject": "Ver Projeto",
+        "backToProjects": "Voltar aos Projetos",
+        "readMore": "Leia mais",
+        "contactMe": "Entre em Contato",
+        "projectHeader": {
+            "projectType": "Tipo de Projeto",
+            "myRole": "Meu Papel",
+            "contribution": "Contribuição",
+            "outcome": "Resultado",
+            "timeline": "Linha do Tempo"
+        }
+    }
+}

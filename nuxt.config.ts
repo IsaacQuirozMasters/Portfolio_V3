@@ -8,7 +8,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/icon',
     '@nuxt/image',
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    '@nuxtjs/i18n'
   ],
 
   // Configuración de la App (SEO Global)
@@ -29,7 +30,21 @@ export default defineNuxtConfig({
       ]
     }
   },
-
+  i18n: {
+    strategy: 'prefix_except_default',
+    defaultLocale: 'es',
+    locales: [
+      { code: 'es', iso: 'es-MX', file: 'es.json', name: 'Español' },
+      { code: 'en', iso: 'en-US', file: 'en.json', name: 'English' },
+      { code: 'pt', iso: 'pt-BR', file: 'pt.json', name: 'Português' }
+    ],
+    langDir: '../app/locales/',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieSecure: true,
+      fallbackLocale: 'es'
+    }
+  },
   // Optimización de imágenes (Nuxt Image)
   image: {
     // Definimos los breakpoints para generar versiones responsivas
@@ -50,15 +65,8 @@ export default defineNuxtConfig({
     classSuffix: '',
     preference: 'system',
     fallback: 'light',
-    hid: 'nuxt-color-mode-script',
-    cookie: 'nuxt-color-mode',
     globalName: 'colorMode',
     componentName: 'ColorScheme',
-    attribute: 'data-theme',
-    cookieOptions: {
-      prefix: 'color-mode',
-      maxAge: 60 * 60 * 24 * 30
-    }
   },
   icon: {
     mode: 'css',

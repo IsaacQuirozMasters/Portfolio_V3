@@ -8,9 +8,9 @@
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between h-16">
         <div>
-          <h1 class="text-lg font-semibold dark:text-white">Isaac Quiroz</h1>
+          <h1 class="text-lg font-semibold dark:text-white">{{ $t('header.name') }}</h1>
           <p class="text-sm text-gray-600 dark:text-gray-400">
-            Diseñador UI/UX y Desarrollador Web
+            {{ $t('header.subtitle') }}
           </p>
         </div>
         <div class="flex items-center gap-4">
@@ -18,6 +18,7 @@
             <Icon v-if="isDark" name="ph:sun-bold" class="w-6 h-6 text-yellow-500" />
             <Icon v-else name="ph:moon-bold" class="w-6 h-6 text-gray-700" />
           </button>
+          <LanguageSwitcher />
           <button class="md:hidden">
             <Icon name="ph:list-bold" class="w-6 h-6 text-black-100 dark:text-white" />
           </button>
@@ -30,14 +31,14 @@
                 @click="scrollToSection(internRoute.section)"
                 class="text-sm text-black-100 dark:text-gray-200 hover:text-[#304fff] dark:hover:text-[#304fff] transition-colors cursor-pointer"
               >
-                {{ internRoute.name }}
+                {{ $t(internRoute.nameKey) }}
               </button>
               <NuxtLink 
                 v-else
                 :to="internRoute.route" 
                 class="text-sm text-black-100 dark:text-gray-200 hover:text-[#304fff] dark:hover:text-[#304fff] transition-colors"
               >
-                {{ internRoute.name }}
+                {{ $t(internRoute.nameKey) }}
               </NuxtLink>
             </li>
           </ul>
@@ -55,20 +56,20 @@ const { isDark, toggleTheme, initTheme } = useTheme();
 
 const internRoutes = ref([
   {
-    name: 'Inicio',
+    nameKey: 'header.nav.home',
     route: '/',
     section: 'main'
   },
   {
-    name: 'About Me',
+    nameKey: 'header.nav.about',
     section: 'about'
   },
   {
-    name: 'Projects',
+    nameKey: 'header.nav.projects',
     section: 'projects'
   },
   {
-    name: 'Contact Me',
+    nameKey: 'header.nav.contact',
     section: 'contact'
   },
 ]);
