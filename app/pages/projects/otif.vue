@@ -8,23 +8,25 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-useSeoMeta({
-  title: 'OTIF - UX Case Study',
-  titleTemplate: '%s | Isaac Quiroz Portfolio',
-  description: 'Estudio de caso UX/UI para "OTIF", rediseño de una plataforma para mejorar la experiencia de los usuarios.',
+import { ref, computed } from 'vue';
+const { t } = useI18n()
 
-  // Open Graph (Para cuando se comparte en Facebook/LinkedIn/WhatsApp)
-  ogTitle: 'OTIF - UX/UI Case Study',
-  ogDescription: 'rediseño de una pagina en una plataforma web para mejorar la experiencia de los usuarios.',
-  ogImage: 'https://isaacquirozmadrigal.dev/img/otif/1.webp', // IMPORTANTE: Usa URL absoluta en producción
+useSeoMeta({
+  title: () => t('projects.otif.title'),
+  titleTemplate: '%s | Isaac Quiroz Portfolio',
+  description: () => t('projects.otif.seo.description'),
+
+  // Open Graph
+  ogTitle: () => t('projects.otif.title'),
+  ogDescription: () => t('projects.otif.seo.description'),
+  ogImage: 'https://isaacquirozmadrigal.dev/img/otif/1.webp',
   ogUrl: 'https://isaacquirozmadrigal.dev/projects/otif',
   ogType: 'article',
 
   // Twitter Card
   twitterCard: 'summary_large_image',
-  twitterTitle: 'OTIF - UX/UI Case Study',
-  twitterDescription: 'rediseño de una pagina en una plataforma web para mejorar la experiencia de los usuarios.',
+  twitterTitle: () => t('projects.otif.title'),
+  twitterDescription: () => t('projects.otif.seo.description'),
   twitterImage: 'https://isaacquirozmadrigal.dev/img/otif/1.webp',
 })
 const infoProject = ref([

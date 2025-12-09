@@ -1,45 +1,38 @@
 <template>
     <h1 class="text-bold text-5xl mb-4">
-    {{ infoProject.title }}
+        {{ infoProject.title }}
     </h1>
-   <section class="header">
-     <div class="historyBase">
-        <div v-if="infoProject.projectType">
-            <h2 class="text-regular font-semibold my-2">Tipo de Proyecto</h2>
-            <p class="text-sm text-gray-500 dark:text-gray-400">{{ infoProject.projectType }}</p>
+    <section class="header">
+        <div class="historyBase">
+            <div v-if="infoProject.projectType">
+                <h2 class="text-regular font-semibold my-2">{{ $t('common.projectHeader.projectType') }}</h2>
+                <p class="text-sm text-gray-500 dark:text-gray-400">{{ infoProject.projectType }}</p>
+            </div>
+            <div v-if="infoProject.myRole">
+                <h2 class="text-regular font-semibold my-2">{{ $t('common.projectHeader.myRole') }}</h2>
+                <p class="text-sm text-gray-500 dark:text-gray-400">{{ infoProject.myRole }}</p>
+            </div>
+            <div v-if="infoProject.contribution">
+                <h2 class="text-regular font-semibold my-2">{{ $t('common.projectHeader.contribution') }}</h2>
+                <p class="text-sm text-gray-500 dark:text-gray-400">{{ infoProject.contribution }}</p>
+            </div>
+            <div v-if="infoProject.outCome">
+                <h2 class="text-regular font-semibold my-2">{{ $t('common.projectHeader.outCome') }}</h2>
+                <p class="text-sm text-gray-500 dark:text-gray-400">{{ infoProject.outCome }}</p>
+            </div>
+            <div v-if="infoProject.timeline">
+                <h2 class="text-regular font-semibold my-2">{{ $t('common.projectHeader.timeline') }}</h2>
+                <p class="text-sm text-gray-500 dark:text-gray-400">{{ infoProject.timeline }}</p>
+            </div>
         </div>
-        <div v-if="infoProject.myRole">
-            <h2 class="text-regular font-semibold my-2">Mi Rol</h2>
-            <p class="text-sm text-gray-500 dark:text-gray-400">{{ infoProject.myRole }}</p>
+        <div>
+            <NuxtImg :src="infoProject.image" alt="portada de proyecto" class="w-full h-auto my-4" format="webp"
+                loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80" />
         </div>
-        <div v-if="infoProject.contribution">
-            <h2 class="text-regular font-semibold my-2">Contribución</h2>
-            <p class="text-sm text-gray-500 dark:text-gray-400">{{ infoProject.contribution }}</p>
-        </div>
-        <div v-if="infoProject.outCome">
-            <h2 class="text-regular font-semibold my-2">Resultado</h2>
-            <p class="text-sm text-gray-500 dark:text-gray-400">{{ infoProject.outCome }}</p>
-        </div>
-        <div v-if="infoProject.timeline">
-            <h2 class="text-regular font-semibold my-2">Línea de Tiempo</h2>
-            <p class="text-sm text-gray-500 dark:text-gray-400">{{ infoProject.timeline }}</p>
-        </div>
-    </div>
-    <div>
-        <NuxtImg
-            :src="infoProject.image"
-            alt="portada de proyecto"
-            class="w-full h-auto my-4"
-            format="webp" 
-            loading="lazy"
-            sizes="100vw sm:100vw md:800px lg:1000px" 
-            quality="80"
-        />
-    </div>
-   </section>
-<p class="description sr-only">
-    {{ infoProject.description }}
-</p>
+    </section>
+    <p class="description sr-only">
+        {{ infoProject.description }}
+    </p>
 
 </template>
 <script setup>
@@ -47,7 +40,7 @@ import { defineProps } from 'vue';
 
 const props = defineProps({
     infoProject: {
-      type: Object,
+        type: Object,
     }
 });
 
@@ -58,6 +51,7 @@ const props = defineProps({
     grid-template-columns: auto auto;
     gap: 10px;
 }
+
 .header {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -73,5 +67,4 @@ const props = defineProps({
         grid-template-columns: 1fr;
     }
 }
-
 </style>

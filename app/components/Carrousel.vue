@@ -3,7 +3,7 @@
     <div class="carousel-wrapper">
       <div class="carousel-track" :style="{ transform: `translateX(-${currentIndex * slideWidth}%)` }">
         <div v-for="(item, index) in items" :key="index" class="carousel-slide">
-          <NuxtLink :to="item.route" class="card-link" :aria-label="'Ver caso de estudio: ' + item.title">
+          <NuxtLink :to="$localePath(item.route)" class="card-link" :aria-label="'Ver caso de estudio: ' + item.title">
             <article class="card">
               <div class="card-image">
                 <NuxtImg :src="item.image" :alt="item.title" sizes="sm:100vw md:50vw lg:300px" loading="lazy" />

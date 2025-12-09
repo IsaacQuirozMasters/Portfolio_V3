@@ -1,8 +1,7 @@
 <template>
   <ButtonFloat />
-
   <main>
-    <section id="main" ref="mainRef" aria-label="Introducción">
+    <section id=" main" ref="mainRef" aria-label="Introducción">
       <Titles :title="$t('home.hero.title')" :subtitle="$t('home.hero.subtitle')" />
       <BubbleImgs />
     </section>
@@ -14,29 +13,96 @@
       <!-- <ButtonsSections @update:current-section="val => currentSection = val" /> -->
       <Carrousel :items="carouselItems" />
     </section>
-
-    <section id="about" ref="aboutRef" aria-label="Sobre mí y Experiencia">
+    <div class="h-[1px] w-3/4 mx-auto bg-gray-200 dark:bg-gray-700"></div>
+    <section id="about" ref="aboutRef" aria-label="Sobre mí y Experiencia" class="pt-12">
       <Titles :title="$t('home.about.title')" :subtitle="$t('home.about.subtitle')" />
+      <!-- Mobile Layout (Grid Stack) -->
+      <div class="md:hidden items-center justify-center px-4">
+        <ul class="grid grid-cols-1 gap-6 w-full text-gray-700 dark:text-white my-8">
+          <li v-for="(place, index) in projects" :key="index"
+            class="flex flex-col border border-gray-200 dark:border-gray-700 rounded-xl transition-all duration-300 bg-white dark:bg-gray-800 shadow-md overflow-hidden">
+            <!-- Mobile Header with Image -->
+            <div class="h-24 bg-cover bg-center relative" :style="{ backgroundImage: `url(${place.bgImage})` }">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+              <div class="absolute bottom-2 left-4 text-white flex items-center space-x-2">
+                <Icon :name="place.icon" size="28px" class="text-white drop-shadow-md" />
+                <h3 class="font-bold text-lg drop-shadow-md">{{ place.site }}</h3>
+              </div>
+            </div>
+            <div class="p-6">
+              <ul style="list-style-type:disc" class="ml-4 space-y-2 text-sm">
+                <li v-for="(project, pIndex) in place.projects" :key="pIndex">
+                  <a :href="project.src" target="_blank" rel="noopener noreferrer"
+                    class="text-blue-500 dark:text-gray-400 hover:underline block truncate">{{ project.title }}</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
 
-      <div class="items-center justify-center">
-        <ul class="grid grid-cols-1 md:grid-cols-2 ...">
+      <!-- Desktop Layout (Poker Fan/Parabola) -->
+      <div
+        class="hidden md:flex w-full max-w-6xl mx-auto h-[350px] relative justify-center items-center mb-32 perspective-1000">
+        <ul class="relative w-full h-full flex justify-center items-center">
+          <li v-for="(place, index) in projects" :key="index"
+            class="absolute w-[340px] bg-white dark:bg-gray-800 rounded-xl shadow-2xl  shadow-blue-400 border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 ease-out hover:z-50 cursor-pointer origin-bottom"
+            :style="{
+              '--rotate': `${(index - (projects.length - 1) / 2) * 12}deg`,
+              '--translateY': `${Math.abs(index - (projects.length - 1) / 2) * 30}px`,
+              '--translateX': `${(index - (projects.length - 1) / 2) * 120}px`,
+              transform: `translateX(var(--translateX)) translateY(var(--translateY)) rotate(var(--rotate))`,
+            }"
+            onmouseover="this.style.transform='translateX(var(--translateX)) translateY(-20px) rotate(0deg) scale(1.1)'"
+            onmouseout="this.style.transform='translateX(var(--translateX)) translateY(var(--translateY)) rotate(var(--rotate))'">
+
+            <!-- Desktop Header with Image -->
+            <div class="h-32 bg-cover bg-center relative transition-all duration-300"
+              :style="{ backgroundImage: `url(${place.bgImage})` }">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+              <div class="absolute bottom-3 left-4 text-white flex items-center space-x-3">
+                <Icon :name="place.icon" size="36px" class="text-white drop-shadow-lg" />
+                <h3 class="font-bold text-xl drop-shadow-lg truncate max-w-[240px]">{{ place.site }}</h3>
+              </div>
+            </div>
+
+            <!-- Desktop Body -->
+            <div class="p-5 bg-white dark:bg-gray-800">
+              <ul style="list-style-type:disc" class="ml-4 space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                <li v-for="(project, pIndex) in place.projects" :key="pIndex">
+                  <a :href="project.src" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-blue-600 dark:hover:text-blue-400 hover:underline block truncate font-medium transition-colors">{{
+                      project.title }}</a>
+                </li>
+              </ul>
+            </div>
+          </li>
         </ul>
       </div>
 
       <article class="tools-section">
         <TitlesH2 :title="$t('home.about.tools.title')" />
         <div class="logo-carousel-container py-12">
+          <div class="logo-carousel" :class="{ 'animate-scroll': isMobile }">
+            <div class="logo-track">
+              <div v-for="(logo, index) in displayLogos" :key="index" class="logo-item">
+                <NuxtImg :src="logo.src" :alt="logo.alt" class="logo-image" width="150" height="150" quality="70"
+                  format="webp" />
+                <span>{{ logo.alt }}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </article>
 
-      <article class="studies-section">
+      <article class="pt-12 dark:bg-gray-700 bg-blue-50">
         <TitlesH2 :title="$t('home.about.studies.title')" />
         <SectionStudies :studies="studies" />
       </article>
     </section>
   </main>
 
-  <footer id="contact" ref="contactRef">
+  <footer>
   </footer>
 </template>
 <script setup>
@@ -53,7 +119,7 @@ useSeoMeta({
   ogTitle: 'Isaac Quiroz Portfolio',
   ogDescription: 'Isaac Quiroz Portfolio',
   ogImage: 'https://isaacquirozmadrigal.dev/img/group.png', // IMPORTANTE: Usa URL absoluta en producción
-  ogUrl: 'https://isaacquirozmadrigal.dev',
+  ogUrl: 'https://isaacquirozmadrigal.com',
   ogType: 'website',
 
   // Twitter Card
@@ -125,6 +191,7 @@ const projects = ref([
   {
     site: 'Universidad',
     icon: 'ph:student',
+    bgImage: '/img/citizen/955shots_so.webp',
     projects: [
       {
         title: 'Reptiles App',
@@ -138,6 +205,7 @@ const projects = ref([
   {
     site: 'Personal Projects',
     icon: 'ph:laptop',
+    bgImage: '/img/yiapp/yofrzpjwfxwjao7e2jub.webp',
     projects: [
       {
         title: 'YiApp',
@@ -164,6 +232,7 @@ const projects = ref([
   {
     site: 'Wizeline',
     icon: 'ph:building-office',
+    bgImage: '/img/otif/1.webp',
     projects: [
       {
         title: 'Plataforma de PATIO for Kudos',
@@ -173,6 +242,7 @@ const projects = ref([
   {
     site: 'WayaWeb Propiedades Cancun',
     icon: 'ph:building-office',
+    bgImage: '/img/propiedades/nvifz5egnosguvd2tmgp.webp',
     projects: [
       {
         title: 'Propiedades Cancun Landing',
@@ -239,6 +309,26 @@ const studies = computed(() => [
 ])
 </script>
 <style scoped>
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
 .logo-carousel-container {
   width: 100%;
   overflow: hidden;

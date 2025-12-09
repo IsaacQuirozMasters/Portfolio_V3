@@ -1,10 +1,10 @@
 <template>
     <div class="container">
         <header-project :infoProject="aboutProject" />
-        <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-4">Overview</h2>
+        <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-4">{{ $t('projects.yiapp.sections.overview') }}</h2>
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
-                <h2 class="text-2xl text-black-700 font-semibold">Background</h2>
+                <h2 class="text-2xl text-black-700 font-semibold">{{ $t('projects.yiapp.sections.background') }}</h2>
             </section>
             <section class="grid-2fr">
                 <h3 class="text-xl text-blue-700 dark:text-blue-500">
@@ -19,7 +19,7 @@
 
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
-                <h3 class="text-2xl text-black-700 font-semibold">The Process</h3>
+                <h3 class="text-2xl text-black-700 font-semibold">{{ $t('projects.yiapp.sections.process') }}</h3>
             </section>
             <section class="grid-2fr">
                 <nuxt-img loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
@@ -31,34 +31,28 @@
 
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
-                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-4">Research</h2>
+                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-4">{{ $t('projects.yiapp.sections.research') }}
+                </h2>
             </section>
             <section class="grid-2fr">
                 <p class="text-sm text-gray-500 italic font-semibold my-2">
-                    What’s the point of exploring this solution? Which user’s interactions are involved? Let's see how
-                    common user behaviors and patterns can help to enforce these design concepts.
+                    {{ $t('projects.yiapp.content.researchIntro') }}
                 </p>
 
-                <h3 class="text-2xl text-black-700 font-semibold mt-6">METHOD</h3>
+                <h3 class="text-2xl text-black-700 font-semibold mt-6">{{ $t('projects.yiapp.sections.method') }}</h3>
                 <ul class="list-disc ml-5 text-gray-600 dark:text-white">
-                    <li>USER INTERVIEWS</li>
-                    <li>FIELD RESEARCH</li>
+                    <li v-for="(item, index) in $tm('projects.yiapp.content.methodItems')" :key="index">{{
+                        resolveMessage(item) }}</li>
                 </ul>
 
-                <h4 class="text-lg text-black-700 font-bold mt-4">Goals</h4>
+                <h4 class="text-lg text-black-700 font-bold mt-4">{{ $t('projects.yiapp.sections.goals') }}</h4>
                 <p class="text-base text-gray-600 dark:text-white my-2">
-                    To understand the user's needs we conducted a user interview to identify their normal flow in an
-                    application, find out what problem they would like to solve and understand how an enhanced wearable
-                    application can help. With the research we tried to identify areas of opportunity to create in our
-                    application.
+                    {{ $t('projects.yiapp.content.goalsText') }}
                 </p>
 
-                <h4 class="text-lg text-black-700 font-bold mt-4">Result</h4>
+                <h4 class="text-lg text-black-700 font-bold mt-4">{{ $t('projects.yiapp.sections.result') }}</h4>
                 <p class="text-base text-gray-600 dark:text-white my-2">
-                    Thanks to that research we were able to identify the common path of a user to achieve their purchase
-                    objective. With the field research we were able to identify the areas of opportunity and from the
-                    result we came up with themes such as Multiple Addresses, Multiple Payment Methods and found that
-                    the whole multi-click checkout process could be simplified into a single view.
+                    {{ $t('projects.yiapp.content.resultText') }}
                 </p>
 
                 <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
@@ -71,7 +65,8 @@
 
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
-                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">Persona Creation</h2>
+                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">{{
+                    $t('projects.yiapp.sections.personaCreation') }}</h2>
             </section>
             <section class="grid-2fr">
                 <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
@@ -83,12 +78,12 @@
 
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
-                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">User Journey Map</h2>
+                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">{{ $t('projects.yiapp.sections.userJourney')
+                }}</h2>
             </section>
             <section class="grid-2fr">
                 <p class="text-base text-gray-600 dark:text-white my-2">
-                    To empathize with users, we also create empathy maps and a user journey map to delve into each stage
-                    our personas go through when buying a product.
+                    {{ $t('projects.yiapp.content.userJourneyText') }}
                 </p>
                 <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
                     src="/img/yiapp/kjw9wrzk4ofhga5k1se1.webp" alt="User Journey Map" class="w-full h-auto my-4" />
@@ -97,13 +92,12 @@
 
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
-                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">User Flow</h2>
+                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">{{ $t('projects.yiapp.sections.userFlow') }}
+                </h2>
             </section>
             <section class="grid-2fr">
                 <p class="text-base text-gray-600 dark:text-white my-2">
-                    To understand how we would build the experience we designed the main user flows for the Yi
-                    application, The user flow allowed us to see the whole application experience on a holistic level
-                    and thus make decisions
+                    {{ $t('projects.yiapp.content.userFlowText') }}
                 </p>
                 <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
                     src="/img/yiapp/ppcamo0nasqajxby72v1.webp" alt="User Flow" class="w-full h-auto my-4" />
@@ -112,21 +106,18 @@
 
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
-                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">Architecture Design</h2>
+                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">{{ $t('projects.yiapp.sections.architecture')
+                }}</h2>
             </section>
             <section class="grid-2fr">
                 <p class="text-base text-gray-600 dark:text-white my-2">
-                    Once we had gathered the topics and identified the user flows, it was time to start creating an
-                    architecture map of how the information would be organized in the design, we brainstormed ideas,
-                    separating what did not meet the objectives and saving it for future ideas.
+                    {{ $t('projects.yiapp.content.architectureBrainstorm') }}
                 </p>
                 <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
                     src="/img/yiapp/acebs7prldg43oi1u0ds.webp" alt="Architecture Design Brainstorming"
                     class="w-full h-auto my-4" />
                 <p class="text-base text-gray-600 dark:text-white my-2">
-                    After the brainstorming we could clearly complete the information architecture by organizing each
-                    view according to its data, this also allows us to scale the application in the future and divide it
-                    into components making it easier to iterate and improve if required.
+                    {{ $t('projects.yiapp.content.architectureComplete') }}
                 </p>
                 <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
                     src="/img/yiapp/English.svg" alt="Information Architecture" class="w-full h-auto my-4" />
@@ -135,14 +126,12 @@
 
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
-                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">Crazy Eight</h2>
+                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">{{ $t('projects.yiapp.sections.crazyEight') }}
+                </h2>
             </section>
             <section class="grid-2fr">
                 <p class="text-base text-gray-600 dark:text-white my-2">
-                    Once we had all the information ready and organized we started to create our mockups based on an
-                    exercise called "Crazy Eight" this helped us to extend the panorama of identifying different ways of
-                    views and based on that to choose a final design gathering elements from the other views evaluating
-                    simplicity, accessibility, inclusiveness and finally the design.
+                    {{ $t('projects.yiapp.content.crazyEightText') }}
                 </p>
                 <NuxtImg format="webp" loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
                     src="/img/yiapp/ucye57h5arwlad59kssg.webp" alt="Crazy Eight" class="w-full h-auto my-4" />
@@ -151,14 +140,12 @@
 
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
-                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">Wireframes</h2>
+                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">{{ $t('projects.yiapp.sections.wireframes') }}
+                </h2>
             </section>
             <section class="grid-2fr">
                 <p class="text-base text-gray-600 dark:text-white my-2">
-                    Iterating on the paper wireframes we started to create the digital wireframes, this helped us to
-                    identify real spaces within a device, it also clarified our ideas of where the final design was
-                    going, at this stage I learned that the elements must be understandable for all people and not just
-                    for me, so every thing that people didn't understand had a label.
+                    {{ $t('projects.yiapp.content.wireframesText') }}
                 </p>
             </section>
         </section>
@@ -168,14 +155,12 @@
             src="/img/yiapp/Wireframe.png" alt="Wireframes Landscape" class="w-full h-auto my-4" />
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
-                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">Low Fidelity Prototype</h2>
+                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">{{ $t('projects.yiapp.sections.lowFidelity')
+                }}</h2>
             </section>
             <section class="grid-2fr">
                 <p class="text-base text-gray-600 dark:text-white my-2">
-                    After confirming our scenarios we started to put together some fundamentals of Yi, we wanted the
-                    user to choose their product and buy it, as if each step was a small part of the whole thing. The
-                    low fidelity wireframes helped us rule out some features that were not as fundamental as the
-                    shopping cart search.
+                    {{ $t('projects.yiapp.content.lowFidelityText') }}
                 </p>
                 <NuxtImg loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
                     src="/img/yiapp/prototypeLow.gif" alt="Low Fidelity Prototype" class="w-full h-auto my-4"
@@ -185,45 +170,34 @@
 
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
-                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">Usability Testing Plan</h2>
+                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">{{
+                    $t('projects.yiapp.sections.usabilityTesting') }}</h2>
             </section>
             <section class="grid-2fr">
                 <p class="text-base text-gray-600 dark:text-white my-2">
-                    We ran several participants through our low-fidelity prototype to better understand their patterns
-                    of interaction patterns. Each of them was given the simple task to buy a product. It wasn't the
-                    difficult task, but it was how they thought through the process of buying a product we were
-                    interested in.
+                    {{ $t('projects.yiapp.content.usabilityTestingIntro') }}
                 </p>
 
-                <h4 class="text-lg text-black-700 font-bold mt-4">📝 Design usability study survey</h4>
+                <h4 class="text-lg text-black-700 font-bold mt-4">{{ $t('projects.yiapp.content.usabilityTestingSurvey')
+                }}</h4>
                 <ul class="list-none space-y-2 mt-2 text-gray-600 dark:text-white">
-                    <li>❓ Did you find it <strong>easy or difficult</strong> to buy a product? If your answer is very
-                        difficult or moderately difficult, <strong>what made it difficult for you</strong></li>
-                    <li>❓ If you could change anything about the process, what would you change?</li>
-                    <li>❓ Did you find it easy or difficult to add the product to your wish list?</li>
-                    <li>❓ I find it easy to navigate the application. <span class="font-semibold">KPI</span></li>
-                    <li>❓ There are inconsistencies within the app. <span class="font-semibold">KPI</span></li>
-                    <li>❓ I would imagine that most people would learn to use this app quickly. <span
-                            class="font-semibold">KPI</span></li>
-                    <li>❓ I think I would use this app frequently. <span class="font-semibold">KPI</span></li>
+                    <li v-for="(question, index) in $tm('projects.yiapp.content.usabilityQuestions')" :key="index">{{
+                        resolveMessage(question) }}</li>
                 </ul>
                 <p class="text-base text-gray-600 dark:text-white my-2">
-                    During the survey we learned that the user expected a deeper accessibility that translates into easy
-                    navigation and thanks to that we came up with themes and then the following solutions until we have
-                    solved the problem.
+                    {{ $t('projects.yiapp.content.usabilityResult') }}
                 </p>
             </section>
         </section>
 
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
-                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">Mockups</h2>
+                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">{{ $t('projects.yiapp.sections.mockups') }}
+                </h2>
             </section>
             <section class="grid-2fr">
                 <p class="text-base text-gray-600 dark:text-white my-2">
-                    After solidifying the foundational framework, we were able to take the feedback from our testing
-                    sessions and start to form our final comps. We used color sparingly throughout the product to help
-                    communicate interactable elements to the user and guide it sequentially to the main objective.
+                    {{ $t('projects.yiapp.content.mockupsText') }}
                 </p>
             </section>
         </section>
@@ -232,18 +206,17 @@
 
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
-                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">Design System</h2>
+                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">{{ $t('projects.yiapp.sections.designSystem')
+                }}</h2>
             </section>
             <section class="grid-2fr">
-                <h4 class="text-lg text-black-700 font-bold mt-2">Creativity, Money and Freshness</h4>
+                <h4 class="text-lg text-black-700 font-bold mt-2">{{ $t('projects.yiapp.content.designSystemSubtitle')
+                }}</h4>
                 <p class="text-base text-gray-600 dark:text-white my-2">
-                    The green color was selected to show creativity and innovation on each product that is sold, the
-                    semicircular corners represent fun but confidence by not being so circular.
+                    {{ $t('projects.yiapp.content.designSystemText1') }}
                 </p>
                 <p class="text-base text-gray-600 dark:text-white my-2">
-                    The brand logo is a creation of two names Yohana Isaac, the bag in the cart is the identity of the
-                    brand as objectively the purchases in the application can be organized by bags and then add to cart
-                    but you can also add the products individually.
+                    {{ $t('projects.yiapp.content.designSystemText2') }}
                 </p>
             </section>
         </section>
@@ -251,7 +224,8 @@
             src="/img/yiapp/yzwtywyema8uvmztgj3a.webp" alt="Design System" class="w-full h-auto my-4" />
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
-                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">High Fidelity Prototype</h2>
+                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">{{ $t('projects.yiapp.sections.highFidelity')
+                }}</h2>
             </section>
             <section class="grid-2fr">
                 <NuxtImg loading="lazy" sizes="100vw sm:100vw md:800px lg:1000px" quality="80"
@@ -262,11 +236,12 @@
 
         <section class="grid grid-cols-1 md:grid-cols-[1fr,4fr] gap-4 md:gap-8 my-4">
             <section class="grid-1fr">
-                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">Conclusion</h2>
+                <h2 class="text-xl text-blue-700 dark:text-blue-500 mt-8">{{ $t('projects.yiapp.sections.conclusion') }}
+                </h2>
             </section>
             <section class="grid-2fr">
                 <p class="text-base text-gray-600 dark:text-white my-2">
-                    Yi is a multi-brand, multi-payment, multi-shipping address, multi-packaging apparel retail app.
+                    {{ $t('projects.yiapp.content.conclusionText') }}
                 </p>
             </section>
         </section>
@@ -275,35 +250,47 @@
 </template>
 <script setup>
 import HeaderProject from '@/components/HeaderProject.vue'
-import { ref } from 'vue';
+import { computed } from 'vue';
 
+const { t, rt } = useI18n()
+
+// SEO Meta - usando traducciones
 useSeoMeta({
-    title: 'YiApp e-commerce of clothing and accessories',
+    title: () => t('projects.yiapp.title'),
     titleTemplate: '%s | Isaac Quiroz Portfolio',
-    description: 'Yi is a multi-brand, multi-payment, multi-shipping address, multi-packaging apparel retail app.',
+    description: () => t('projects.yiapp.seo.description'),
     keywords: ['ecommerce', 'yiapp', 'multi-brand', 'multi-payment', 'multi-shipping address', 'multi-packaging', 'apparel retail app', 'ui/ux', 'prototipado', 'investigación de usuarios'],
-    // Open Graph (Para cuando se comparte en Facebook/LinkedIn/WhatsApp)
-    ogTitle: 'YiApp e-commerce of clothing and accessories',
-    ogDescription: 'Yi is a multi-brand, multi-payment, multi-shipping address, multi-packaging apparel retail app.',
-    ogImage: 'https://isaacquirozmadrigal.dev/img/yiapp/yofrzpjwfxwjao7e2jub.webp', // IMPORTANTE: Usa URL absoluta en producción
+    // Open Graph
+    ogTitle: () => t('projects.yiapp.title'),
+    ogDescription: () => t('projects.yiapp.seo.description'),
+    ogImage: 'https://isaacquirozmadrigal.dev/img/yiapp/yofrzpjwfxwjao7e2jub.webp',
     ogUrl: 'https://isaacquirozmadrigal.dev/projects/yiapp',
     ogType: 'article',
-
     // Twitter Card
     twitterCard: 'summary_large_image',
-    twitterTitle: 'YiApp e-commerce of clothing and accessories',
-    twitterDescription: 'Yi is a multi-brand, multi-payment, multi-shipping address, multi-packaging apparel retail app.',
+    twitterTitle: () => t('projects.yiapp.title'),
+    twitterDescription: () => t('projects.yiapp.seo.description'),
     twitterImage: 'https://isaacquirozmadrigal.dev/img/yiapp/yofrzpjwfxwjao7e2jub.webp',
 })
-const aboutProject = ref({
-    projectType: 'Mobile App - This design is a multi-brand and multi-delivery online clothing store application for the general public.',
-    contribution: 'UI/UX Design, Prototipado, Investigación de usuarios',
-    myRole: 'UI/UX Designer',
-    timeline: 'January 2023 - April 2023',
-    title: 'YiApp e-commerce of clothing and accessories',
+
+// Datos del proyecto - usando computed para reactividad con el idioma
+const aboutProject = computed(() => ({
+    projectType: t('projects.yiapp.meta.projectType'),
+    contribution: t('projects.yiapp.meta.contribution'),
+    myRole: t('projects.yiapp.meta.myRole'),
+    timeline: t('projects.yiapp.meta.timeline'),
+    title: t('projects.yiapp.title'),
     image: '/img/yiapp/yofrzpjwfxwjao7e2jub.webp',
-    description: 'YiApp es una aplicación móvil de comercio electrónico especializada en ropa y accesorios. La plataforma ofrece una experiencia de compra intuitiva y segura, permitiendo a los usuarios explorar una amplia variedad de productos, realizar compras rápidas y gestionar sus pedidos de manera eficiente. Con un diseño atractivo y funcionalidades avanzadas, YiApp se posiciona como una opción ideal para los amantes de la moda que buscan conveniencia y estilo en un solo lugar.'
-})
+    description: t('projects.yiapp.meta.description')
+}))
+
+// Helper function to resolve translation messages
+const resolveMessage = (msg) => {
+    // If it's already a string, return as-is
+    if (typeof msg === 'string') return msg
+    // If it's a message object, resolve it with rt()
+    return rt(msg)
+}
 </script>
 <style scoped>
 .container {

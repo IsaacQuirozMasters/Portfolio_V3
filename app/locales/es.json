@@ -11,16 +11,16 @@
     },
     "home": {
         "hero": {
-            "title": "Diseñador UX Generalista y Desarrollador web en Propiedades Cancún",
-            "subtitle": "Hi, I'm Isaac, a multidisciplinary UI/UX Designer & Front-end Developer. I Design, Code and Write."
+            "title": "Diseñador UX Generalista y Desarrollador web en <span>Propiedades Cancún</span>",
+            "subtitle": "Hi, I'm Isaac, a multidisciplinary <u>UI/UX Designer</u> & <u>Front-end Developer</u>. I Design, Code and Write."
         },
         "projects": {
-            "title": "Pongo mi corazón en todo lo que hago",
-            "subtitleUX": "Te muestro una pequeña sección de casos de estudio que muestran mi trabajo y que disfruto mucho hacer",
-            "subtitleDev": "Te muestro una pequeña sección de proyectos frontend que muestran mi trabajo y que disfruto mucho hacer"
+            "title": "Pongo mi <span>corazón</span> en todo lo que hago",
+            "subtitleUX": "Te muestro una pequeña <span>sección de casos de estudio</span> que muestran mi trabajo y que disfruto mucho hacer",
+            "subtitleDev": "Te muestro una pequeña <span>sección de proyectos frontend</span> que muestran mi trabajo y que disfruto mucho hacer"
         },
         "about": {
-            "title": "La experiencia que me respalda",
+            "title": "La <span>experiencia</span> que me respalda",
             "subtitle": "Descubre mi experiencia desde diferentes proyecto con los que he trabajado estos ultimos años",
             "tools": {
                 "title": "Herramientas que se utilizar"
@@ -105,6 +105,234 @@
         }
     },
     "projects": {
+        "otif": {
+            "title": "Rediseño Landing OTIF",
+            "seo": {
+                "description": "Rediseño de la navegación principal de una plataforma web de logística internacional para mejorar la experiencia del usuario."
+            },
+            "meta": {
+                "projectType": "Rediseño Web - Plataforma de logística internacional",
+                "contribution": "Diseño UI/UX, Prototipado, Investigación de usuarios",
+                "myRole": "Diseñador UI/UX",
+                "timeline": "2024",
+                "description": "Rediseño de una página en una plataforma web para mejorar la experiencia de los usuarios."
+            }
+        },
+        "freelearn": {
+            "title": "Free Learn - Estudio de Caso UX",
+            "seo": {
+                "description": "Plataforma para aprender de forma gratuita y fácil. Una red social educativa donde estudiantes y profesores comparten conocimiento."
+            },
+            "meta": {
+                "projectType": "Crear una aplicación que facilite la interacción entre estudiantes y profesores en línea, donde el estudiante pueda encontrar toda la información en el formato deseado.",
+                "contribution": "Diseño UI/UX, Prototipado, Investigación de usuarios",
+                "myRole": "Diseñador UX Generalista",
+                "timeline": "1 mes",
+                "description": "Plataforma educativa en línea para cursos gratuitos"
+            },
+            "sections": {
+                "overview": "Resumen",
+                "background": "Contexto",
+                "allInOne": "Todo en uno",
+                "research": "Investigación",
+                "method": "MÉTODO",
+                "goals": "Objetivos",
+                "result": "Resultado",
+                "personaCreation": "Creación de Personas",
+                "userJourney": "Mapa de Viaje del Usuario",
+                "userFlow": "Flujo de Usuario",
+                "architecture": "Diseño de Arquitectura",
+                "crazyEight": "Crazy Eight",
+                "wireframes": "Wireframes",
+                "lowFidelity": "Prototipo de Baja Fidelidad",
+                "usabilityTesting": "Plan de Pruebas de Usabilidad",
+                "mockups": "Mockups",
+                "designSystem": "Sistema de Diseño",
+                "conclusion": "Conclusión"
+            },
+            "content": {
+                "backgroundText": "Gracias a internet, muchas personas tienen acceso a la educación a pesar de no tener la posibilidad de escolarizarse, plataformas como YouTube, blogs, etc… ayudan a crear aprendizaje, sin embargo la dificultad de encontrar información precisa a lo que buscamos o una guía de principio a fin sobre un tema general como arquitectura, mecánica, química entre muchos, donde se necesita lectura, video, imágenes, todo esto se vuelve difícil y la persona al buscar se bloquea gastando mucho tiempo, uniendo información de diferentes plataformas, por eso nació Free Learn, todo el aprendizaje en una sola red social.",
+                "allInOneTitle": "Todo en uno",
+                "allInOneText": "Eso es lo que Free Learn pretende ofrecer. Un espacio para que los estudiantes compartan sus guías de estudio, información relacionada con el aprendizaje, y donde los profesores puedan compartir diversos tipos de información, texto, imágenes, videos, transmisiones en vivo, encuestas, grupos de aprendizaje y un filtro de aprendizaje personalizado, esto beneficia a una industria muy importante como la educación y algo rezagado en el presente.",
+                "researchIntro": "¿Cuál es el sentido de explorar esta solución? ¿Qué interacciones del usuario estamos hablando? Veamos cómo los comportamientos y patrones habituales de los usuarios pueden ayudar a aplicar estos conceptos de diseño.",
+                "methodItems": [
+                    "ENTREVISTAS DE USUARIO",
+                    "INVESTIGACIÓN DE CAMPO"
+                ],
+                "goalsText": "Entrevistamos a 10 personas con preguntas de usabilidad, utilizando el marco de empatía del usuario pudimos entender sus dificultades, el flujo común para aprender y el flujo para compartir información con su equipo.",
+                "resultText": "Las personas que usan YouTube para aprender, también usan Office Word para autoevaluarse, las personas que aprenden en línea comparten su aprendizaje en grupos de WhatsApp.",
+                "userJourneyText": "Para empatizar con los usuarios, también creamos mapas de empatía y un mapa de viaje del usuario para profundizar en cada etapa por la que pasan nuestras personas al evaluar y encontrar la información que necesitan.",
+                "userFlowText": "Decidimos invertir nuestro esfuerzo principalmente en el flujo de usuario más utilizado, descubrimos que es encontrar información, basándonos en el descubrimiento a través del flujo de usuario pudimos ver cómo se vinculan las vistas de esta manera.",
+                "architectureText": "El diseño de la arquitectura de información fue fácil de crear porque conocíamos el flujo del usuario, también fue accesible porque desde el principio pensamos en un menú hamburguesa o menú lateral.",
+                "crazyEightText": "Teniendo en cuenta la Arquitectura de Información comenzamos a organizar los elementos correspondientes en sus vistas, expandimos nuestro rango de posibilidades con el ejercicio Crazy Eight y finalmente refinamos basándonos en los parámetros de experiencia de usuario (Accesibilidad, Simplicidad, Intuitivo e Inclusividad).",
+                "wireframesText": "Teniendo los wireframes listos en papel, comenzamos a digitalizarlos, dando a cada elemento una coordenada en pantalla según su jerarquía y peso, para que el usuario pueda ser guiado paso a paso a través del diseño para completar el objetivo principal.",
+                "lowFidelityText": "Una vez creados los wireframes digitales, comenzamos a prototipar, esto nos ayudó a saber si nuestra lógica de enlace interno funcionaba bien, crear más accesos al mismo lugar y descartar lo que no funcionaba.",
+                "usabilityTestingIntro": "Queríamos saber cómo navega el usuario entre las vistas, cuánto tiempo tarda en acceder a la información, ver sus reacciones al ejecutar una tarea, todo esto se hizo durante el proceso del Plan de Pruebas, los participantes elegidos fueron 6 personas de diferentes edades, profesiones y habilidades.",
+                "usabilityTestingResult": "Durante la entrevista aprendimos que las preguntas que el usuario no pudo responder podrían contener información de donde se menciona en la tarjeta para ser más accesible y consecuentemente ahorrar más tiempo de interacción. Interpretamos el Wireframe y resolvimos el aviso.",
+                "usabilityTestingSurvey": "📝 Encuesta de estudio de usabilidad de diseño",
+                "backgroundExperienceTitle": "Antecedentes y experiencia:",
+                "backgroundExperienceQuestions": [
+                    "¿Podrías presentarte brevemente y contarme sobre tu experiencia con la tecnología y las aplicaciones móviles?",
+                    "¿Con qué frecuencia usas aplicaciones de cursos en línea y redes sociales?",
+                    "¿Has usado previamente aplicaciones que combinen ambas funcionalidades?"
+                ],
+                "appExperienceTitle": "Experiencia con la aplicación:",
+                "appExperienceQuestions": [
+                    "¿Podrías presentarte brevemente y contarme sobre tu experiencia con la aplicación?",
+                    "¿Podrías describir tu experiencia general usando la app hasta ahora?",
+                    "¿Qué aspectos de la aplicación has encontrado más fáciles de usar?",
+                    "¿Has encontrado alguna dificultad o problema usando la aplicación? Si es así, ¿podrías describirlos en detalle?",
+                    "¿Cómo calificarías la facilidad de uso general de la app en una escala del 1 al 5 (1 siendo muy difícil y 5 siendo muy fácil)?",
+                    "¿Has usado la aplicación para buscar y tomar cursos en línea?",
+                    "¿Podrías describir el proceso de buscar un curso específico? ¿Te resultó fácil encontrar lo que buscabas?",
+                    "¿Cómo calificarías la facilidad de uso de la sección de cursos en línea en una escala del 1 al 5?",
+                    "¿Has completado alguna lección o actividad dentro de un curso? ¿Podrías describir tu experiencia en ese proceso?",
+                    "¿Cómo calificarías la facilidad de uso de la sección de lecciones y actividades en una escala del 1 al 5?",
+                    "¿Has interactuado con el profesor o compañero en algún curso? ¿Podrías describir tu experiencia en ese caso?",
+                    "¿Qué aspectos de la sección de cursos en línea podrías mejorar?"
+                ],
+                "mockupsText": "Una vez afinados los Wireframes, nos dedicamos a maquetar todos los elementos agregando colores, pesos, sombras, tipografías, etc.",
+                "designSystemSubtitle": "Tecnológico y Futurista",
+                "designSystemText": "La combinación de azul y turquesa bajo un fondo negro para dar contraste a algo nuevo y futurista, la tipografía Roboto para dar un tono elegante y tecnológico, los tamaños en botones y el contraste en ellos para que las personas con visión cromática puedan diferenciarlo fácilmente.",
+                "conclusionText": "El producto es Free Learn, una red social para que todos aprendan fácil y gratis, todavía estamos trabajando en las vistas y componentes para mostrar el producto final."
+            }
+        },
+        "propiedades": {
+            "title": "Propiedades Cancún Landing Page",
+            "seo": {
+                "description": "Implementé con un compañero una refactorización del diseño de una landing page de propiedades inmobiliarias en Cancún."
+            },
+            "meta": {
+                "projectType": "Landing para una agencia inmobiliaria en Cancún",
+                "contribution": "Diseño UI/UX, Prototipado, Investigación de usuarios",
+                "myRole": "Diseñador UI/UX",
+                "timeline": "Enero 2024 - Marzo 2024",
+                "description": "Implementé con un compañero una refactorización del diseño de una landing page de propiedades"
+            },
+            "sections": {
+                "background": "Contexto",
+                "research": "Investigación",
+                "researchProcess": "Proceso de Investigación",
+                "keyResults": "Resultados Clave",
+                "painPoints": "Puntos de Dolor",
+                "architecture": "Arquitectura de Diseño",
+                "personas": "Personas de Usuario",
+                "wireframes": "Wireframes",
+                "mockups": "Mockups Finales",
+                "cta": "¿Te gustó este proyecto?",
+                "ctaDescription": "Explora más de mi trabajo y descubre cómo puedo ayudarte a crear experiencias digitales excepcionales.",
+                "viewMore": "Ver más proyectos"
+            },
+            "content": {
+                "backgroundText": "La idea surgió de la necesidad de mejorar la experiencia del usuario en la página web de una agencia inmobiliaria en Cancún. Aquí implementamos el branding de la página más lujosa, intuitiva y profesional. Mejoramos el filtro principal para que desde ahí redireccione a propiedades más específicas.",
+                "researchText": "Investigación de usuarios, obtuvimos datos de personas que visitan, las que compran propiedades, las que buscan propiedades, las que alquilan propiedades. Gracias a Google Analytics pudimos identificar las personas que más interactúan con la página y las que más tiempo pasan en la página, la tasa de conversión de la página era de 10% y el tiempo de interacción era de 2 minutos.",
+                "resultText": "Encontramos que los usuarios tienen una tendencia a buscar las propiedades más exclusivas y seguras, también encontramos que los usuarios que compran propiedades son personas que tienen familias grandes y que quieren seguridad en su inversión como cercanía a la playa.",
+                "painPointsList": [
+                    "Las personas sienten que su inversión es peligrosa si no hay seguridad en las propiedades",
+                    "Necesitan una plataforma que les ayude a encontrar propiedades seguras",
+                    "Quieren conocer la propiedad mediante imágenes y videos",
+                    "Es difícil contactarse con las agencias"
+                ],
+                "architectureText": "Se planificó una arquitectura de landing page con un filtro principal que redirija a propiedades más específicas.",
+                "occupation": "Ocupación",
+                "goal": "Objetivo",
+                "difficulty": "Dificultad",
+                "years": "años"
+            },
+            "personas": {
+                "felipe": {
+                    "name": "Felipe González",
+                    "age": 25,
+                    "gender": "Masculino",
+                    "occupation": "Dueño de una empresa de marketing",
+                    "goal": "Buscar una propiedad segura para su familia",
+                    "difficulty": "No encontraba propiedades seguras porque no tenía tiempo de salir a buscar a lugares cercanos y no hay quien le dé información sobre propiedades"
+                },
+                "carlos": {
+                    "name": "Carlos Soza",
+                    "age": 50,
+                    "gender": "Masculino",
+                    "occupation": "Inversionista en propiedades",
+                    "goal": "Buscar una o más propiedades en preventa seguras para su inversión",
+                    "difficulty": "A pesar de que tiene tiempo para buscar propiedades, se le dificulta contactarse con las agencias porque sus agendas están llenas y no hay quien le ayude a buscar propiedades"
+                }
+            }
+        },
+        "citizen": {
+            "title": "Denuncia Ciudadana",
+            "seo": {
+                "description": "App para que cada ciudadano pueda presentar su inconformidad sobre un servicio público en Benito Juárez."
+            },
+            "meta": {
+                "projectType": "Plataforma de denuncia ciudadana, servicios públicos, mala administración",
+                "contribution": "Diseño UI/UX, Prototipado, Investigación de usuarios",
+                "myRole": "Diseñador UI/UX",
+                "timeline": "Enero 2024 - Febrero 2024",
+                "description": "Denuncia ciudadana Benito Juárez es una App para que cada ciudadano pueda presentar su inconformidad sobre un servicio público. La plataforma facilita el proceso de reportar problemas relacionados con servicios municipales, infraestructura y administración pública."
+            },
+            "sections": {
+                "background": "Contexto",
+                "research": "Investigación",
+                "researchMethods": "Métodos de Investigación",
+                "researchGoals": "Objetivos de Investigación",
+                "keyResults": "Resultados Clave",
+                "researchQuestions": "Preguntas de Investigación",
+                "painPoints": "Puntos de Dolor",
+                "personas": "Personas de Usuario",
+                "userJourney": "Mapa de Viaje del Usuario",
+                "userFlow": "Flujo de Usuario",
+                "architecture": "Arquitectura de Diseño",
+                "crazyEights": "Crazy Eights",
+                "wireframes": "Wireframes",
+                "lowFidelity": "Prototipo de Baja Fidelidad",
+                "usabilityTesting": "Pruebas de Usabilidad",
+                "mockups": "Mockups Finales",
+                "conclusion": "Conclusión",
+                "cta": "¿Te gustó este proyecto?",
+                "ctaDescription": "Explora más de mi trabajo y descubre cómo puedo ayudarte a crear experiencias digitales excepcionales.",
+                "viewMore": "Ver más proyectos"
+            },
+            "content": {
+                "backgroundText": "Denuncia ciudadana Benito Juárez es una App para que cada ciudadano pueda presentar su inconformidad sobre un servicio público.",
+                "researchMethods": [
+                    "Entrevistas de Usuario",
+                    "Investigación de Campo"
+                ],
+                "researchGoals": "Se entrevistaron 15 personas y se hicieron las preguntas que se presentan en la imagen, para conocer si habían hecho alguna denuncia y cuál es el proceso para hacerla.",
+                "researchResult": "Son pocas las personas que han hecho alguna denuncia, para dar a conocer su inconformidad lo comentan entre ciudadanos pero nunca a la autoridad correspondiente, también no saben a quién acudir.",
+                "userJourneyText": "Después de comprender las necesidades de los usuarios creamos los temas para poder sacar ideas de los diseños que más adelante lograron responder puntualmente a las necesidades de los usuarios.",
+                "userFlowText": "Decidimos recrear todo el proceso que un usuario hace para realizar una denuncia, al igual sacamos ideas de cómo resolveríamos puntualmente esos procesos.",
+                "architectureText": "Una vez tenidos en cuenta todos los procesos y temas, generamos la arquitectura de diseño para organizar qué información va en cada vista y cómo se conectarán entre ellas.",
+                "crazyEightsText": "Finalmente para tener un boceto guía de hacia dónde dirigiríamos nuestro esfuerzo sobre el diseño de interfaz hicimos el famoso ejercicio crazy eight que explora las ideas de diseño que puede tomar nuestra interfaz y toma lo mejor de cada una para finalmente tener un diseño final.",
+                "wireframesText": "Mejoramos espacios, formas y contenido al digitalizar los wireframes.",
+                "lowFidelityText": "Aclaramos visiblemente los enlaces y acciones internas dentro del diseño para luego iterar internamente en el equipo y corregimos algunas conexiones internas.",
+                "usabilityTestingText": "Para finalizar la primera etapa quisimos encuestar a los usuarios sobre la plataforma y obtener retroalimentaciones como observar qué tan fácil o difícil era para los usuarios navegar. Durante la entrevista aprendimos que realmente fue fácil e intuitivo para el usuario sin embargo algunos elementos como el texto necesitaban contexto a pesar de ya tener una idea de para qué servían. Iteramos sobre el Wireframes y resolvimos el aviso. Preguntas de Indicador Clave de Rendimiento: Son medidas cuantificables utilizadas para evaluar el éxito de una organización, proyecto o actividad en función de sus objetivos.",
+                "usabilityQuestions": {
+                    "usability": [
+                        "¿Qué tan fácil fue para ti entender el propósito de la plataforma de denuncia ciudadana?",
+                        "¿Qué tan intuitiva fue la navegación en la plataforma?",
+                        "¿Encontraste algún problema técnico mientras usabas la plataforma?"
+                    ],
+                    "design": [
+                        "¿Te gustó el diseño general de la plataforma?",
+                        "¿Los elementos de la interfaz de usuario estaban claramente etiquetados?",
+                        "¿El flujo de trabajo en la plataforma fue lógico y coherente?"
+                    ],
+                    "functional": [
+                        "¿Las funciones disponibles en la plataforma cumplieron tus expectativas?",
+                        "¿Consideras que la plataforma de denuncia ciudadana sería útil para resolver problemas comunitarios?",
+                        "¿Qué tan probable es que recomiendes esta plataforma a otras personas?"
+                    ]
+                },
+                "usabilityLabels": {
+                    "usability": "Usabilidad",
+                    "design": "Diseño",
+                    "functional": "Funcionalidad"
+                },
+                "mockupsText": "Una vez afinados los Wireframes nos dedicamos a maquetar todos los elementos agregando colores, pesos, sombras, tipografías, etc.",
+                "conclusionText": "Denuncia ciudadana Benito Juárez es una App para que cada ciudadano pueda presentar su inconformidad sobre un servicio público."
+            }
+        },
         "yiapp": {
             "title": "YiApp e-commerce of clothing and accessories",
             "seo": {
@@ -190,6 +418,7 @@
             "contribution": "Contribución",
             "outcome": "Resultado",
             "timeline": "Línea de Tiempo"
-        }
+        },
+        "moreAbout": "Más sobre mí"
     }
 }

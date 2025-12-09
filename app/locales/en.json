@@ -11,16 +11,16 @@
     },
     "home": {
         "hero": {
-            "title": "Generalist UX Designer and Web Developer at Propiedades Cancún",
-            "subtitle": "Hi, I'm Isaac, a multidisciplinary UI/UX Designer & Front-end Developer. I Design, Code and Write."
+            "title": "Generalist UX Designer and Web Developer at <span>Propiedades Cancún</span>",
+            "subtitle": "Hi, I'm Isaac, a multidisciplinary <u>UI/UX Designer</u> & <u>Front-end Developer</u>. I Design, Code and Write."
         },
         "projects": {
-            "title": "I put my heart into everything I do",
-            "subtitleUX": "I show you a small section of case studies that showcase my work and that I really enjoy doing",
-            "subtitleDev": "I show you a small section of frontend projects that showcase my work and that I really enjoy doing"
+            "title": "I put my <span>heart</span> into everything I do",
+            "subtitleUX": "I show you a small <u>section of case studies</u> that showcase my work and that I really enjoy doing",
+            "subtitleDev": "I show you a small <u>section of frontend projects</u> that showcase my work and that I really enjoy doing"
         },
         "about": {
-            "title": "The experience that backs me up",
+            "title": "The <span>experience</span> that backs me up",
             "subtitle": "Discover my experience from different projects I have worked on in recent years",
             "tools": {
                 "title": "Tools I know how to use"
@@ -105,6 +105,234 @@
         }
     },
     "projects": {
+        "otif": {
+            "title": "OTIF Landing Redesign",
+            "seo": {
+                "description": "Redesign of the main navigation of an international logistics web platform to improve user experience."
+            },
+            "meta": {
+                "projectType": "Web Redesign - International logistics platform",
+                "contribution": "UI/UX Design, Prototyping, User Research",
+                "myRole": "UI/UX Designer",
+                "timeline": "2024",
+                "description": "Redesign of a page in a web platform to improve user experience."
+            }
+        },
+        "freelearn": {
+            "title": "Free Learn - UX Case Study",
+            "seo": {
+                "description": "Platform to learn for free and easy. An educational social network where students and teachers share knowledge."
+            },
+            "meta": {
+                "projectType": "Create an application that facilitates the interaction between students and teachers online, where the student can find all the information in the desired format.",
+                "contribution": "UI/UX Design, Prototyping, User Research",
+                "myRole": "Generalist UX Designer",
+                "timeline": "1 month",
+                "description": "Online educational platform for free courses"
+            },
+            "sections": {
+                "overview": "Overview",
+                "background": "Background",
+                "allInOne": "All in One",
+                "research": "Research",
+                "method": "METHOD",
+                "goals": "Goals",
+                "result": "Result",
+                "personaCreation": "Persona Creation",
+                "userJourney": "User Journey Map",
+                "userFlow": "User Flow",
+                "architecture": "Architecture Design",
+                "crazyEight": "Crazy Eight",
+                "wireframes": "Wireframes",
+                "lowFidelity": "Low Fidelity Prototype",
+                "usabilityTesting": "Usability Testing Plan",
+                "mockups": "Mockups",
+                "designSystem": "Design System",
+                "conclusion": "Conclusion"
+            },
+            "content": {
+                "backgroundText": "Thanks to the internet, many people have access to education despite not having the possibility of schooling, platforms like YouTube, blogs, etc... help to create learning, however the difficulty in finding precise information to what we are looking for or a guide from beginning to end on a general topic like architecture, mechanics, chemistry among many, where reading, video, images are needed, all this becomes difficult and the person when searching gets blocked spending a lot of time, joining information from different platforms, that's why Free Learn was born, all the learning in a single social network.",
+                "allInOneTitle": "All in One",
+                "allInOneText": "That's what Free Learn aims to offer. A space for learners to share their study guides, learning-related information, and where teachers can share various types of information, text, images, videos, live streams, surveys, learning groups and a personalized learning filter, this benefits a very important industry like education and something lagging in the present.",
+                "researchIntro": "What is the point of exploring this solution? What user interactions are we talking about? Let's see how users' usual behaviors and patterns can help apply these design concepts.",
+                "methodItems": [
+                    "USER INTERVIEWS",
+                    "FIELD RESEARCH"
+                ],
+                "goalsText": "We interviewed 10 people with usability questions, using the user empathy framework we were able to understand their difficulties, common flow for learning and the flow for sharing information with their team.",
+                "resultText": "People who use YouTube to learn, also use Office Word for self-assessment, people who learn online share their learning in WhatsApp groups.",
+                "userJourneyText": "To empathize with users, we also create empathy maps and a user journey map to delve into each stage our personas go through when evaluating and finding the information they need.",
+                "userFlowText": "We decided to invest our effort mainly in the most used user flow, we discovered that it is finding information, based on the discovery through user flow we could see how the views are linked in this way.",
+                "architectureText": "The information architecture design was easy to create because we knew the user flow, it was also accessible because from the beginning we thought of a hamburger menu or side menu.",
+                "crazyEightText": "Taking into account the Information Architecture we started to arrange the corresponding elements in their views, we expanded our range of possibilities with the Crazy Eight exercise and finally we refined based on the user experience parameters (Accessibility, Simplicity, Intuitive and Inclusiveness).",
+                "wireframesText": "Having the wireframes ready on paper, we started to digitize them, giving each element a coordinate on screen according to its hierarchy and weight, so that the user can be guided step by step through the design to complete the main objective.",
+                "lowFidelityText": "Once the digital wireframes were created, we started to prototype, this helped us to know if our internal linking logic worked well, to create more accesses to the same place and to discard what did not work.",
+                "usabilityTestingIntro": "We wanted to know how the user navigates between the views, how long it takes to access the information, see their reactions when executing a task, all this was done during the Test Plan process, the chosen participants were 6 people of different ages, professions and abilities.",
+                "usabilityTestingResult": "During the interview we learned that the questions that the user failed to answer could contain information from where it is mentioned on the card in order to be more accessible and consequently save more interaction time. We interpreted the Wireframe and solved the prompt.",
+                "usabilityTestingSurvey": "📝 Design usability study survey",
+                "backgroundExperienceTitle": "Background and experience:",
+                "backgroundExperienceQuestions": [
+                    "Could you briefly introduce yourself and tell me about your experience with technology and mobile applications?",
+                    "How often do you use online course and social networking apps?",
+                    "Have you previously used apps that combine both functionalities?"
+                ],
+                "appExperienceTitle": "Experience with the application:",
+                "appExperienceQuestions": [
+                    "Could you briefly introduce yourself and tell me about your experience with the application?",
+                    "Could you describe your overall experience using the app so far?",
+                    "What aspects of the application have you found easiest to use?",
+                    "Have you encountered any difficulties or problems using the application? If so, could you describe them in detail?",
+                    "How would you rate the overall ease of use of the app on a scale of 1 to 5 (1 being very difficult and 5 being very easy)?",
+                    "Have you used the application to search for and take online courses?",
+                    "Could you describe the process of searching for a specific course? Did you find it easy to find what you were looking for?",
+                    "How would you rate the ease of use of the online course section on a scale of 1 to 5?",
+                    "Have you completed any lessons or activities within a course, and could you describe your experience in that process?",
+                    "How would you rate the ease of use of the lessons and activities section on a scale of 1 to 5?",
+                    "Have you interacted with the teacher or partner in any course, and could you describe your experience in that case?",
+                    "What aspects of the online course section could you improve?"
+                ],
+                "mockupsText": "Once the Wireframes are fine-tuned, we dedicate ourselves to layout all the elements adding colors, weights, shadows, typographies, etc.",
+                "designSystemSubtitle": "Technological & Futuristic",
+                "designSystemText": "The combination of blue and turquoise under a black background to give contrast to something new and futuristic, the Roboto typography to give an elegant and technological tone, the sizes in buttons and the contrast in them so that people with chromatic vision can easily differentiate it.",
+                "conclusionText": "The product is Free Learn a social network for everyone to learn easy and free, we are still working on the views and components to show the final product."
+            }
+        },
+        "propiedades": {
+            "title": "Propiedades Cancún Landing Page",
+            "seo": {
+                "description": "I implemented with a partner a refactoring of the design of a real estate landing page in Cancun."
+            },
+            "meta": {
+                "projectType": "Landing for a real estate agency in Cancun",
+                "contribution": "UI/UX Design, Prototyping, User Research",
+                "myRole": "UI/UX Designer",
+                "timeline": "January 2024 - March 2024",
+                "description": "I implemented with a partner a refactoring of the design of a real estate landing page"
+            },
+            "sections": {
+                "background": "Background",
+                "research": "Research",
+                "researchProcess": "Research Process",
+                "keyResults": "Key Results",
+                "painPoints": "Pain Points",
+                "architecture": "Architecture Design",
+                "personas": "User Personas",
+                "wireframes": "Wireframes",
+                "mockups": "Final Mockups",
+                "cta": "Did you like this project?",
+                "ctaDescription": "Explore more of my work and discover how I can help you create exceptional digital experiences.",
+                "viewMore": "View more projects"
+            },
+            "content": {
+                "backgroundText": "The idea arose from the need to improve the user experience on the website of a real estate agency in Cancun. Here we implemented the branding of the page more luxurious, intuitive and professional. We improved the main filter so that it redirects to more specific properties.",
+                "researchText": "User research, we obtained data from people who visit, those who buy properties, those who search for properties, those who rent properties. Thanks to Google Analytics we were able to identify the people who interact the most with the page and those who spend the most time on the page, the conversion rate of the page was 10% and the interaction time was 2 minutes.",
+                "resultText": "We found that users have a tendency to look for the most exclusive and safe properties, we also found that users who buy properties are people who have large families and who want security in their investment like proximity to the beach.",
+                "painPointsList": [
+                    "People feel that their investment is dangerous if there is no security in the properties",
+                    "They need a platform that helps them find safe properties",
+                    "They want to know the property through images and videos",
+                    "It is difficult to contact the agencies"
+                ],
+                "architectureText": "A landing page architecture was planned with a main filter that redirects to more specific properties.",
+                "occupation": "Occupation",
+                "goal": "Goal",
+                "difficulty": "Difficulty",
+                "years": "years"
+            },
+            "personas": {
+                "felipe": {
+                    "name": "Felipe González",
+                    "age": 25,
+                    "gender": "Male",
+                    "occupation": "Owner of a marketing company",
+                    "goal": "Find a safe property for his family",
+                    "difficulty": "He couldn't find safe properties because he didn't have time to go out to look in nearby places and there is no one to give him information about properties"
+                },
+                "carlos": {
+                    "name": "Carlos Soza",
+                    "age": 50,
+                    "gender": "Male",
+                    "occupation": "Property investor",
+                    "goal": "Find one or more safe pre-sale properties for his investment",
+                    "difficulty": "Although he has time to search for properties, it is difficult for him to contact agencies because their schedules are full and there is no one to help him search for properties"
+                }
+            }
+        },
+        "citizen": {
+            "title": "Citizen Complaint",
+            "seo": {
+                "description": "App for every citizen to file their complaint about a public service in Benito Juárez."
+            },
+            "meta": {
+                "projectType": "Citizen complaint platform, public services, poor management",
+                "contribution": "UI/UX Design, Prototyping, User Research",
+                "myRole": "UI/UX Designer",
+                "timeline": "January 2024 - February 2024",
+                "description": "Citizen Complaint Benito Juárez is an App for every citizen to file their complaint about a public service. The platform facilitates the process of reporting problems related to municipal services, infrastructure and public administration."
+            },
+            "sections": {
+                "background": "Background",
+                "research": "Research",
+                "researchMethods": "Research Methods",
+                "researchGoals": "Research Goals",
+                "keyResults": "Key Results",
+                "researchQuestions": "Research Questions",
+                "painPoints": "Pain Points",
+                "personas": "User Personas",
+                "userJourney": "User Journey Map",
+                "userFlow": "User Flow",
+                "architecture": "Architecture Design",
+                "crazyEights": "Crazy Eights",
+                "wireframes": "Wireframes",
+                "lowFidelity": "Low Fidelity Prototype",
+                "usabilityTesting": "Usability Testing",
+                "mockups": "Final Mockups",
+                "conclusion": "Conclusion",
+                "cta": "Did you like this project?",
+                "ctaDescription": "Explore more of my work and discover how I can help you create exceptional digital experiences.",
+                "viewMore": "View more projects"
+            },
+            "content": {
+                "backgroundText": "Citizen Complaint Benito Juárez is an App for every citizen to file their complaint about a public service.",
+                "researchMethods": [
+                    "User Interviews",
+                    "Field Research"
+                ],
+                "researchGoals": "15 people were interviewed and the questions shown in the image were asked, to find out if they had filed any complaint and what is the process to do it.",
+                "researchResult": "Few people have filed a complaint, to make their dissatisfaction known they comment among citizens but never to the corresponding authority, they also don't know who to go to.",
+                "userJourneyText": "After understanding the needs of the users we created the themes to be able to draw ideas from the designs that later managed to respond precisely to the needs of the users.",
+                "userFlowText": "We decided to recreate the entire process that a user does to file a complaint, we also drew ideas on how we would precisely solve those processes.",
+                "architectureText": "Once all the processes and themes were taken into account, we generated the design architecture to organize what information goes in each view and how they will be connected.",
+                "crazyEightsText": "Finally to have a guide sketch of where we would direct our effort on interface design we did the famous crazy eight exercise that explores the design ideas that our interface can take and takes the best of each one to finally have a final design.",
+                "wireframesText": "We improved spaces, shapes and content when digitizing the wireframes.",
+                "lowFidelityText": "We clearly clarified the internal links and actions within the design and then iterated internally in the team and corrected some internal connections.",
+                "usabilityTestingText": "To finish the first stage we wanted to survey users about the platform and get feedback like observing how easy or difficult it was for users to navigate. During the interview we learned that it was really easy and intuitive for the user however some elements like the text needed context despite already having an idea of what they were for. We iterated on the Wireframes and solved the notice. Key Performance Indicator questions: They are quantifiable measures used to evaluate the success of an organization, project or activity based on its objectives.",
+                "usabilityQuestions": {
+                    "usability": [
+                        "How easy was it for you to understand the purpose of the citizen complaint platform?",
+                        "How intuitive was the navigation on the platform?",
+                        "Did you encounter any technical problems while using the platform?"
+                    ],
+                    "design": [
+                        "Did you like the overall design of the platform?",
+                        "Were the user interface elements clearly labeled?",
+                        "Was the workflow on the platform logical and coherent?"
+                    ],
+                    "functional": [
+                        "Did the available features on the platform meet your expectations?",
+                        "Do you think the citizen complaint platform would be useful for solving community problems?",
+                        "How likely are you to recommend this platform to other people?"
+                    ]
+                },
+                "usabilityLabels": {
+                    "usability": "Usability",
+                    "design": "Design",
+                    "functional": "Functionality"
+                },
+                "mockupsText": "Once the Wireframes were fine-tuned, we dedicated ourselves to layout all the elements adding colors, weights, shadows, typographies, etc.",
+                "conclusionText": "Citizen Complaint Benito Juárez is an App for every citizen to file their complaint about a public service."
+            }
+        },
         "yiapp": {
             "title": "YiApp e-commerce of clothing and accessories",
             "seo": {
@@ -190,6 +418,7 @@
             "contribution": "Contribution",
             "outcome": "Outcome",
             "timeline": "Timeline"
-        }
+        },
+        "moreAbout": "More about me"
     }
 }

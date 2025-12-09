@@ -26,7 +26,7 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#ffffff' }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        { rel: 'icon', type: 'image/png', href: '/group.png' }
       ]
     }
   },
@@ -43,7 +43,11 @@ export default defineNuxtConfig({
       useCookie: true,
       cookieSecure: true,
       fallbackLocale: 'es'
-    }
+    },
+    compilation: {
+      strictMessage: false
+    },
+    vueI18n: './i18n.config.ts'
   },
   // Optimización de imágenes (Nuxt Image)
   image: {
