@@ -51,6 +51,24 @@
                 "description": "Aplicación para reportar incidencias en la vía pública"
             }
         },
+        "carrouselDev": {
+            "propiedades": {
+                "title": "Propiedades Cancún Landing",
+                "description": "Desarrollo de landing page para agencia inmobiliaria en Cancún"
+            },
+            "virtureORM": {
+                "title": "Virture ORM",
+                "description": "CRM centralizado para agencias inmobiliarias y brokers de bienes raíces"
+            },
+            "zooApp": {
+                "title": "Zoo App",
+                "description": "Aplicación móvil de Zoologia educativa para niños"
+            },
+            "estancias": {
+                "title": "Pagina web de Estancias y Estadias",
+                "description": "Pagina web para gestionar documentos de Estancias y Estadias de la universidad"
+            }
+        },
         "experience": {
             "university": {
                 "site": "Universidad",

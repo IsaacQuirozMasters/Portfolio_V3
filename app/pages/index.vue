@@ -171,11 +171,36 @@ const carouselItems = computed(() => [
 
 const carrouselItemsDevelopment = ref([
   {
-    title: 'Propiedades Cancún Landing',
-    description: 'Desarrollo de landing page para agencia inmobiliaria en Cancún',
+    title: $t('home.carouselDev.propiedades.title'),
+    description: $t('home.carouselDev.propiedades.description'),
     image: '/img/propiedades/nvifz5egnosguvd2tmgp.webp',
-    route: '/projects/propiedades'
-  }
+    route: '/projects/front-end/propiedades'
+  },
+  {
+    title: $t('home.carouselDev.virtureCRM.title'),
+    description: $t('home.carouselDev.virtureCRM.description'),
+    image: '/img/virtureCRM/1.webp',
+    route: '/projects/front-end/virtureCRM'
+  },
+  {
+    title: $t('home.carouselDev.zooApp.title'),
+    description: $t('home.carouselDev.zooApp.description'),
+    image: '/img/zooApp/1.webp',
+    route: '/projects/front-end/zooApp'
+  },
+  {
+    title: $t('home.carouselDev.estancias.title'),
+    description: $t('home.carouselDev.estancias.description'),
+    image: '/img/estancias/1.webp',
+    route: '/projects/front-end/estancias',
+    url: 'https://gestionvinculacion.upqroo.edu.mx/'
+  },
+  {
+    title: $t('home.carouselDev.freelearn.title'),
+    description: $t('home.carouselDev.freelearn.description'),
+    image: '/img/free/lqgrculfmexx2betqcuw.webp',
+    route: '/projects/front-end/freelearn'
+  },
 ])
 
 
