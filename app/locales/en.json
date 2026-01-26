@@ -1,12 +1,13 @@
 {
     "header": {
         "name": "Isaac Quiroz",
-        "subtitle": "UI/UX Designer and Web Developer",
+        "subtitle": "UI/UX Designer & Web Developer",
         "nav": {
             "home": "Home",
             "about": "About Me",
             "projects": "Projects",
-            "contact": "Contact Me"
+            "contact": "Contact Me",
+            "language": "Language"
         }
     },
     "home": {
@@ -16,17 +17,17 @@
         },
         "projects": {
             "title": "I put my <span>heart</span> into everything I do",
-            "subtitleUX": "I show you a small <u>section of case studies</u> that showcase my work and that I really enjoy doing",
-            "subtitleDev": "I show you a small <u>section of frontend projects</u> that showcase my work and that I really enjoy doing"
+            "subtitleUX": "Here is a small <span>section of case studies</span> showcasing my work and what I enjoy doing most",
+            "subtitleDev": "Here is a small <span>section of frontend projects</span> showcasing my work and what I enjoy doing most"
         },
         "about": {
             "title": "The <span>experience</span> that backs me up",
             "subtitle": "Discover my experience from different projects I have worked on in recent years",
             "tools": {
-                "title": "Tools I know how to use"
+                "title": "Tools I use"
             },
             "studies": {
-                "title": "Studies that endorse"
+                "title": "Supporting Studies"
             }
         },
         "carousel": {
@@ -40,15 +41,33 @@
             },
             "propiedades": {
                 "title": "Propiedades Cancún Landing",
-                "description": "Landing page development for real estate agency in Cancun"
+                "description": "Landing page development for a real estate agency in Cancún"
             },
             "otif": {
                 "title": "Otif Landing Redesign",
-                "description": "Transformation of the main navigation of an international logistics web platform"
+                "description": "Transformation of the main navigation for an international logistics web platform"
             },
             "citizen": {
                 "title": "Citizen Report",
-                "description": "Application to report incidents on public roads"
+                "description": "Application to report incidents in public spaces"
+            }
+        },
+        "carouseldev": {
+            "propiedades": {
+                "title": "Propiedades Cancún Landing",
+                "description": "Landing page development for a real estate agency in Cancún"
+            },
+            "virturecrm": {
+                "title": "Virture CRM",
+                "description": "Centralized CRM for real estate agencies and brokers"
+            },
+            "zooapp": {
+                "title": "Zoo App",
+                "description": "Educational Zoology mobile application for children"
+            },
+            "estancias": {
+                "title": "Internships and Stays Web Page",
+                "description": "Web page to manage Internship and Stay documents for the university"
             }
         },
         "experience": {
@@ -65,7 +84,7 @@
             "wizeline": {
                 "site": "Wizeline",
                 "projects": {
-                    "patio": "PATIO platform for Kudos"
+                    "patio": "PATIO Platform for Kudos"
                 }
             },
             "wayaweb": {
@@ -102,6 +121,36 @@
                     "Design a User Experience for Social Good & Prepare for Jobs"
                 ]
             }
+        },
+        "studies_dev": {
+            "upqroo": {
+                "institution": "Polytechnic University of Quintana Roo",
+                "degree": "Software Engineering",
+                "year": "2020 - 2023",
+                "experience": [
+                    "Object-Oriented Programming",
+                    "Data Structures",
+                    "Software Development Process",
+                    "Database Fundamentals",
+                    "Software Requirements Engineering",
+                    "Web Programming",
+                    "Interface Design",
+                    "Mobile Application Development",
+                    "Databases",
+                    "Client-Server Programming",
+                    "Software Architecture",
+                    "Management Skills",
+                    "Software Quality",
+                    "High-Performance Team Leadership",
+                    "Software Testing",
+                    "Mobile Programming I",
+                    "Mobile Programming II",
+                    "Artificial Intelligence",
+                    "Software Maintenance",
+                    "Software Project Management",
+                    "Service-Oriented Architecture"
+                ]
+            }
         }
     },
     "projects": {
@@ -111,20 +160,20 @@
                 "description": "Redesign of the main navigation of an international logistics web platform to improve user experience."
             },
             "meta": {
-                "projectType": "Web Redesign - International logistics platform",
+                "projectType": "Web Redesign - International Logistics Platform",
                 "contribution": "UI/UX Design, Prototyping, User Research",
                 "myRole": "UI/UX Designer",
                 "timeline": "2024",
-                "description": "Redesign of a page in a web platform to improve user experience."
+                "description": "Redesign of a page on a web platform to improve user experience."
             }
         },
         "freelearn": {
             "title": "Free Learn - UX Case Study",
             "seo": {
-                "description": "Platform to learn for free and easy. An educational social network where students and teachers share knowledge."
+                "description": "Platform to learn for free and easily. An educational social network where students and teachers share knowledge."
             },
             "meta": {
-                "projectType": "Create an application that facilitates the interaction between students and teachers online, where the student can find all the information in the desired format.",
+                "projectType": "Create an application that facilitates interaction between students and teachers online, where the student can find all information in the desired format.",
                 "contribution": "UI/UX Design, Prototyping, User Research",
                 "myRole": "Generalist UX Designer",
                 "timeline": "1 month",
@@ -151,63 +200,63 @@
                 "conclusion": "Conclusion"
             },
             "content": {
-                "backgroundText": "Thanks to the internet, many people have access to education despite not having the possibility of schooling, platforms like YouTube, blogs, etc... help to create learning, however the difficulty in finding precise information to what we are looking for or a guide from beginning to end on a general topic like architecture, mechanics, chemistry among many, where reading, video, images are needed, all this becomes difficult and the person when searching gets blocked spending a lot of time, joining information from different platforms, that's why Free Learn was born, all the learning in a single social network.",
+                "backgroundText": "Thanks to the internet, many people have access to education despite not having the possibility of schooling. Platforms like YouTube, blogs, etc., help create learning. However, the difficulty of finding precise information for what we seek or a guide from start to finish on a general topic like architecture, mechanics, chemistry among many others, where reading, video, and images are needed, becomes difficult. The person searching gets blocked wasting a lot of time, piecing together information from different platforms. That is why Free Learn was born, all learning in a single social network.",
                 "allInOneTitle": "All in One",
-                "allInOneText": "That's what Free Learn aims to offer. A space for learners to share their study guides, learning-related information, and where teachers can share various types of information, text, images, videos, live streams, surveys, learning groups and a personalized learning filter, this benefits a very important industry like education and something lagging in the present.",
-                "researchIntro": "What is the point of exploring this solution? What user interactions are we talking about? Let's see how users' usual behaviors and patterns can help apply these design concepts.",
+                "allInOneText": "That is what Free Learn aims to offer. A space for students to share their study guides, learning-related information, and where teachers can share diverse types of information: text, images, videos, live streams, polls, study groups, and a personalized learning filter. This benefits a very important industry like education, which is somewhat lagging in the present.",
+                "researchIntro": "What is the point of exploring this solution? What user interactions are we talking about? Let's see how common user behaviors and patterns can help apply these design concepts.",
                 "methodItems": [
                     "USER INTERVIEWS",
                     "FIELD RESEARCH"
                 ],
-                "goalsText": "We interviewed 10 people with usability questions, using the user empathy framework we were able to understand their difficulties, common flow for learning and the flow for sharing information with their team.",
-                "resultText": "People who use YouTube to learn, also use Office Word for self-assessment, people who learn online share their learning in WhatsApp groups.",
-                "userJourneyText": "To empathize with users, we also create empathy maps and a user journey map to delve into each stage our personas go through when evaluating and finding the information they need.",
-                "userFlowText": "We decided to invest our effort mainly in the most used user flow, we discovered that it is finding information, based on the discovery through user flow we could see how the views are linked in this way.",
-                "architectureText": "The information architecture design was easy to create because we knew the user flow, it was also accessible because from the beginning we thought of a hamburger menu or side menu.",
-                "crazyEightText": "Taking into account the Information Architecture we started to arrange the corresponding elements in their views, we expanded our range of possibilities with the Crazy Eight exercise and finally we refined based on the user experience parameters (Accessibility, Simplicity, Intuitive and Inclusiveness).",
-                "wireframesText": "Having the wireframes ready on paper, we started to digitize them, giving each element a coordinate on screen according to its hierarchy and weight, so that the user can be guided step by step through the design to complete the main objective.",
-                "lowFidelityText": "Once the digital wireframes were created, we started to prototype, this helped us to know if our internal linking logic worked well, to create more accesses to the same place and to discard what did not work.",
-                "usabilityTestingIntro": "We wanted to know how the user navigates between the views, how long it takes to access the information, see their reactions when executing a task, all this was done during the Test Plan process, the chosen participants were 6 people of different ages, professions and abilities.",
-                "usabilityTestingResult": "During the interview we learned that the questions that the user failed to answer could contain information from where it is mentioned on the card in order to be more accessible and consequently save more interaction time. We interpreted the Wireframe and solved the prompt.",
-                "usabilityTestingSurvey": "📝 Design usability study survey",
-                "backgroundExperienceTitle": "Background and experience:",
+                "goalsText": "We interviewed 10 people with usability questions. Using the user empathy framework, we were able to understand their difficulties, the common flow for learning, and the flow for sharing information with their team.",
+                "resultText": "People who use YouTube to learn also use Office Word to self-evaluate; people who learn online share their learning in WhatsApp groups.",
+                "userJourneyText": "To empathize with users, we also created empathy maps and a user journey map to delve into each stage our personas go through when evaluating and finding the information they need.",
+                "userFlowText": "We decided to invest our effort mainly in the most used user flow; we discovered it is finding information. Based on the discovery through the user flow, we could see how the views link together in this way.",
+                "architectureText": "Designing the information architecture was easy to create because we knew the user flow. It was also accessible because from the beginning we thought of a hamburger menu or side menu.",
+                "crazyEightText": "Taking the Information Architecture into account, we began organizing the corresponding elements in their views. We expanded our range of possibilities with the Crazy Eight exercise and finally refined based on user experience parameters (Accessibility, Simplicity, Intuitive, and Inclusivity).",
+                "wireframesText": "Having the wireframes ready on paper, we started digitizing them, giving each element a coordinate on the screen according to its hierarchy and weight, so the user can be guided step by step through the design to complete the main goal.",
+                "lowFidelityText": "Once digital wireframes were created, we started prototyping. This helped us know if our internal linking logic worked well, create more accesses to the same place, and discard what didn't work.",
+                "usabilityTestingIntro": "We wanted to know how the user navigates between views, how long it takes to access information, and see their reactions when executing a task. All this was done during the Testing Plan process. The participants chosen were 6 people of different ages, professions, and skills.",
+                "usabilityTestingResult": "During the interview, we learned that the questions the user couldn't answer might contain information mentioned on the card to be more accessible and consequently save more interaction time. We interpreted the Wireframe and resolved the notice.",
+                "usabilityTestingSurvey": "📝 Design Usability Study Survey",
+                "backgroundExperienceTitle": "Background and Experience:",
                 "backgroundExperienceQuestions": [
                     "Could you briefly introduce yourself and tell me about your experience with technology and mobile applications?",
-                    "How often do you use online course and social networking apps?",
-                    "Have you previously used apps that combine both functionalities?"
+                    "How often do you use online course apps and social networks?",
+                    "Have you previously used applications that combine both functionalities?"
                 ],
-                "appExperienceTitle": "Experience with the application:",
+                "appExperienceTitle": "Experience with the App:",
                 "appExperienceQuestions": [
                     "Could you briefly introduce yourself and tell me about your experience with the application?",
-                    "Could you describe your overall experience using the app so far?",
+                    "Could you describe your general experience using the app so far?",
                     "What aspects of the application have you found easiest to use?",
                     "Have you encountered any difficulties or problems using the application? If so, could you describe them in detail?",
-                    "How would you rate the overall ease of use of the app on a scale of 1 to 5 (1 being very difficult and 5 being very easy)?",
+                    "How would you rate the general ease of use of the app on a scale of 1 to 5 (1 being very difficult and 5 being very easy)?",
                     "Have you used the application to search for and take online courses?",
-                    "Could you describe the process of searching for a specific course? Did you find it easy to find what you were looking for?",
-                    "How would you rate the ease of use of the online course section on a scale of 1 to 5?",
-                    "Have you completed any lessons or activities within a course, and could you describe your experience in that process?",
+                    "Could you describe the process of searching for a specific course? Was it easy to find what you were looking for?",
+                    "How would you rate the ease of use of the online courses section on a scale of 1 to 5?",
+                    "Have you completed any lesson or activity within a course? Could you describe your experience in that process?",
                     "How would you rate the ease of use of the lessons and activities section on a scale of 1 to 5?",
-                    "Have you interacted with the teacher or partner in any course, and could you describe your experience in that case?",
-                    "What aspects of the online course section could you improve?"
+                    "Have you interacted with a teacher or classmate in any course? Could you describe your experience in that case?",
+                    "What aspects of the online courses section could be improved?"
                 ],
-                "mockupsText": "Once the Wireframes are fine-tuned, we dedicate ourselves to layout all the elements adding colors, weights, shadows, typographies, etc.",
-                "designSystemSubtitle": "Technological & Futuristic",
-                "designSystemText": "The combination of blue and turquoise under a black background to give contrast to something new and futuristic, the Roboto typography to give an elegant and technological tone, the sizes in buttons and the contrast in them so that people with chromatic vision can easily differentiate it.",
-                "conclusionText": "The product is Free Learn a social network for everyone to learn easy and free, we are still working on the views and components to show the final product."
+                "mockupsText": "Once the Wireframes were refined, we dedicated ourselves to laying out all the elements adding colors, weights, shadows, typography, etc.",
+                "designSystemSubtitle": "Technological and Futuristic",
+                "designSystemText": "The combination of blue and turquoise under a black background to give contrast to something new and futuristic, the Roboto typography to give an elegant and technological tone, the sizes in buttons and the contrast in them so that people with color vision deficiency can differentiate it easily.",
+                "conclusionText": "The product is Free Learn, a social network for everyone to learn easily and for free. We are still working on the views and components to show the final product."
             }
         },
         "propiedades": {
             "title": "Propiedades Cancún Landing Page",
             "seo": {
-                "description": "I implemented with a partner a refactoring of the design of a real estate landing page in Cancun."
+                "description": "I implemented with a colleague a design refactoring of a real estate landing page in Cancún."
             },
             "meta": {
-                "projectType": "Landing for a real estate agency in Cancun",
+                "projectType": "Landing page for a real estate agency in Cancún",
                 "contribution": "UI/UX Design, Prototyping, User Research",
                 "myRole": "UI/UX Designer",
                 "timeline": "January 2024 - March 2024",
-                "description": "I implemented with a partner a refactoring of the design of a real estate landing page"
+                "description": "I implemented with a colleague a design refactoring of a real estate landing page."
             },
             "sections": {
                 "background": "Background",
@@ -215,7 +264,7 @@
                 "researchProcess": "Research Process",
                 "keyResults": "Key Results",
                 "painPoints": "Pain Points",
-                "architecture": "Architecture Design",
+                "architecture": "Design Architecture",
                 "personas": "User Personas",
                 "wireframes": "Wireframes",
                 "mockups": "Final Mockups",
@@ -224,51 +273,51 @@
                 "viewMore": "View more projects"
             },
             "content": {
-                "backgroundText": "The idea arose from the need to improve the user experience on the website of a real estate agency in Cancun. Here we implemented the branding of the page more luxurious, intuitive and professional. We improved the main filter so that it redirects to more specific properties.",
-                "researchText": "User research, we obtained data from people who visit, those who buy properties, those who search for properties, those who rent properties. Thanks to Google Analytics we were able to identify the people who interact the most with the page and those who spend the most time on the page, the conversion rate of the page was 10% and the interaction time was 2 minutes.",
-                "resultText": "We found that users have a tendency to look for the most exclusive and safe properties, we also found that users who buy properties are people who have large families and who want security in their investment like proximity to the beach.",
+                "backgroundText": "The idea arose from the need to improve the user experience on the website of a real estate agency in Cancún. Here we implemented the branding of a more luxurious, intuitive, and professional page. We improved the main filter so that it redirects to more specific properties from there.",
+                "researchText": "User research, we obtained data from people who visit, those who buy properties, those who search for properties, and those who rent properties. Thanks to Google Analytics we were able to identify the people who interact most with the page and those who spend the most time on the page; the page conversion rate was 10% and the interaction time was 2 minutes.",
+                "resultText": "We found that users tend to look for the most exclusive and secure properties. We also found that users who buy properties are people who have large families and want security in their investment such as proximity to the beach.",
                 "painPointsList": [
-                    "People feel that their investment is dangerous if there is no security in the properties",
-                    "They need a platform that helps them find safe properties",
+                    "People feel their investment is risky if there is no security in the properties",
+                    "They need a platform that helps them find secure properties",
                     "They want to know the property through images and videos",
-                    "It is difficult to contact the agencies"
+                    "It is difficult to contact agencies"
                 ],
                 "architectureText": "A landing page architecture was planned with a main filter that redirects to more specific properties.",
                 "occupation": "Occupation",
                 "goal": "Goal",
                 "difficulty": "Difficulty",
-                "years": "years"
+                "years": "years old"
             },
             "personas": {
                 "felipe": {
                     "name": "Felipe González",
                     "age": 25,
                     "gender": "Male",
-                    "occupation": "Owner of a marketing company",
-                    "goal": "Find a safe property for his family",
-                    "difficulty": "He couldn't find safe properties because he didn't have time to go out to look in nearby places and there is no one to give him information about properties"
+                    "occupation": "Marketing company owner",
+                    "goal": "Search for a safe property for his family",
+                    "difficulty": "He couldn't find safe properties because he didn't have time to go out and look in nearby places and there is no one to give him information about properties"
                 },
                 "carlos": {
                     "name": "Carlos Soza",
                     "age": 50,
                     "gender": "Male",
-                    "occupation": "Property investor",
-                    "goal": "Find one or more safe pre-sale properties for his investment",
-                    "difficulty": "Although he has time to search for properties, it is difficult for him to contact agencies because their schedules are full and there is no one to help him search for properties"
+                    "occupation": "Property Investor",
+                    "goal": "Search for one or more pre-sale properties safe for his investment",
+                    "difficulty": "Although he has time to look for properties, he finds it difficult to contact agencies because their schedules are full and there is no one to help him look for properties"
                 }
             }
         },
         "citizen": {
-            "title": "Citizen Complaint",
+            "title": "Citizen Report",
             "seo": {
-                "description": "App for every citizen to file their complaint about a public service in Benito Juárez."
+                "description": "App for every citizen to present their dissatisfaction regarding a public service in Benito Juárez."
             },
             "meta": {
-                "projectType": "Citizen complaint platform, public services, poor management",
+                "projectType": "Citizen reporting platform, public services, mismanagement",
                 "contribution": "UI/UX Design, Prototyping, User Research",
                 "myRole": "UI/UX Designer",
                 "timeline": "January 2024 - February 2024",
-                "description": "Citizen Complaint Benito Juárez is an App for every citizen to file their complaint about a public service. The platform facilitates the process of reporting problems related to municipal services, infrastructure and public administration."
+                "description": "Citizen Report Benito Juárez is an App for every citizen to present their dissatisfaction regarding a public service. The platform facilitates the process of reporting problems related to municipal services, infrastructure, and public administration."
             },
             "sections": {
                 "background": "Background",
@@ -281,7 +330,7 @@
                 "personas": "User Personas",
                 "userJourney": "User Journey Map",
                 "userFlow": "User Flow",
-                "architecture": "Architecture Design",
+                "architecture": "Design Architecture",
                 "crazyEights": "Crazy Eights",
                 "wireframes": "Wireframes",
                 "lowFidelity": "Low Fidelity Prototype",
@@ -293,34 +342,34 @@
                 "viewMore": "View more projects"
             },
             "content": {
-                "backgroundText": "Citizen Complaint Benito Juárez is an App for every citizen to file their complaint about a public service.",
+                "backgroundText": "Citizen Report Benito Juárez is an App for every citizen to present their dissatisfaction regarding a public service.",
                 "researchMethods": [
                     "User Interviews",
                     "Field Research"
                 ],
-                "researchGoals": "15 people were interviewed and the questions shown in the image were asked, to find out if they had filed any complaint and what is the process to do it.",
-                "researchResult": "Few people have filed a complaint, to make their dissatisfaction known they comment among citizens but never to the corresponding authority, they also don't know who to go to.",
-                "userJourneyText": "After understanding the needs of the users we created the themes to be able to draw ideas from the designs that later managed to respond precisely to the needs of the users.",
-                "userFlowText": "We decided to recreate the entire process that a user does to file a complaint, we also drew ideas on how we would precisely solve those processes.",
-                "architectureText": "Once all the processes and themes were taken into account, we generated the design architecture to organize what information goes in each view and how they will be connected.",
-                "crazyEightsText": "Finally to have a guide sketch of where we would direct our effort on interface design we did the famous crazy eight exercise that explores the design ideas that our interface can take and takes the best of each one to finally have a final design.",
-                "wireframesText": "We improved spaces, shapes and content when digitizing the wireframes.",
-                "lowFidelityText": "We clearly clarified the internal links and actions within the design and then iterated internally in the team and corrected some internal connections.",
-                "usabilityTestingText": "To finish the first stage we wanted to survey users about the platform and get feedback like observing how easy or difficult it was for users to navigate. During the interview we learned that it was really easy and intuitive for the user however some elements like the text needed context despite already having an idea of what they were for. We iterated on the Wireframes and solved the notice. Key Performance Indicator questions: They are quantifiable measures used to evaluate the success of an organization, project or activity based on its objectives.",
+                "researchGoals": "15 people were interviewed and asked the questions presented in the image, to know if they had made any report and what the process to do so is.",
+                "researchResult": "Few people have made a report; to make their dissatisfaction known they comment among citizens but never to the corresponding authority, also they do not know who to turn to.",
+                "userJourneyText": "After understanding user needs, we created themes to be able to extract design ideas that later managed to respond punctually to user needs.",
+                "userFlowText": "We decided to recreate the entire process a user goes through to make a report, as well as extracting ideas on how we would punctually solve those processes.",
+                "architectureText": "Once all processes and themes were taken into account, we generated the design architecture to organize what information goes in each view and how they will connect with each other.",
+                "crazyEightsText": "Finally, to have a guiding sketch of where to direct our effort regarding interface design, we did the famous Crazy Eight exercise that explores design ideas our interface can take and takes the best of each one to finally have a final design.",
+                "wireframesText": "We improved spaces, shapes, and content by digitizing the wireframes.",
+                "lowFidelityText": "We visibly clarified links and internal actions within the design to then iterate internally in the team and corrected some internal connections.",
+                "usabilityTestingText": "To finish the first stage, we wanted to survey users about the platform and obtain feedback such as observing how easy or difficult it was for users to navigate. During the interview, we learned that it was actually easy and intuitive for the user; however, some elements like text needed context despite already having an idea of what they were for. We iterated on the Wireframes and resolved the notice. Key Performance Indicator Questions: These are quantifiable measures used to evaluate the success of an organization, project, or activity based on its objectives.",
                 "usabilityQuestions": {
                     "usability": [
-                        "How easy was it for you to understand the purpose of the citizen complaint platform?",
+                        "How easy was it for you to understand the purpose of the citizen reporting platform?",
                         "How intuitive was the navigation on the platform?",
                         "Did you encounter any technical problems while using the platform?"
                     ],
                     "design": [
-                        "Did you like the overall design of the platform?",
+                        "Did you like the general design of the platform?",
                         "Were the user interface elements clearly labeled?",
-                        "Was the workflow on the platform logical and coherent?"
+                        "Was the workflow on the platform logical and consistent?"
                     ],
                     "functional": [
-                        "Did the available features on the platform meet your expectations?",
-                        "Do you think the citizen complaint platform would be useful for solving community problems?",
+                        "Did the functions available on the platform meet your expectations?",
+                        "Do you consider that the citizen reporting platform would be useful for solving community problems?",
                         "How likely are you to recommend this platform to other people?"
                     ]
                 },
@@ -329,8 +378,8 @@
                     "design": "Design",
                     "functional": "Functionality"
                 },
-                "mockupsText": "Once the Wireframes were fine-tuned, we dedicated ourselves to layout all the elements adding colors, weights, shadows, typographies, etc.",
-                "conclusionText": "Citizen Complaint Benito Juárez is an App for every citizen to file their complaint about a public service."
+                "mockupsText": "Once the Wireframes were refined, we dedicated ourselves to laying out all the elements adding colors, weights, shadows, typography, etc.",
+                "conclusionText": "Citizen Report Benito Juárez is an App for every citizen to present their dissatisfaction regarding a public service."
             }
         },
         "yiapp": {
@@ -343,7 +392,7 @@
                 "contribution": "UI/UX Design, Prototyping, User Research",
                 "myRole": "UI/UX Designer",
                 "timeline": "January 2023 - April 2023",
-                "description": "YiApp is a mobile e-commerce application specialized in clothing and accessories. The platform offers an intuitive and secure shopping experience, allowing users to explore a wide variety of products, make quick purchases and manage their orders efficiently. With an attractive design and advanced functionalities, YiApp positions itself as an ideal option for fashion lovers looking for convenience and style in one place."
+                "description": "YiApp is a mobile e-commerce application specialized in clothing and accessories. The platform offers an intuitive and secure shopping experience, allowing users to explore a wide variety of products, make quick purchases, and manage their orders efficiently. With an attractive design and advanced functionalities, YiApp positions itself as an ideal option for fashion lovers looking for convenience and style in one place."
             },
             "sections": {
                 "overview": "Overview",
@@ -398,6 +447,121 @@
                 "designSystemText1": "The green color was selected to show creativity and innovation on each product that is sold, the semicircular corners represent fun but confidence by not being so circular.",
                 "designSystemText2": "The brand logo is a creation of two names Yohana Isaac, the bag in the cart is the identity of the brand as objectively the purchases in the application can be organized by bags and then add to cart but you can also add the products individually.",
                 "conclusionText": "Yi is a multi-brand, multi-payment, multi-shipping address, multi-packaging apparel retail app."
+            }
+        }
+    },
+    "projectsDev": {
+        "propiedadesCancun": {
+            "title": "Propiedades Cancún Landing Page",
+            "description": "Propiedades Cancún Landing Page",
+            "projectType": "Landing Page",
+            "myRole": "Front-end Developer",
+            "contribution": "Front-end Development",
+            "outcome": "Landing Page for Propiedades Cancún",
+            "timeline": "March 2024 - Present",
+            "largeDescription": "<article class=\"max-w-3xl mx-auto px-4 py-8 dark:bg-slate-900 transition-colors duration-300\"><header class=\"mb-10\"><h1 class=\"text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-tight mb-4\">How I increased organic traffic by 25% by optimizing the architecture of Propiedades Cancún</h1><p class=\"text-xl text-gray-500 dark:text-gray-400 font-medium italic\">A case study on web performance, technical SEO, and user experience.</p></header><hr class=\"border-gray-200 dark:border-gray-700 mb-10\" /><section class=\"mb-8\"><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6\">In the competitive real estate market of the Riviera Maya, a slow or poorly structured website is synonymous with losing clients. When I took on the challenge of developing the landing page for <strong class=\"font-bold text-gray-900 dark:text-white\">Propiedades Cancún</strong>, my goal was not only to deliver an attractive design but to build an efficient conversion machine.</p><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed\">The main challenge was balancing the visual load of luxury properties with impeccable technical performance. Below, I detail how I transformed the digital experience through software engineering and SEO strategy.</p></section><section class=\"mb-10\"><h2 class=\"text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4\">1. UX Design: Beyond Aesthetics</h2><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6\">The first step was to refactor the visual components. I didn't just layout; I applied principles of <strong class=\"font-semibold text-gray-900 dark:text-white\">Gestalt Psychology</strong> and contrast theories to guide the user's eye naturally toward action buttons.</p><img src=\"/img/propiedades/multiURLsInterface.webp\" alt=\"Multi-URL Interface\" class=\"w-full h-auto rounded-lg shadow-lg my-6\" /><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed\">The result was a clean interface where every element has a purpose, improving user retention from the first second.</p></section><section class=\"mb-10\"><h2 class=\"text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4\">2. Performance Engineering (WPO)</h2><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4\">We know that Google penalizes slowness. To achieve excellent scores in <strong class=\"font-semibold text-gray-900 dark:text-white\">Lighthouse</strong> and optimize <em>LCP</em>, I implemented several aggressive strategies:</p><ul class=\"list-disc pl-6 space-y-3 text-lg text-gray-700 dark:text-gray-300 leading-relaxed\"><li><strong class=\"font-bold text-gray-900 dark:text-white\">Image Optimization:</strong> I automated format conversion and adjusted quality to drastically reduce weight without losing sharpness.</li><li><strong class=\"font-bold text-gray-900 dark:text-white\">Critical Path Rendering:</strong> One of the most technical improvements was CSS optimization. I injected critical CSS <em>in-line</em> so that the browser could render the visible content (\"above the fold\") in the first bytes.</li></ul></section><section class=\"mb-10\"><h2 class=\"text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4\">3. SEO Architecture and Automation</h2><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6\">The most strategic part of the development was the restructuring of the backend to favor organic positioning:</p><div class=\"space-y-6\"><div><h3 class=\"text-xl font-bold text-gray-800 dark:text-gray-200 mb-2\">Smart URLs and Cannibalization Prevention</h3><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed\">I designed a new structure of semantic URLs that respond to user search intent. I was careful to avoid <strong class=\"font-medium text-indigo-600 dark:text-indigo-400\">keyword cannibalization</strong>, ensuring that each dynamic page had its own authority.</p><img src=\"/img/propiedades/canonicalURLSourceCode.webp\" alt=\"Canonical URL Source Code\" class=\"w-full h-auto rounded-lg shadow-lg my-4\" /></div><div><h3 class=\"text-xl font-bold text-gray-800 dark:text-gray-200 mb-2\">Metadata Automation</h3><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed\">To scale the project, I programmed the automatic generation of <strong class=\"font-medium text-indigo-600 dark:text-indigo-400\">unique titles and meta descriptions</strong> for each property, ensuring relevance in indexing.</p></div><div><h3 class=\"text-xl font-bold text-gray-800 dark:text-gray-200 mb-2\">Authority Management</h3><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed\">I optimized the <code class=\"text-sm font-mono bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-pink-600 dark:text-pink-400\">robots.txt</code> file to improve the crawl budget and configured smart 301 redirects to protect the domain's \"link juice\".</p></div></div></section><section class=\"mt-12\"><h2 class=\"text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6\">The Result: Business Impact</h2><blockquote class=\"border-l-4 border-indigo-500 dark:border-indigo-400 pl-6 py-4 bg-gray-50 dark:bg-gray-800/50 rounded-r-lg\"><p class=\"text-xl md:text-2xl font-medium text-gray-800 dark:text-gray-100 italic leading-normal\">\"We achieved a <span class=\"text-indigo-600 dark:text-indigo-400 font-bold\">25% increase in organic traffic</span> and positioned the most important transactional pages in rank 3 to 10.\"</p></blockquote><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-6\">This project demonstrated that in modern web development, engineering and marketing are not separate disciplines, but parts of the same code.</p></section></article>",
+            "tools": ""
+        },
+        "virturecrm": {
+            "title": "Virture CRM",
+            "description": "Centralized CRM for real estate agencies and brokers",
+            "projectType": "Web Application - CRM",
+            "myRole": "Front-end Developer",
+            "contribution": "Architecture, Form Optimization",
+            "outcome": "Optimized Data Flow",
+            "timeline": "2024",
+            "caseStudy": {
+                "header": {
+                    "title": "How I improved the delivery speed of multi-field forms",
+                    "subtitle": "<strong>Frontend architecture</strong> strategies to optimize large volumes of data."
+                },
+                "intro": "In the development of <strong>data-rich applications</strong>, <strong>extensive forms</strong> are usually the bottleneck. My goal was to transform data capture into a seamless experience.",
+                "sections": [
+                    {
+                        "title": "1. Divide and Conquer",
+                        "content": "I managed to split a single <strong>monolithic block</strong> of one column to <strong>organizing information by categories</strong> to make them processable.",
+                        "highlight": "Organization by categories"
+                    },
+                    {
+                        "title": "2. Creating and Multiplying",
+                        "content": "I created <strong>multimodal components</strong> that had a similar main function, like the <strong>select</strong> component with logic for <strong>single and multiple selection</strong>.",
+                        "highlight": "Smart components"
+                    },
+                    {
+                        "title": "3. Achieving Challenges",
+                        "content": "We implemented a strategy to adapt data from <strong>rich text</strong> fields with old tags to visualize them correctly in the new interface.",
+                        "highlight": "Adaptation strategy"
+                    }
+                ],
+                "footer": "Optimization was not just visual; it was a restructuring of how <strong>data flows</strong>."
+            }
+        },
+        "biologiaEduApp": {
+            "title": "BioAprendizaje México",
+            "description": "Educational mobile application to bring biology closer to basic education students.",
+            "projectType": "Mobile App (Android)",
+            "myRole": "Mobile Developer & UX Researcher",
+            "contribution": "UX Research, Kotlin Development, Map Integration",
+            "outcome": "Beta version delivered to stakeholders",
+            "timeline": "University Stage (Last year)",
+            "caseStudy": {
+                "header": {
+                    "title": "Bringing science to the palm of your hand",
+                    "subtitle": "Development of a didactic tool for biology teaching in Mexico."
+                },
+                "intro": "In collaboration with researcher Cristian Berriozabal, we developed a <strong>mobile solution</strong> to facilitate biology learning in Mexican children and youth.",
+                "sections": [
+                    {
+                        "title": "1. Research and UX",
+                        "content": "I conducted <strong>research work through interviews</strong> with children and adolescents to understand their needs and design an effective <strong>user experience</strong> for education.",
+                        "highlight": "Educational UX Research"
+                    },
+                    {
+                        "title": "2. Native Development with Kotlin",
+                        "content": "I programmed species detail modules, creating <strong>custom components</strong> such as <strong>image carousels</strong> with full-screen view in <strong>Kotlin</strong>.",
+                        "highlight": "Kotlin Development"
+                    },
+                    {
+                        "title": "3. Geographic Data Integration",
+                        "content": "I adapted <strong>maps from CONABIO</strong> within the application so that students could visually geographically see species sightings.",
+                        "highlight": "CONABIO Maps"
+                    }
+                ],
+                "footer": "The project culminated in a <strong>beta version</strong> shared with stakeholders, laying the groundwork for future academic developments."
+            }
+        },
+        "estanciasEstadias": {
+            "title": "Internship and Stay Management System",
+            "description": "University platform for uploading, validating, and tracking official documentation.",
+            "projectType": "Web Application - University Tool",
+            "myRole": "Full-stack Developer",
+            "contribution": "Database Optimization & UI Refactoring",
+            "outcome": "Successful launch in record time for end of semester",
+            "timeline": "End of Semester (Record Time)",
+            "caseStudy": {
+                "header": {
+                    "title": "Document Optimization: From saturation to administrative efficiency",
+                    "subtitle": "Large-scale file management with <strong>modular architecture</strong> and <strong>Agile methodology</strong>."
+                },
+                "intro": "The challenge was ambitious: rebuild the university documentation system just before the semester closed. We had to guarantee that hundreds of students could upload files simultaneously while administrators graded in real time.",
+                "sections": [
+                    {
+                        "title": "1. Engineering and Time Challenges",
+                        "content": "We optimized the <strong>database</strong> and its connections to support the massive flow of files. We implemented a <strong>real-time status</strong> system for documents, allowing precise tracking by group and career under a strict time limit.",
+                        "highlight": "Database Optimization"
+                    },
+                    {
+                        "title": "2. Creativity and Technical Innovation",
+                        "content": "We separated business logic into <strong>small and reusable functions</strong>. We implemented <strong>sortable lists</strong>, advanced filters, and optimized <strong>API calls</strong>. Additionally, we used a <strong>role system (RBAC)</strong> to handle multiple permissions on the same endpoints.",
+                        "highlight": "Modular Architecture and RBAC"
+                    },
+                    {
+                        "title": "3. Clean Code and QA",
+                        "content": "We applied <strong>Clean Code</strong> and performed <strong>usability testing</strong>, <strong>A/B testing</strong>, and <strong>black box testing</strong>. We documented every process under the <strong>Agile methodology</strong>, ensuring the code was maintainable for future generations of students.",
+                        "highlight": "Testing and Clean Code"
+                    }
+                ],
+                "footer": "We achieved the goal in record time: a functional tool where the flow between student and administrator is now impeccable."
             }
         }
     },

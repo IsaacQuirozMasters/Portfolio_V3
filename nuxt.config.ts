@@ -9,9 +9,8 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxtjs/color-mode',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
   ],
-
   // Configuración de la App (SEO Global)
   app: {
     head: {

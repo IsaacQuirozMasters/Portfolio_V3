@@ -1,17 +1,17 @@
 <template>
   <ButtonFloat />
   <main>
-    <section id=" main" ref="mainRef" aria-label="Introducción">
+    <section id="main" ref="mainRef" aria-label="Introducción">
       <Titles :title="$t('home.hero.title')" :subtitle="$t('home.hero.subtitle')" />
       <BubbleImgs />
     </section>
-
     <section id="projects" ref="projectsRef" aria-label="Portafolio de Proyectos">
-      <Titles v-if="currentSection === 'Diseñador UI/UX'" :title="$t('home.projects.title')"
+      <Titles v-if="currentSection === 'Diseñador UX/UI'" :title="$t('home.projects.title')"
         :subtitle="$t('home.projects.subtitleUX')" />
       <Titles v-else :title="$t('home.projects.title')" :subtitle="$t('home.projects.subtitleDev')" />
-      <!-- <ButtonsSections @update:current-section="val => currentSection = val" /> -->
-      <Carrousel :items="carouselItems" />
+      <ButtonsSections @update:current-section="val => currentSection = val" />
+      <Carrousel v-if="currentSection === 'Diseñador UX/UI'" :items="carouselItems" />
+      <Carrousel v-else :items="carrouselItemsDevelopment" />
     </section>
     <div class="h-[1px] w-3/4 mx-auto bg-gray-200 dark:bg-gray-700"></div>
     <section id="about" ref="aboutRef" aria-label="Sobre mí y Experiencia" class="pt-12">
@@ -43,9 +43,9 @@
 
       <!-- Desktop Layout (Poker Fan/Parabola) -->
       <div
-        class="hidden md:flex w-full max-w-6xl mx-auto h-[350px] relative justify-center items-center mb-32 perspective-1000">
+        class="hidden md:flex md:flex-col  w-full max-w-6xl mx-auto h-[350px] relative justify-center items-center mb-32 perspective-1000">
         <ul class="relative w-full h-full flex justify-center items-center">
-          <li v-for="(place, index) in projects" :key="index"
+          <li v-if="currentSection === 'Diseñador UX/UI'" v-for="(place, index) in projects" :key="index"
             class="absolute w-[340px] bg-white dark:bg-gray-800 rounded-xl shadow-2xl  shadow-blue-400 border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 ease-out hover:z-50 cursor-pointer origin-bottom"
             :style="{
               '--rotate': `${(index - (projects.length - 1) / 2) * 12}deg`,
@@ -77,6 +77,41 @@
               </ul>
             </div>
           </li>
+          <li v-else v-for="(place, index) in projectsDevelopment"
+            class="absolute w-[340px] bg-white dark:bg-gray-800 rounded-xl shadow-2xl  shadow-blue-400 border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 ease-out hover:z-50 cursor-pointer origin-bottom"
+            :style="{
+              '--rotate': `${(index - (projects.length - 1) / 2) * 12}deg`,
+              '--translateY': `${Math.abs(index - (projects.length - 1) / 2) * 30}px`,
+              '--translateX': `${(index - (projects.length - 1) / 2) * 120}px`,
+              transform: `translateX(var(--translateX)) translateY(var(--translateY)) rotate(var(--rotate))`,
+            }"
+            onmouseover="this.style.transform='translateX(var(--translateX)) translateY(-20px) rotate(0deg) scale(1.1)'"
+            onmouseout="this.style.transform='translateX(var(--translateX)) translateY(var(--translateY)) rotate(var(--rotate))'">
+
+            <!-- Desktop Header with Image -->
+            <div class="h-32 bg-cover bg-center relative transition-all duration-300"
+              :style="{ backgroundImage: `url(${place.bgImage})` }">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+              <div class="absolute bottom-3 left-4 text-white flex items-center space-x-3">
+                <Icon :name="place.icon" size="36px" class="text-white drop-shadow-lg" />
+                <h3 class="font-bold text-xl drop-shadow-lg truncate max-w-[240px]">{{ place.site }}</h3>
+              </div>
+            </div>
+
+            <!-- Desktop Body -->
+            <div class="p-5 bg-white dark:bg-gray-800">
+              <ul style="list-style-type:disc" class="ml-4 space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                <li v-for="(project, pIndex) in place.projects" :key="pIndex"
+                  :class="{ 'private-project': project.status === 'Private' }" class="flex items-center space-x-2">
+                  <a :href="project.src" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-blue-600 dark:hover:text-blue-400 hover:underline block truncate font-medium transition-colors">{{
+                      project.title }}</a>
+                  <Icon v-if="project.status === 'Private'" name="ph:lock" size="20px"
+                    class="dark:text-white text-gray-600" />
+                </li>
+              </ul>
+            </div>
+          </li>
         </ul>
       </div>
 
@@ -93,11 +128,23 @@
             </div>
           </div>
         </div>
+        <div class="logo-carousel-container py-12">
+          <div class="logo-carousel" :class="{ 'animate-scroll': isMobile }">
+            <div class="logo-track">
+              <div v-for="(logo, index) in displayToolsDev" :key="index" class="logo-item">
+                <NuxtImg :src="logo.src" :alt="logo.alt" class="logo-image" width="150" height="150" quality="70" />
+                <span>{{ logo.alt }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </article>
 
       <article class="pt-12 dark:bg-gray-700 bg-blue-50">
         <TitlesH2 :title="$t('home.about.studies.title')" />
-        <SectionStudies :studies="studies" />
+        <ButtonsSections @update:current-section="val => currentSection = val" />
+        <SectionStudies v-if="currentSection === 'Diseñador UX/UI'" :studies="studies" />
+        <SectionStudies v-else :studies="studiesDev" />
       </article>
     </section>
   </main>
@@ -128,7 +175,7 @@ useSeoMeta({
   twitterDescription: 'Isaac Quiroz Portfolio',
   twitterImage: 'https://isaacquirozmadrigal.dev/img/group.png',
 })
-const currentSection = ref('')
+const currentSection = ref('Diseñador UX/UI')
 // Refs para las secciones
 const projectsRef = ref(null)
 const aboutRef = ref(null)
@@ -169,38 +216,35 @@ const carouselItems = computed(() => [
   },
 ])
 
-const carrouselItemsDevelopment = ref([
+const carrouselItemsDevelopment = computed(() => [
   {
-    title: $t('home.carouselDev.propiedades.title'),
-    description: $t('home.carouselDev.propiedades.description'),
+    title: $t('home.carouseldev.propiedades.title'),
+    description: $t('home.carouseldev.propiedades.description'),
     image: '/img/propiedades/nvifz5egnosguvd2tmgp.webp',
     route: '/projects/front-end/propiedades'
   },
   {
-    title: $t('home.carouselDev.virtureCRM.title'),
-    description: $t('home.carouselDev.virtureCRM.description'),
-    image: '/img/virtureCRM/1.webp',
-    route: '/projects/front-end/virtureCRM'
+    title: $t('home.carouseldev.virturecrm.title'),
+    description: $t('home.carouseldev.virturecrm.description'),
+    image: '/img/virture/dashboard.png',
+    route: '/projects/front-end/virture-crm'
   },
   {
-    title: $t('home.carouselDev.zooApp.title'),
-    description: $t('home.carouselDev.zooApp.description'),
-    image: '/img/zooApp/1.webp',
-    route: '/projects/front-end/zooApp'
+    title: $t('home.carouseldev.zooapp.title'),
+    description: $t('home.carouseldev.zooapp.description'),
+    image: '/img/zooapp/task.png',
+    route: '/projects/front-end/zoo-app',
+    github: 'https://github.com/IsaacQuirozMasters/CatalogoMovil'
+
   },
   {
-    title: $t('home.carouselDev.estancias.title'),
-    description: $t('home.carouselDev.estancias.description'),
-    image: '/img/estancias/1.webp',
+    title: $t('home.carouseldev.estancias.title'),
+    description: $t('home.carouseldev.estancias.description'),
+    image: '/img/estancias/login.jpeg',
     route: '/projects/front-end/estancias',
-    url: 'https://gestionvinculacion.upqroo.edu.mx/'
-  },
-  {
-    title: $t('home.carouselDev.freelearn.title'),
-    description: $t('home.carouselDev.freelearn.description'),
-    image: '/img/free/lqgrculfmexx2betqcuw.webp',
-    route: '/projects/front-end/freelearn'
-  },
+    url: 'https://gestionvinculacion.upqroo.edu.mx/',
+    github: 'https://github.com/IsaacQuirozMasters/estancias-y-estadias-'
+  }
 ])
 
 
@@ -280,17 +324,91 @@ const projects = ref([
     ]
   }
 ])
+const projectsDevelopment = ref([
+  {
+    site: 'Universidad',
+    icon: 'ph:student',
+    bgImage: '/img/citizen/955shots_so.webp',
+    projects: [
+      {
+        title: 'Reptiles App Front-end',
+        src: 'https://github.com/IsaacQuirozMasters/CatalogoMovil',
+        status: 'Public'
+      },
+      {
+        title: 'Reptiles App Back-end',
+        src: 'https://github.com/IsaacQuirozMasters/ZOO-API-feat-ZOO-13',
+        status: 'Public'
+      },
+      {
+        title: 'Plataforma de documentación de estadias',
+        src: 'https://github.com/IsaacQuirozMasters/estancias-y-estadias-',
+        status: 'Private'
+      },
+      {
+        title: 'Novedades de la Universidad',
+        src: 'https://github.com/IsaacQuirozMasters/CatalogoMovil',
+        status: 'Public'
+      }
+    ]
+  },
+  {
+    site: 'Wizeline',
+    icon: 'ph:building-office',
+    bgImage: '/img/otif/1.webp',
+    projects: [
+      {
+        title: 'Plataforma de PATIO for Kudos',
+        status: 'Private'
+      }
+    ]
+  },
+  {
+    site: 'WayaWeb Propiedades Cancun',
+    icon: 'ph:building-office',
+    bgImage: '/img/propiedades/nvifz5egnosguvd2tmgp.webp',
+    projects: [
+      {
+        title: 'Propiedades Cancun Landing',
+        src: 'https://www.figma.com/design/Dd72HXnjoEAyoNxlNJWB5V/Propiedades-Canc%C3%BAn?node-id=0-1&t=WhZY8LFASa4EtrxM-1',
+        status: 'Private'
+      },
+      {
+        title: 'Virture App and CRM',
+        src: 'https://www.figma.com/design/RDYH5lbQMg2LrcocLxEPqe/Virture-web?node-id=0-1&t=AvXCTcIAVcChWyZI-1',
+        status: 'Private'
+      }
+    ]
+  }
+])
 const isMobile = ref(false)
 
 // Define tus logos aquí
 const logos = ref([
-  { src: '/adobeXd.png', alt: 'Figma' },
+  { src: '/adobeXd.png', alt: 'Adobe XD' },
   { src: '/framex.jpg', alt: 'framex' },
-  { src: '/figma.png', alt: 'figma' },
+  { src: '/figma.png', alt: 'Figma' },
   { src: '/balsamiq.png', alt: 'balsamiq' },
   { src: '/photoshop.png', alt: 'Photoshop' },
   { src: '/lightroom.png', alt: 'lightroom' },
   // Agrega más logos según necesites
+])
+const toolsDev = ref([
+  { src: '/img/toolsdev/javascript-logo-svgrepo-com.svg', alt: 'JavaScript' },
+  { src: '/img/toolsdev/html5-svgrepo-com.svg', alt: 'HTML5' },
+  { src: '/img/toolsdev/css3-svgrepo-com.svg', alt: 'CSS3' },
+  { src: '/img/toolsdev/vue.svg', alt: 'VueJs' },
+  { src: '/img/toolsdev/Pinialogo.svg', alt: 'Pinia' },
+  { src: '/img/toolsdev/icon-green.svg', alt: 'NuxtJs' },
+  { src: '/img/toolsdev/react-svgrepo-com.svg', alt: 'ReactJs' },
+  { src: '/img/toolsdev/nextjs.svg', alt: 'NextJs' },
+  { src: '/img/toolsdev/tailwind-svgrepo-com.svg', alt: 'TailwindCSS' },
+  { src: '/img/toolsdev/Daco_1407237.png', alt: 'Sass' },
+  { src: '/img/toolsdev/storybook-svgrepo-com.svg', alt: 'Storybook' },
+  { src: '/img/toolsdev/Google Tag Manager.svg', alt: 'Google Tag Manager' },
+  { src: '/img/toolsdev/pngegg.png', alt: 'Google Search Console' },
+  { src: '/img/toolsdev/cdnlogo.com_analytics.svg', alt: 'Google Analytics' },
+  { src: '/img/toolsdev/cdnlogo.com_google-lighthouse-icon-may-2019.svg', alt: 'Google Lighthouse' },
 ])
 
 // Duplica los logos para el efecto infinito en móvil
@@ -298,6 +416,9 @@ const displayLogos = computed(() => {
   return isMobile.value ? [...logos.value, ...logos.value] : logos.value
 })
 
+const displayToolsDev = computed(() => {
+  return isMobile.value ? [...toolsDev.value, ...toolsDev.value] : toolsDev.value
+})
 const checkMobile = () => {
   isMobile.value = window.innerWidth < 768
 }
@@ -330,6 +451,18 @@ const studies = computed(() => [
       '/coursera.jpg',
     ],
     experience: $tm('home.studies.google.experience')
+  }
+])
+const studiesDev = computed(() => [
+  {
+    institution: $t('home.studies_dev.upqroo.institution'),
+    degree: $t('home.studies_dev.upqroo.degree'),
+    year: $t('home.studies_dev.upqroo.year'),
+    photos: [
+      '/certificado_de_estudios.jpg',
+      '/titulo.jpg'
+    ],
+    experience: $tm('home.studies_dev.upqroo.experience')
   }
 ])
 </script>

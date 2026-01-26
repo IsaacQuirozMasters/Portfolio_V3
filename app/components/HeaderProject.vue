@@ -3,7 +3,7 @@
         {{ infoProject.title }}
     </h1>
     <section class="header">
-        <div class="historyBase">
+        <div class="grid grid-auto gap-2">
             <div v-if="infoProject.projectType">
                 <h2 class="text-regular font-semibold my-2">{{ $t('common.projectHeader.projectType') }}</h2>
                 <p class="text-sm text-gray-500 dark:text-gray-400">{{ infoProject.projectType }}</p>

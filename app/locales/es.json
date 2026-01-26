@@ -6,7 +6,8 @@
             "home": "Inicio",
             "about": "About Me",
             "projects": "Projects",
-            "contact": "Contact Me"
+            "contact": "Contact Me",
+            "language": "Idioma"
         }
     },
     "home": {
@@ -51,16 +52,16 @@
                 "description": "Aplicación para reportar incidencias en la vía pública"
             }
         },
-        "carrouselDev": {
+        "carouseldev": {
             "propiedades": {
                 "title": "Propiedades Cancún Landing",
                 "description": "Desarrollo de landing page para agencia inmobiliaria en Cancún"
             },
-            "virtureORM": {
-                "title": "Virture ORM",
+            "virturecrm": {
+                "title": "Virture CRM",
                 "description": "CRM centralizado para agencias inmobiliarias y brokers de bienes raíces"
             },
-            "zooApp": {
+            "zooapp": {
                 "title": "Zoo App",
                 "description": "Aplicación móvil de Zoologia educativa para niños"
             },
@@ -118,6 +119,36 @@
                     "Create High-Fidelity Designs and Prototypes in Figma",
                     "Build Dynamic User Interfaces (UI) for Websites",
                     "Design a User Experience for Social Good & Prepare for Jobs"
+                ]
+            }
+        },
+        "studies_dev": {
+            "upqroo": {
+                "institution": "Universidad Politécnica de Quintana Roo",
+                "degree": "Ingeniería en Software",
+                "year": "2020 - 2023",
+                "experience": [
+                    "Programación Orientada a Objetos",
+                    "Estructuras de datos",
+                    "Proceso de desarrollo de software",
+                    "Fundamentos de base de datos",
+                    "Ingeniería de requerimientos de software",
+                    "Programación Web",
+                    "Diseño de interfaces",
+                    "Desarrollo de aplicaciones móviles",
+                    "Base de datos",
+                    "Programación Cliente - Servidor",
+                    "Arquitectura de software",
+                    "Habilidades Gerenciales",
+                    "Calidad de Software",
+                    "Liderazgo de equipos de alto desempeño",
+                    "Pruebas de software",
+                    "Programación para moviles I",
+                    "Programación para moviles II",
+                    "Inteligencia Artificial",
+                    "Mantenimiento de software",
+                    "Administración de proyectos de software",
+                    "Arquitectura orientada a servicios"
                 ]
             }
         }
@@ -416,6 +447,121 @@
                 "designSystemText1": "The green color was selected to show creativity and innovation on each product that is sold, the semicircular corners represent fun but confidence by not being so circular.",
                 "designSystemText2": "The brand logo is a creation of two names Yohana Isaac, the bag in the cart is the identity of the brand as objectively the purchases in the application can be organized by bags and then add to cart but you can also add the products individually.",
                 "conclusionText": "Yi is a multi-brand, multi-payment, multi-shipping address, multi-packaging apparel retail app."
+            }
+        }
+    },
+    "projectsDev": {
+        "propiedadesCancun": {
+            "title": "Propiedades Cancún Landing Page",
+            "description": "Propiedades Cancún Landing Page",
+            "projectType": "Landing Page",
+            "myRole": "Front-end Developer",
+            "contribution": "Front-end Development",
+            "outcome": "Landing Page for Propiedades Cancún",
+            "timeline": "Marzo 2024 - Actualidad",
+            "largeDescription": "<article class=\"max-w-3xl mx-auto px-4 py-8 dark:bg-slate-900 transition-colors duration-300\"><header class=\"mb-10\"><h1 class=\"text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-tight mb-4\">Cómo aumenté el tráfico orgánico un 25% optimizando la arquitectura de Propiedades Cancún</h1><p class=\"text-xl text-gray-500 dark:text-gray-400 font-medium italic\">Un caso de estudio sobre rendimiento web, SEO técnico y experiencia de usuario.</p></header><hr class=\"border-gray-200 dark:border-gray-700 mb-10\" /><section class=\"mb-8\"><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6\">En el competitivo mercado inmobiliario de la Riviera Maya, una página web lenta o mal estructurada es sinónimo de perder clientes. Cuando asumí el reto de desarrollar la landing page para <strong class=\"font-bold text-gray-900 dark:text-white\">Propiedades Cancún</strong>, mi objetivo no era solo entregar un diseño atractivo, sino construir una máquina de conversión eficiente.</p><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed\">El desafío principal era equilibrar la carga visual de las propiedades de lujo con un rendimiento técnico impecable. A continuación, detallo cómo transformé la experiencia digital mediante ingeniería de software y estrategia SEO.</p></section><section class=\"mb-10\"><h2 class=\"text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4\">1. Diseño UX: Más allá de la estética</h2><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6\">El primer paso fue refactorizar los componentes visuales. No me limité a maquetar; apliqué principios de la <strong class=\"font-semibold text-gray-900 dark:text-white\">Psicología de la Gestalt</strong> y teorías del contraste para guiar el ojo del usuario de manera natural hacia los botones de acción.</p><img src=\"/img/propiedades/multiURLsInterface.webp\" alt=\"Interfaz de múltiples URLs\" class=\"w-full h-auto rounded-lg shadow-lg my-6\" /><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed\">El resultado fue una interfaz limpia donde cada elemento tiene un propósito, mejorando la retención del usuario desde el primer segundo.</p></section><section class=\"mb-10\"><h2 class=\"text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4\">2. Ingeniería de Rendimiento (WPO)</h2><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4\">Sabemos que Google penaliza la lentitud. Para lograr puntuaciones excelentes en <strong class=\"font-semibold text-gray-900 dark:text-white\">Lighthouse</strong> y optimizar el <em>LCP</em>, implementé varias estrategias agresivas:</p><ul class=\"list-disc pl-6 space-y-3 text-lg text-gray-700 dark:text-gray-300 leading-relaxed\"><li><strong class=\"font-bold text-gray-900 dark:text-white\">Optimización de Imágenes:</strong> Automaticé la conversión de formatos y ajusté la calidad para reducir el peso drásticamente sin perder nitidez.</li><li><strong class=\"font-bold text-gray-900 dark:text-white\">Critical Path Rendering:</strong> Una de las mejoras más técnicas fue la optimización del CSS. Inyecté el CSS crítico <em>in-line</em> para que el navegador pudiera renderizar el contenido visible (\"above the fold\") en los primeros bytes.</li></ul></section><section class=\"mb-10\"><h2 class=\"text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4\">3. Arquitectura SEO y Automatización</h2><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6\">La parte más estratégica del desarrollo fue la reestructuración del backend para favorecer el posicionamiento orgánico:</p><div class=\"space-y-6\"><div><h3 class=\"text-xl font-bold text-gray-800 dark:text-gray-200 mb-2\">URLs Inteligentes y Prevención de Canibalismo</h3><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed\">Diseñé una nueva estructura de URLs semánticas que responden a la intención de búsqueda del usuario. Fui cuidadoso para evitar el <strong class=\"font-medium text-indigo-600 dark:text-indigo-400\">canibalismo de palabras clave</strong>, asegurando que cada página dinámica tuviera su propia autoridad.</p><img src=\"/img/propiedades/canonicalURLSourceCode.webp\" alt=\"Código fuente de canonical URL\" class=\"w-full h-auto rounded-lg shadow-lg my-4\" /></div><div><h3 class=\"text-xl font-bold text-gray-800 dark:text-gray-200 mb-2\">Automatización de Metadatos</h3><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed\">Para escalar el proyecto, programé la generación automática de <strong class=\"font-medium text-indigo-600 dark:text-indigo-400\">títulos y metadescripciones únicos</strong> para cada propiedad, garantizando la relevancia en la indexación.</p></div><div><h3 class=\"text-xl font-bold text-gray-800 dark:text-gray-200 mb-2\">Gestión de Autoridad</h3><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed\">Optimicé el archivo <code class=\"text-sm font-mono bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-pink-600 dark:text-pink-400\">robots.txt</code> para mejorar el presupuesto de rastreo y configuré redirecciones 301 inteligentes para proteger el \"link juice\" del dominio.</p></div></div></section><section class=\"mt-12\"><h2 class=\"text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6\">El Resultado: Impacto en el Negocio</h2><blockquote class=\"border-l-4 border-indigo-500 dark:border-indigo-400 pl-6 py-4 bg-gray-50 dark:bg-gray-800/50 rounded-r-lg\"><p class=\"text-xl md:text-2xl font-medium text-gray-800 dark:text-gray-100 italic leading-normal\">\"Logramos un <span class=\"text-indigo-600 dark:text-indigo-400 font-bold\">aumento del tráfico orgánico del 25%</span> y posicionamos las páginas transaccionales más importantes en el ranking 3 al 10.\"</p></blockquote><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-6\">Este proyecto demostró que en el desarrollo web moderno, la ingeniería y el marketing no son disciplinas separadas, sino partes de un mismo código.</p></section></article>",
+            "tools": ""
+        },
+        "virturecrm": {
+            "title": "Virture CRM",
+            "description": "CRM centralizado para agencias inmobiliarias y brokers de bienes raíces",
+            "projectType": "Web Application - CRM",
+            "myRole": "Front-end Developer",
+            "contribution": "Architecture, Form Optimization",
+            "outcome": "Optimized Data Flow",
+            "timeline": "2024",
+            "caseStudy": {
+                "header": {
+                    "title": "Cómo mejoré la velocidad de entrega de formulario multicampos",
+                    "subtitle": "Estrategias de <strong>arquitectura frontend</strong> para optimizar grandes volúmenes de datos."
+                },
+                "intro": "En el desarrollo de <strong>aplicaciones ricas en datos</strong>, los <strong>formularios extensos</strong> suelen ser el cuello de botella. Mi objetivo fue transformar la captura de datos en una experiencia fluida.",
+                "sections": [
+                    {
+                        "title": "1. Dividiendo y venciendo",
+                        "content": "Logré dividir un único <strong>bloque monolítico</strong> de una sola columna a <strong>organizar la información por categorías</strong> para hacerlos procesables.",
+                        "highlight": "Organización por categorías"
+                    },
+                    {
+                        "title": "2. Creando y Multiplicando",
+                        "content": "Cree <strong>componentes multimodales</strong> que tenían la función principal parecida, como el componente <strong>select</strong> con lógica para <strong>selección simple y múltiple</strong>.",
+                        "highlight": "Componentes inteligentes"
+                    },
+                    {
+                        "title": "3. Logrando Retos",
+                        "content": "Realizamos una estrategia para adaptar datos de campos de <strong>texto enriquecido</strong> con etiquetas antiguas para visualizarlos correctamente en la nueva interfaz.",
+                        "highlight": "Estrategia de adaptación"
+                    }
+                ],
+                "footer": "La optimización no fue solo visual; fue una reestructuración de cómo los <strong>datos fluyen</strong>."
+            }
+        },
+        "biologiaEduApp": {
+            "title": "BioAprendizaje México",
+            "description": "Aplicación móvil educativa para acercar la biología a estudiantes de educación básica.",
+            "projectType": "Mobile App (Android)",
+            "myRole": "Mobile Developer & UX Researcher",
+            "contribution": "UX Research, Kotlin Development, Map Integration",
+            "outcome": "Versión Beta entregada a stakeholders",
+            "timeline": "Etapa Universitaria (Último año)",
+            "caseStudy": {
+                "header": {
+                    "title": "Acercando la ciencia a la palma de la mano",
+                    "subtitle": "Desarrollo de una herramienta didáctica para la enseñanza de la biología en México."
+                },
+                "intro": "En colaboración con el investigador Cristian Berriozabal, desarrollamos una <strong>solución móvil</strong> para facilitar el aprendizaje de la biología en niños y jóvenes mexicanos.",
+                "sections": [
+                    {
+                        "title": "1. Investigación y UX",
+                        "content": "Realicé un trabajo de <strong>investigación mediante entrevistas</strong> a niños y adolescentes para entender sus necesidades y diseñar una <strong>experiencia de usuario</strong> educativa efectiva.",
+                        "highlight": "UX Research Educativo"
+                    },
+                    {
+                        "title": "2. Desarrollo Nativo con Kotlin",
+                        "content": "Programé módulos de detalles de especies, creando <strong>componentes personalizados</strong> como <strong>carruseles de imágenes</strong> con vista a pantalla completa en <strong>Kotlin</strong>.",
+                        "highlight": "Desarrollo en Kotlin"
+                    },
+                    {
+                        "title": "3. Integración de Datos Geográficos",
+                        "content": "Adapté <strong>mapas de la CONABIO</strong> dentro de la aplicación para que los estudiantes pudieran visualizar geográficamente los avistamientos de las especies.",
+                        "highlight": "Mapas CONABIO"
+                    }
+                ],
+                "footer": "El proyecto culminó en una <strong>versión beta</strong> compartida con stakeholders, sentando las bases para futuros desarrollos académicos."
+            }
+        },
+        "estanciasEstadias": {
+            "title": "Sistema de Gestión de Estancias y Estadías",
+            "description": "Plataforma universitaria para la carga, validación y seguimiento de documentación oficial.",
+            "projectType": "Web Application - University Tool",
+            "myRole": "Full-stack Developer",
+            "contribution": "Database Optimization & UI Refactoring",
+            "outcome": "Lanzamiento exitoso en tiempo récord para fin de semestre",
+            "timeline": "Final de Semestre (Tiempo Récord)",
+            "caseStudy": {
+                "header": {
+                    "title": "Optimización Documental: De la saturación a la eficiencia administrativa",
+                    "subtitle": "Gestión de archivos a gran escala con <strong>arquitectura modular</strong> y <strong>metodología Agile</strong>."
+                },
+                "intro": "El reto era ambicioso: reconstruir el sistema de documentación universitaria justo antes del cierre de semestre. Debíamos garantizar que cientos de alumnos pudieran subir archivos simultáneamente mientras los administradores calificaban en tiempo real.",
+                "sections": [
+                    {
+                        "title": "1. Retos de Ingeniería y Tiempo",
+                        "content": "Optimizamos la <strong>base de datos</strong> y sus conexiones para soportar el flujo masivo de archivos. Implementamos un sistema de <strong>status en tiempo real</strong> para documentos, permitiendo un seguimiento preciso por grupo y carrera bajo un límite de tiempo estricto.",
+                        "highlight": "Optimización de Base de Datos"
+                    },
+                    {
+                        "title": "2. Creatividad e Innovación Técnica",
+                        "content": "Separamos la lógica de negocio en <strong>funciones pequeñas y reutilizables</strong>. Implementamos <strong>listas sortables</strong>, filtros avanzados y optimizamos las <strong>llamadas a las APIs</strong>. Además, usamos un sistema de <strong>roles (RBAC)</strong> para manejar múltiples permisos en los mismos endpoints.",
+                        "highlight": "Arquitectura Modular y RBAC"
+                    },
+                    {
+                        "title": "3. Código Limpio y QA",
+                        "content": "Aplicamos <strong>Clean Code</strong> y realizamos <strong>pruebas de usabilidad</strong>, <strong>pruebas A/B</strong> y <strong>pruebas de caja negra</strong>. Documentamos cada proceso bajo la <strong>metodología Agile</strong>, asegurando que el código fuera mantenible para futuras generaciones de estudiantes.",
+                        "highlight": "Testing y Clean Code"
+                    }
+                ],
+                "footer": "Logramos la meta en tiempo récord: una herramienta funcional donde el flujo entre alumno y administrador es ahora impecable."
             }
         }
     },
