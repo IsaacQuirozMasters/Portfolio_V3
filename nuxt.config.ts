@@ -2,10 +2,11 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   srcDir: 'app/',
+  css: ['~/assets/css/main.css'],
 
   // Módulos necesarios
   modules: [
-    '@nuxtjs/tailwindcss',
+    '@nuxt/ui',
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxtjs/color-mode',
@@ -46,7 +47,7 @@ export default defineNuxtConfig({
     compilation: {
       strictMessage: false
     },
-    vueI18n: './i18n.config.ts'
+    vueI18n: '../i18n.config.ts'
   },
   // Optimización de imágenes (Nuxt Image)
   image: {

@@ -1,5 +1,6 @@
 <template>
   <ButtonFloat />
+  <ButtonsSections :current-section="currentSection" @update:current-section="val => currentSection = val" />
   <main>
     <section id="main" ref="mainRef" aria-label="Introducción">
       <Titles :title="$t('home.hero.title')" :subtitle="$t('home.hero.subtitle')" />
@@ -9,110 +10,91 @@
       <Titles v-if="currentSection === 'Diseñador UX/UI'" :title="$t('home.projects.title')"
         :subtitle="$t('home.projects.subtitleUX')" />
       <Titles v-else :title="$t('home.projects.title')" :subtitle="$t('home.projects.subtitleDev')" />
-      <ButtonsSections @update:current-section="val => currentSection = val" />
       <Carrousel v-if="currentSection === 'Diseñador UX/UI'" :items="carouselItems" />
       <Carrousel v-else :items="carrouselItemsDevelopment" />
     </section>
     <div class="h-[1px] w-3/4 mx-auto bg-gray-200 dark:bg-gray-700"></div>
     <section id="about" ref="aboutRef" aria-label="Sobre mí y Experiencia" class="pt-12">
       <Titles :title="$t('home.about.title')" :subtitle="$t('home.about.subtitle')" />
-      <!-- Mobile Layout (Grid Stack) -->
-      <div class="md:hidden items-center justify-center px-4">
-        <ul class="grid grid-cols-1 gap-6 w-full text-gray-700 dark:text-white my-8">
-          <li v-for="(place, index) in projects" :key="index"
-            class="flex flex-col border border-gray-200 dark:border-gray-700 rounded-xl transition-all duration-300 bg-white dark:bg-gray-800 shadow-md overflow-hidden">
-            <!-- Mobile Header with Image -->
-            <div class="h-24 bg-cover bg-center relative" :style="{ backgroundImage: `url(${place.bgImage})` }">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-              <div class="absolute bottom-2 left-4 text-white flex items-center space-x-2">
-                <Icon :name="place.icon" size="28px" class="text-white drop-shadow-md" />
-                <h3 class="font-bold text-lg drop-shadow-md">{{ place.site }}</h3>
-              </div>
-            </div>
-            <div class="p-6">
-              <ul style="list-style-type:disc" class="ml-4 space-y-2 text-sm">
-                <li v-for="(project, pIndex) in place.projects" :key="pIndex">
-                  <a :href="project.src" target="_blank" rel="noopener noreferrer"
-                    class="text-blue-500 dark:text-gray-400 hover:underline block truncate">{{ project.title }}</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
+      <!-- Experience Cards Grid -->
+      <div class="w-full max-w-7xl mx-auto mt-12 md:mt-16 mb-24 px-4 sm:px-6 lg:px-8">
+        <!-- UX/UI Section (4 cards) -->
+        <div v-if="currentSection === 'Diseñador UX/UI'" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div v-for="(place, index) in projects" :key="index"
+            class="group flex flex-col bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-xl hover:border-blue-500/40 dark:hover:border-blue-400/40 transition-all duration-300 overflow-hidden hover:-translate-y-1">
 
-      <!-- Desktop Layout (Poker Fan/Parabola) -->
-      <div
-        class="hidden md:flex md:flex-col  w-full max-w-6xl mx-auto h-[350px] relative justify-center items-center mb-32 perspective-1000">
-        <ul class="relative w-full h-full flex justify-center items-center">
-          <li v-if="currentSection === 'Diseñador UX/UI'" v-for="(place, index) in projects" :key="index"
-            class="absolute w-[340px] bg-white dark:bg-gray-800 rounded-xl shadow-2xl  shadow-blue-400 border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 ease-out hover:z-50 cursor-pointer origin-bottom"
-            :style="{
-              '--rotate': `${(index - (projects.length - 1) / 2) * 12}deg`,
-              '--translateY': `${Math.abs(index - (projects.length - 1) / 2) * 30}px`,
-              '--translateX': `${(index - (projects.length - 1) / 2) * 120}px`,
-              transform: `translateX(var(--translateX)) translateY(var(--translateY)) rotate(var(--rotate))`,
-            }"
-            onmouseover="this.style.transform='translateX(var(--translateX)) translateY(-20px) rotate(0deg) scale(1.1)'"
-            onmouseout="this.style.transform='translateX(var(--translateX)) translateY(var(--translateY)) rotate(var(--rotate))'">
-
-            <!-- Desktop Header with Image -->
-            <div class="h-32 bg-cover bg-center relative transition-all duration-300"
+            <!-- Card Header with Image -->
+            <div class="h-36 bg-cover bg-center relative overflow-hidden"
               :style="{ backgroundImage: `url(${place.bgImage})` }">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-              <div class="absolute bottom-3 left-4 text-white flex items-center space-x-3">
-                <Icon :name="place.icon" size="36px" class="text-white drop-shadow-lg" />
-                <h3 class="font-bold text-xl drop-shadow-lg truncate max-w-[240px]">{{ place.site }}</h3>
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-950/40 to-transparent group-hover:scale-105 transition-transform duration-500"></div>
+              <div class="absolute bottom-3 left-4 right-4 text-white flex items-center space-x-3">
+                <div class="p-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shadow-sm flex items-center justify-center">
+                  <Icon :name="place.icon" size="24px" class="text-white drop-shadow" />
+                </div>
+                <h3 class="font-bold text-lg drop-shadow tracking-tight truncate">{{ place.site }}</h3>
               </div>
             </div>
 
-            <!-- Desktop Body -->
-            <div class="p-5 bg-white dark:bg-gray-800">
-              <ul style="list-style-type:disc" class="ml-4 space-y-2 text-sm text-gray-600 dark:text-gray-300">
+            <!-- Card Body -->
+            <div class="p-5 flex-1 flex flex-col justify-between bg-white dark:bg-gray-800">
+              <ul class="space-y-2 text-sm">
                 <li v-for="(project, pIndex) in place.projects" :key="pIndex">
-                  <a :href="project.src" target="_blank" rel="noopener noreferrer"
-                    class="hover:text-blue-600 dark:hover:text-blue-400 hover:underline block truncate font-medium transition-colors">{{
-                      project.title }}</a>
+                  <a v-if="project.src" :href="project.src" target="_blank" rel="noopener noreferrer"
+                    class="group/link flex items-center justify-between py-1.5 px-2.5 -mx-2.5 rounded-lg text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50/60 dark:hover:bg-gray-700/60 transition-all">
+                    <span class="truncate font-medium">{{ project.title }}</span>
+                    <Icon name="ph:arrow-up-right" size="14px" class="opacity-0 group-hover/link:opacity-100 transition-opacity ml-1.5 flex-shrink-0 text-blue-500" />
+                  </a>
+                  <div v-else class="flex items-center py-1.5 px-2.5 -mx-2.5 text-gray-600 dark:text-gray-400 font-medium">
+                    <span class="truncate">{{ project.title }}</span>
+                  </div>
                 </li>
               </ul>
             </div>
-          </li>
-          <li v-else v-for="(place, index) in projectsDevelopment"
-            class="absolute w-[340px] bg-white dark:bg-gray-800 rounded-xl shadow-2xl  shadow-blue-400 border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 ease-out hover:z-50 cursor-pointer origin-bottom"
-            :style="{
-              '--rotate': `${(index - (projects.length - 1) / 2) * 12}deg`,
-              '--translateY': `${Math.abs(index - (projects.length - 1) / 2) * 30}px`,
-              '--translateX': `${(index - (projects.length - 1) / 2) * 120}px`,
-              transform: `translateX(var(--translateX)) translateY(var(--translateY)) rotate(var(--rotate))`,
-            }"
-            onmouseover="this.style.transform='translateX(var(--translateX)) translateY(-20px) rotate(0deg) scale(1.1)'"
-            onmouseout="this.style.transform='translateX(var(--translateX)) translateY(var(--translateY)) rotate(var(--rotate))'">
+          </div>
+        </div>
 
-            <!-- Desktop Header with Image -->
-            <div class="h-32 bg-cover bg-center relative transition-all duration-300"
+        <!-- Development Section (2 cards centered) -->
+        <div v-else class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div v-for="(place, index) in projectsDevelopment" :key="index"
+            class="group flex flex-col bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-xl hover:border-blue-500/40 dark:hover:border-blue-400/40 transition-all duration-300 overflow-hidden hover:-translate-y-1">
+
+            <!-- Card Header with Image -->
+            <div class="h-36 bg-cover bg-center relative overflow-hidden"
               :style="{ backgroundImage: `url(${place.bgImage})` }">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-              <div class="absolute bottom-3 left-4 text-white flex items-center space-x-3">
-                <Icon :name="place.icon" size="36px" class="text-white drop-shadow-lg" />
-                <h3 class="font-bold text-xl drop-shadow-lg truncate max-w-[240px]">{{ place.site }}</h3>
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-950/40 to-transparent group-hover:scale-105 transition-transform duration-500"></div>
+              <div class="absolute bottom-3 left-4 right-4 text-white flex items-center space-x-3">
+                <div class="p-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shadow-sm flex items-center justify-center">
+                  <Icon :name="place.icon" size="24px" class="text-white drop-shadow" />
+                </div>
+                <h3 class="font-bold text-lg drop-shadow tracking-tight truncate">{{ place.site }}</h3>
               </div>
             </div>
 
-            <!-- Desktop Body -->
-            <div class="p-5 bg-white dark:bg-gray-800">
-              <ul style="list-style-type:disc" class="ml-4 space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                <li v-for="(project, pIndex) in place.projects" :key="pIndex"
-                  :class="{ 'private-project': project.status === 'Private' }" class="flex items-center space-x-2">
-                  <a :href="project.src" target="_blank" rel="noopener noreferrer"
-                    class="hover:text-blue-600 dark:hover:text-blue-400 hover:underline block truncate font-medium transition-colors">{{
-                      project.title }}</a>
-                  <Icon v-if="project.status === 'Private'" name="ph:lock" size="20px"
-                    class="dark:text-white text-gray-600" />
+            <!-- Card Body -->
+            <div class="p-5 flex-1 flex flex-col justify-between bg-white dark:bg-gray-800">
+              <ul class="space-y-2 text-sm">
+                <li v-for="(project, pIndex) in place.projects" :key="pIndex">
+                  <a v-if="project.src" :href="project.src" target="_blank" rel="noopener noreferrer"
+                    class="group/link flex items-center justify-between py-1.5 px-2.5 -mx-2.5 rounded-lg text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50/60 dark:hover:bg-gray-700/60 transition-all">
+                    <span class="truncate font-medium">{{ project.title }}</span>
+                    <div class="flex items-center space-x-1.5 flex-shrink-0 ml-1.5">
+                      <span v-if="project.status === 'Private'" class="inline-flex items-center text-xs px-2 py-0.5 rounded-full bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-700/40">
+                        <Icon name="ph:lock" size="12px" class="mr-1" /> Privado
+                      </span>
+                      <Icon name="ph:arrow-up-right" size="14px" class="opacity-0 group-hover/link:opacity-100 transition-opacity text-blue-500" />
+                    </div>
+                  </a>
+                  <div v-else class="flex items-center justify-between py-1.5 px-2.5 -mx-2.5 text-gray-600 dark:text-gray-400 font-medium">
+                    <span class="truncate">{{ project.title }}</span>
+                    <span v-if="project.status === 'Private'" class="inline-flex items-center text-xs px-2 py-0.5 rounded-full bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-700/40">
+                      <Icon name="ph:lock" size="12px" class="mr-1" /> Privado
+                    </span>
+                  </div>
                 </li>
               </ul>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
 
       <article class="tools-section">
@@ -142,7 +124,6 @@
 
       <article class="pt-12 dark:bg-gray-700 bg-blue-50">
         <TitlesH2 :title="$t('home.about.studies.title')" />
-        <ButtonsSections @update:current-section="val => currentSection = val" />
         <SectionStudies v-if="currentSection === 'Diseñador UX/UI'" :studies="studies" />
         <SectionStudies v-else :studies="studiesDev" />
       </article>
@@ -228,22 +209,6 @@ const carrouselItemsDevelopment = computed(() => [
     description: $t('home.carouseldev.virturecrm.description'),
     image: '/img/virture/dashboard.png',
     route: '/projects/front-end/virture-crm'
-  },
-  {
-    title: $t('home.carouseldev.zooapp.title'),
-    description: $t('home.carouseldev.zooapp.description'),
-    image: '/img/zooapp/task.png',
-    route: '/projects/front-end/zoo-app',
-    github: 'https://github.com/IsaacQuirozMasters/CatalogoMovil'
-
-  },
-  {
-    title: $t('home.carouseldev.estancias.title'),
-    description: $t('home.carouseldev.estancias.description'),
-    image: '/img/estancias/login.jpeg',
-    route: '/projects/front-end/estancias',
-    url: 'https://gestionvinculacion.upqroo.edu.mx/',
-    github: 'https://github.com/IsaacQuirozMasters/estancias-y-estadias-'
   }
 ])
 
@@ -325,33 +290,6 @@ const projects = ref([
   }
 ])
 const projectsDevelopment = ref([
-  {
-    site: 'Universidad',
-    icon: 'ph:student',
-    bgImage: '/img/citizen/955shots_so.webp',
-    projects: [
-      {
-        title: 'Reptiles App Front-end',
-        src: 'https://github.com/IsaacQuirozMasters/CatalogoMovil',
-        status: 'Public'
-      },
-      {
-        title: 'Reptiles App Back-end',
-        src: 'https://github.com/IsaacQuirozMasters/ZOO-API-feat-ZOO-13',
-        status: 'Public'
-      },
-      {
-        title: 'Plataforma de documentación de estadias',
-        src: 'https://github.com/IsaacQuirozMasters/estancias-y-estadias-',
-        status: 'Private'
-      },
-      {
-        title: 'Novedades de la Universidad',
-        src: 'https://github.com/IsaacQuirozMasters/CatalogoMovil',
-        status: 'Public'
-      }
-    ]
-  },
   {
     site: 'Wizeline',
     icon: 'ph:building-office',
