@@ -75,8 +75,12 @@ const caseStudy = computed(() => ({
     padding: 20px;
 }
 
-/* Estilo opcional para resaltar las palabras clave dentro del v-html */
 :deep(strong) {
-    @apply font-bold text-gray-900 dark:text-white;
+    font-weight: 700;
+    color: #111827;
+}
+
+:global(.dark) :deep(strong) {
+    color: #ffffff;
 }
 </style>

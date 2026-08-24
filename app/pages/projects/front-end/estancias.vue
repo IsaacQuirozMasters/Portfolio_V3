@@ -75,8 +75,12 @@ const caseStudy = computed(() => ({
     padding: 20px;
 }
 
-/* Asegura que los strong insertados vía v-html se vean bien en ambos modos */
 :deep(strong) {
-    @apply font-bold text-gray-900 dark:text-white;
+    font-weight: 700;
+    color: #111827;
+}
+
+:global(.dark) :deep(strong) {
+    color: #ffffff;
 }
 </style>
