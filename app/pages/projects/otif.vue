@@ -9,6 +9,9 @@
 
 <script setup>
 import { ref, computed } from 'vue';
+
+definePageMeta({ layout: 'project' })
+
 const { t } = useI18n()
 
 useSeoMeta({

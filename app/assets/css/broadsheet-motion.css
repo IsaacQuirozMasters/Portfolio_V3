@@ -1,0 +1,93 @@
+/* Broadsheet — motion primitives shared by the editorial pages: the front
+   page furniture rules, entrance reveals, the typewriter caret, the
+   halftone dot-screen photo reveal, the plate-registration replate used on
+   edition switches, the tools marquee, drift fields and the magnetic
+   cursor. Every animated class here is neutralised under
+   prefers-reduced-motion below. */
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+@keyframes bs-wipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes bs-rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+@keyframes bs-drift { 0% { transform: translate(0, 0); } 50% { transform: translate(-6px, 4px); } 100% { transform: translate(0, 0); } }
+@keyframes bs-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes bs-caret { 0%, 100% { border-right-color: var(--color-accent); } 50% { border-right-color: transparent; } }
+@keyframes bs-replate {
+  0% { transform: translate(-6px, 4px); opacity: .25; }
+  45% { transform: translate(4px, -3px); opacity: .75; }
+  100% { transform: none; opacity: 1; }
+}
+
+/* — front-page furniture: rules drawn left-to-right on load — */
+.fp-rule { background: var(--color-text); animation: bs-wipe .9s cubic-bezier(.16, 1, .3, 1) both; }
+.fp-rule--6 { height: 6px; }
+.fp-rule--3 { height: 3px; animation-duration: 1.1s; animation-delay: .4s; }
+.fp-rule--1 { height: 1px; animation-duration: 1s; animation-delay: .25s; }
+
+/* — entrance reveals, IntersectionObserver-driven via v-reveal — */
+.reveal { opacity: 0; transform: translateY(26px); }
+.reveal.is-visible {
+  opacity: 1; transform: none;
+  transition: opacity .8s var(--reveal-delay, 0ms) cubic-bezier(.2, .8, .2, 1),
+    transform .8s var(--reveal-delay, 0ms) cubic-bezier(.2, .8, .2, 1);
+}
+
+/* — typewriter caret, applied imperatively while a headline types in — */
+.tw-caret { border-right: 5px solid var(--color-accent); padding-right: 8px; }
+
+/* — halftone dot screen resting over a photograph until scrolled into view — */
+.dot-screen {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(circle, var(--color-text) 46%, transparent 48%);
+  background-size: 5px 5px; opacity: .9;
+  transition: opacity 1.1s cubic-bezier(.2, .8, .2, 1), background-size 1.1s cubic-bezier(.2, .8, .2, 1);
+}
+.dot-screen.is-resolved { background-size: 11px 11px; opacity: 0; }
+
+/* — background process-dot field — */
+.bg-dots {
+  position: absolute; pointer-events: none;
+  background-image: radial-gradient(circle, var(--color-accent-300) 30%, transparent 32%),
+    radial-gradient(circle, var(--color-accent-2-300) 30%, transparent 32%);
+  background-size: 7px 7px, 7px 7px; background-position: 0 0, 3px 3px;
+  opacity: .5; animation: bs-drift 14s ease-in-out infinite;
+}
+
+/* — avatar halo breathing behind the portrait — */
+.avatar-halo {
+  position: absolute; pointer-events: none;
+  background: radial-gradient(circle at 50% 45%, var(--color-accent-200), transparent 68%);
+  animation: bs-drift 13s ease-in-out infinite;
+}
+
+/* — tools marquee — */
+.marquee-track { display: flex; width: max-content; animation: bs-marquee 26s linear infinite; }
+
+/* — edition switch replate on the project grid — */
+.replate-item { animation: bs-rise .7s both; }
+
+.reveal.is-visible .cmyk-num .plate {
+  animation: bs-replate .7s cubic-bezier(.2, .8, .2, 1) var(--reveal-delay, 0ms) both;
+}
+
+/* — magnetic cursor (registration mark) — */
+.magnet-cursor {
+  position: fixed; top: 0; left: 0; width: 34px; height: 34px;
+  pointer-events: none; opacity: 0; z-index: 60;
+  transition: opacity .25s, transform .12s cubic-bezier(.2, .8, .2, 1), width .25s, height .25s;
+}
+.magnet-cursor__ring { position: absolute; inset: 0; border: 1px solid var(--color-accent); border-radius: inherit; }
+.magnet-cursor__v { position: absolute; left: 50%; top: -7px; bottom: -7px; width: 1px; background: var(--color-accent); opacity: .65; }
+.magnet-cursor__h { position: absolute; top: 50%; left: -7px; right: -7px; height: 1px; background: var(--color-accent); opacity: .65; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fp-rule { animation: none; clip-path: none; }
+  .reveal { transition: opacity .3s ease both; transform: none; }
+  .reveal.is-visible { transition: opacity .3s ease both; }
+  .bg-dots { display: none; }
+  .avatar-halo, .marquee-track { animation: none; }
+  .replate-item { animation: none; }
+  .cmyk-num .plate { animation: none; }
+  .magnet-cursor { display: none; }
+}

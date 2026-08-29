@@ -11,145 +11,225 @@
         }
     },
     "home": {
-        "hero": {
-            "title": "Diseñador UX Generalista y Desarrollador web en <span>Propiedades Cancún</span>",
-            "subtitle": "Hi, I'm Isaac, a multidisciplinary <u>UI/UX Designer</u> & <u>Front-end Developer</u>. I Design, Code and Write."
+        "masthead": {
+            "role": "Diseñador UX/UI & Front-end",
+            "location": "Cancún, Quintana Roo · México",
+            "site": "isaacquirozmadrigal.com",
+            "nav": {
+                "projects": "Proyectos",
+                "about": "Sobre mí",
+                "studies": "Estudios",
+                "cv": "CV",
+                "contact": "Contacto"
+            },
+            "editionRail": "Edición {edition} · 2026",
+            "editionLabel": {
+                "design": "Diseño",
+                "code": "Código"
+            },
+            "night": {
+                "on": "Edición nocturna",
+                "off": "Edición matutina"
+            }
         },
-        "projects": {
-            "title": "Pongo mi <span>corazón</span> en todo lo que hago",
-            "subtitleUX": "Te muestro una pequeña <span>sección de casos de estudio</span> que muestran mi trabajo y que disfruto mucho hacer",
-            "subtitleDev": "Te muestro una pequeña <span>sección de proyectos frontend</span> que muestran mi trabajo y que disfruto mucho hacer"
+        "editionSwitch": {
+            "design": "UX/UI Designer",
+            "code": "Front-end Developer",
+            "note": "Cambia la portada completa: proyectos, herramientas y estudios."
+        },
+        "avatar": {
+            "alt": "Isaac Quiroz Madrigal",
+            "caption": "Retrato temporal · aquí va el avatar 3D"
         },
         "about": {
-            "title": "La <span>experiencia</span> que me respalda",
-            "subtitle": "Descubre mi experiencia desde diferentes proyecto con los que he trabajado estos ultimos años",
-            "tools": {
-                "title": "Herramientas que se utilizar"
-            },
-            "studies": {
-                "title": "Estudios que avalan"
-            }
+            "kicker": "Sobre mí",
+            "lead": "Diseño productos y luego los construyo: research, interfaz y código de producción.",
+            "body": "He trabajado en Wizeline y WayaWeb, y en proyectos propios como YiApp, FreeLearn y Citizen. Mi ventaja es entregar la pantalla y el componente: el mismo criterio en Figma y en el repositorio.",
+            "cvButton": "Descargar CV",
+            "cvGhost": "Ver como CV →"
         },
-        "carousel": {
-            "yiapp": {
-                "title": "YiApp e-commerce",
-                "description": "Aplicación móvil de comercio electrónico para ropa y accesorios"
-            },
-            "freelearn": {
-                "title": "Free Learn",
-                "description": "Plataforma educativa en línea para cursos gratuitos"
-            },
-            "propiedades": {
-                "title": "Propiedades Cancún Landing",
-                "description": "Desarrollo de landing page para agencia inmobiliaria en Cancún"
-            },
-            "otif": {
-                "title": "Rediseño Landing Otif",
-                "description": "Transformación de la navegación principal de una plataforma web de logística internacional"
-            },
-            "citizen": {
-                "title": "Denuncia Ciudadana",
-                "description": "Aplicación para reportar incidencias en la vía pública"
-            }
+        "availability": {
+            "kicker": "Disponibilidad",
+            "value": "24h",
+            "body": "Respuesta a propuestas. Abierto a freelance y equipos de producto, remoto o Cancún (GMT−5).",
+            "tags": [
+                "Freelance",
+                "Remoto",
+                "ES/EN/PT"
+            ]
         },
-        "carouseldev": {
-            "propiedades": {
-                "title": "Propiedades Cancún Landing",
-                "description": "Desarrollo de landing page para agencia inmobiliaria en Cancún"
-            },
-            "virturecrm": {
-                "title": "Virture CRM",
-                "description": "CRM centralizado para agencias inmobiliarias y brokers de bienes raíces"
-            },
-            "zooapp": {
-                "title": "Zoo App",
-                "description": "Aplicación móvil de Zoologia educativa para niños"
-            },
-            "estancias": {
-                "title": "Pagina web de Estancias y Estadias",
-                "description": "Pagina web para gestionar documentos de Estancias y Estadias de la universidad"
-            }
+        "projects": {
+            "heading": "Proyectos destacados",
+            "count": "{count} piezas · edición {edition}",
+            "design": [
+                {
+                    "id": "yiapp",
+                    "kicker": "E-commerce · app móvil",
+                    "title": "YiApp e-commerce",
+                    "blurb": "Aplicación móvil de comercio electrónico para ropa y accesorios",
+                    "image": "/img/yiapp/yofrzpjwfxwjao7e2jub.webp",
+                    "span": 3
+                },
+                {
+                    "id": "freelearn",
+                    "kicker": "Plataforma educativa",
+                    "title": "Free Learn",
+                    "blurb": "Plataforma educativa en línea para cursos gratuitos",
+                    "image": "/img/free/lqgrculfmexx2betqcuw.webp",
+                    "span": 3
+                },
+                {
+                    "id": "citizen",
+                    "kicker": "Servicios públicos",
+                    "title": "Denuncia Ciudadana",
+                    "blurb": "Aplicación para reportar incidencias en la vía pública",
+                    "image": "/img/citizen/955shots_so.webp",
+                    "span": 2
+                },
+                {
+                    "id": "otif",
+                    "kicker": "Logística internacional",
+                    "title": "Rediseño Landing Otif",
+                    "blurb": "Transformación de la navegación principal de una plataforma web de logística internacional",
+                    "image": "/img/otif/1.webp",
+                    "span": 2
+                },
+                {
+                    "id": "propiedades",
+                    "kicker": "Inmobiliaria",
+                    "title": "Propiedades Cancún Landing",
+                    "blurb": "Desarrollo de landing page para agencia inmobiliaria en Cancún",
+                    "image": "/img/propiedades/nvifz5egnosguvd2tmgp.webp",
+                    "span": 2
+                }
+            ],
+            "code": [
+                {
+                    "id": "propiedadesDev",
+                    "kicker": "Landing · Front-end",
+                    "title": "Propiedades Cancún Landing",
+                    "blurb": "+25% de tráfico orgánico: CSS crítico, URLs semánticas y metadatos automáticos.",
+                    "image": "/img/propiedades/nvifz5egnosguvd2tmgp.webp",
+                    "span": 3
+                },
+                {
+                    "id": "virturecrm",
+                    "kicker": "Web app · CRM",
+                    "title": "Virture CRM",
+                    "blurb": "CRM centralizado para agencias inmobiliarias y brokers de bienes raíces",
+                    "image": "/img/virture/dashboard.png",
+                    "span": 3
+                },
+                {
+                    "id": "estancias",
+                    "kicker": "Universidad · full-stack",
+                    "title": "Estancias y Estadías",
+                    "blurb": "Página web para gestionar documentos de Estancias y Estadias de la universidad",
+                    "image": "/img/estancias/estancias-estadias.png",
+                    "span": 3
+                },
+                {
+                    "id": "zooapp",
+                    "kicker": "App Android",
+                    "title": "BioAprendizaje México",
+                    "blurb": "Aplicación móvil de Zoología educativa para niños",
+                    "image": "/img/zooapp/detalle.png",
+                    "span": 3
+                }
+            ]
+        },
+        "tools": {
+            "heading": "Herramientas",
+            "design": "Figma · Adobe XD · Photoshop · Lightroom · Balsamiq · Research · Sistemas de diseño · ",
+            "code": "JavaScript · Vue · Nuxt · Pinia · React · Next.js · Tailwind CSS · Sass · Storybook · Google Analytics · Lighthouse · "
         },
         "experience": {
-            "university": {
-                "site": "Universidad",
-                "projects": {
-                    "reptiles": "Reptiles App",
-                    "platform": "Plataforma de documentación de estadias"
+            "heading": "Experiencia",
+            "rows": [
+                {
+                    "date": "Mar 2024 – hoy",
+                    "role": "WayaWeb · Propiedades Cancún — Diseñador UX y desarrollador web",
+                    "detail": "Landing en producción, Virture App y CRM"
+                },
+                {
+                    "date": "Wizeline",
+                    "role": "PATIO for Kudos — plataforma interna",
+                    "detail": "Diseño y front-end (proyecto privado)"
+                },
+                {
+                    "date": "Universidad",
+                    "role": "UPQROO — proyectos y estadías",
+                    "detail": "Reptiles App, sistema de Estancias y Estadías"
                 }
-            },
-            "personal": {
-                "site": "Personal Projects"
-            },
-            "wizeline": {
-                "site": "Wizeline",
-                "projects": {
-                    "patio": "Plataforma de PATIO for Kudos"
-                }
-            },
-            "wayaweb": {
-                "site": "WayaWeb Propiedades Cancun",
-                "projects": {
-                    "landing": "Propiedades Cancun Landing",
-                    "virture": "Virture App and CRM"
-                }
-            }
+            ]
         },
         "studies": {
-            "upqroo": {
-                "institution": "Universidad Politécnica de Quintana Roo",
-                "degree": "Ingeniería en Software",
-                "year": "2020 - 2023",
-                "experience": [
-                    "Expresión oral y escrita",
-                    "Ingeniería de requerimientos de software",
-                    "Habilidades cognitivas y de creatividad",
-                    "Diseño de interfaces"
-                ]
-            },
-            "google": {
-                "institution": "Google",
-                "degree": "Google UX Design Professional Certificate",
-                "year": "2024",
-                "experience": [
-                    "Foundations of User Experience (UX) Design",
-                    "Start the UX Design Process: Empathize, Define, and Ideate",
-                    "Build Wireframes and Low-Fidelity Prototypes",
-                    "Conduct UX Research and Test Early Concepts",
-                    "Create High-Fidelity Designs and Prototypes in Figma",
-                    "Build Dynamic User Interfaces (UI) for Websites",
-                    "Design a User Experience for Social Good & Prepare for Jobs"
-                ]
-            }
+            "heading": "Estudios",
+            "items": [
+                {
+                    "institution": "Universidad Politécnica de Quintana Roo",
+                    "meta": "Ingeniería en Software · 2020–2023",
+                    "link": "/certificado_de_estudios.jpg"
+                },
+                {
+                    "institution": "Google UX Design",
+                    "meta": "Certificado profesional · 2024",
+                    "link": "/coursera.jpg"
+                },
+                {
+                    "institution": "Universidad Internacional de la Rioja",
+                    "meta": "Actualmente cursando · Master Universitario de IA"
+                }
+            ],
+            "certificatesLink": "Ver certificados"
         },
-        "studies_dev": {
-            "upqroo": {
-                "institution": "Universidad Politécnica de Quintana Roo",
-                "degree": "Ingeniería en Software",
-                "year": "2020 - 2023",
-                "experience": [
-                    "Programación Orientada a Objetos",
-                    "Estructuras de datos",
-                    "Proceso de desarrollo de software",
-                    "Fundamentos de base de datos",
-                    "Ingeniería de requerimientos de software",
-                    "Programación Web",
-                    "Diseño de interfaces",
-                    "Desarrollo de aplicaciones móviles",
-                    "Base de datos",
-                    "Programación Cliente - Servidor",
-                    "Arquitectura de software",
-                    "Habilidades Gerenciales",
-                    "Calidad de Software",
-                    "Liderazgo de equipos de alto desempeño",
-                    "Pruebas de software",
-                    "Programación para moviles I",
-                    "Programación para moviles II",
-                    "Inteligencia Artificial",
-                    "Mantenimiento de software",
-                    "Administración de proyectos de software",
-                    "Arquitectura orientada a servicios"
-                ]
+        "contact": {
+            "kicker": "Contacto",
+            "title": "¿Construimos algo?",
+            "cta": "Ir a contacto →"
+        },
+        "contactPage": {
+            "railHome": "← Isaac Quiroz Madrigal",
+            "railCurrent": "Contacto",
+            "heading": "Hablemos",
+            "lead": "Cuéntame qué estás construyendo. Si es un proyecto de diseño, de front-end o los dos, contesto con una propuesta de alcance y tiempos.",
+            "form": {
+                "nameLabel": "Nombre",
+                "namePlaceholder": "Cómo te llamas",
+                "emailLabel": "Correo",
+                "emailPlaceholder": "tu{'@'}correo.com",
+                "projectLabel": "Proyecto",
+                "projectPlaceholder": "Qué necesitas, para cuándo y con qué presupuesto aproximado",
+                "typeLabel": "Tipo",
+                "types": {
+                    "freelance": "Freelance",
+                    "fulltime": "Tiempo completo",
+                    "consulting": "Consultoría UX",
+                    "frontend": "Front-end"
+                },
+                "buttonIdle": "Enviar mensaje →",
+                "buttonSending": "Enviando…",
+                "buttonSent": "Enviado ✓",
+                "buttonError": "Error al enviar",
+                "sentNote": "Te contesto en menos de 24 horas.",
+                "errorNote": "Ocurrió un error. Intenta de nuevo o escribe por correo."
+            },
+            "info": {
+                "locationLabel": "Dónde estoy",
+                "locationValue": "Cancún, Quintana Roo\nMéxico · GMT−5",
+                "languagesLabel": "Idiomas",
+                "languagesValue": "Español · Inglés · Portugués",
+                "responseLabel": "Respuesta",
+                "responseValue": "24h",
+                "directLabel": "Directo",
+                "email": "isaacquirozmadrigal{'@'}gmail.com",
+                "linkedin": "LinkedIn",
+                "github": "GitHub",
+                "behance": "Behance"
+            },
+            "footer": {
+                "scheduleText": "O agenda 15 minutos si prefieres hablarlo.",
+                "scheduleCta": "Agendar llamada →"
             }
         }
     },
@@ -574,6 +654,11 @@
     "common": {
         "viewProject": "Ver Proyecto",
         "backToProjects": "Volver a Proyectos",
+        "projectNav": {
+            "back": "Volver al inicio",
+            "next": "Siguiente proyecto"
+        },
+        "scrollTop": "Volver arriba",
         "readMore": "Leer más",
         "contactMe": "Contáctame",
         "projectHeader": {

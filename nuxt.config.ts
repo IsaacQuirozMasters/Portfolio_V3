@@ -1,8 +1,16 @@
 export default defineNuxtConfig({
+  // Nuxt 3 Portfolio config
   compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   srcDir: 'app/',
-  css: ['~/assets/css/main.css'],
+  // Broadsheet's component classes (.card, .btn, …) act as a components
+  // layer; Tailwind utilities load last so they can win ties against them,
+  // same convention as Tailwind's own base/components/utilities ordering.
+  css: [
+    '~/assets/css/broadsheet.css',
+    '~/assets/css/broadsheet-motion.css',
+    '~/assets/css/main.css',
+  ],
 
   // Módulos necesarios
   modules: [

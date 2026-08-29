@@ -468,6 +468,8 @@
 <script setup>
 import { computed } from 'vue'
 
+definePageMeta({ layout: 'project' })
+
 const { t, rt } = useI18n()
 
 useSeoMeta({

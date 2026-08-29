@@ -7,9 +7,7 @@
                 <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">
                     {{ caseStudy.header.title }}
                 </h1>
-                <p class="text-xl text-gray-500 italic">
-                    {{ caseStudy.header.subtitle }}
-                </p>
+                <p class="text-xl text-gray-500 italic" v-html="caseStudy.header.subtitle" />
             </header>
 
             <hr class="border-gray-200 dark:border-gray-700 mb-10" />
@@ -42,6 +40,8 @@
 <script setup>
 import HeaderProject from '@/components/HeaderProject.vue'
 import { computed } from 'vue';
+
+definePageMeta({ layout: 'project' })
 
 const { t, rt, tm } = useI18n()
 

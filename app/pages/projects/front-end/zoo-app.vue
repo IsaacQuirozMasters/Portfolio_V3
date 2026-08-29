@@ -14,9 +14,7 @@
 
             <hr class="border-gray-200 dark:border-gray-700 mb-10" />
 
-            <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
-                {{ caseStudy.intro }}
-            </p>
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-8" v-html="caseStudy.intro" />
 
             <section v-for="(section, index) in caseStudy.sections" :key="index" class="mb-10">
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
@@ -32,7 +30,7 @@
 
             <footer class="mt-12 border-l-4 border-green-500 pl-6 py-4 bg-gray-50 dark:bg-gray-800/50">
                 <p class="text-xl italic text-gray-800 dark:text-gray-100">
-                    "{{ caseStudy.footer }}"
+                    "<span v-html="caseStudy.footer" />"
                 </p>
             </footer>
         </article>
@@ -42,6 +40,8 @@
 <script setup>
 import HeaderProject from '@/components/HeaderProject.vue'
 import { computed } from 'vue';
+
+definePageMeta({ layout: 'project' })
 
 const { t, rt, tm } = useI18n()
 

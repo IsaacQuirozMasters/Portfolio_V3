@@ -6,24 +6,18 @@
                 <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">
                     {{ caseStudy.header.title }}
                 </h1>
-                <p class="text-xl text-gray-500 italic">
-                    {{ caseStudy.header.subtitle }}
-                </p>
+                <p class="text-xl text-gray-500 italic" v-html="caseStudy.header.subtitle" />
             </header>
 
             <hr class="border-gray-200 dark:border-gray-700 mb-10" />
 
-            <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
-                {{ caseStudy.intro }}
-            </p>
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-8" v-html="caseStudy.intro" />
 
             <section v-for="(section, index) in caseStudy.sections" :key="index" class="mb-10">
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
                     {{ rt(section.title) }}
                 </h2>
-                <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                    {{ rt(section.content) }}
-                </p>
+                <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4" v-html="rt(section.content)" />
                 <div
                     class="inline-block bg-indigo-50 dark:bg-indigo-900/30 px-3 py-1 rounded text-indigo-600 dark:text-indigo-400 font-medium">
                     {{ rt(section.highlight) }}
@@ -32,7 +26,7 @@
 
             <footer class="mt-12 border-l-4 border-indigo-500 pl-6 py-4 bg-gray-50 dark:bg-gray-800/50">
                 <p class="text-xl italic text-gray-800 dark:text-gray-100">
-                    "{{ caseStudy.footer }}"
+                    "<span v-html="caseStudy.footer" />"
                 </p>
             </footer>
         </article>
@@ -42,6 +36,8 @@
 <script setup>
 import HeaderProject from '@/components/HeaderProject.vue'
 import { computed } from 'vue';
+
+definePageMeta({ layout: 'project' })
 
 const { t, rt, tm } = useI18n()
 // Datos del proyecto - usando computed para reactividad con el idioma

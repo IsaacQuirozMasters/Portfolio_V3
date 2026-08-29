@@ -1,503 +1,228 @@
 <template>
-  <ButtonFloat />
-  <ButtonsSections :current-section="currentSection" @update:current-section="val => currentSection = val" />
-  <main>
-    <section id="main" ref="mainRef" aria-label="Introducción">
-      <Titles :title="$t('home.hero.title')" :subtitle="$t('home.hero.subtitle')" />
-      <BubbleImgs />
-    </section>
-    <section id="projects" ref="projectsRef" aria-label="Portafolio de Proyectos">
-      <Titles v-if="currentSection === 'Diseñador UX/UI'" :title="$t('home.projects.title')"
-        :subtitle="$t('home.projects.subtitleUX')" />
-      <Titles v-else :title="$t('home.projects.title')" :subtitle="$t('home.projects.subtitleDev')" />
-      <Carrousel v-if="currentSection === 'Diseñador UX/UI'" :items="carouselItems" />
-      <Carrousel v-else :items="carrouselItemsDevelopment" />
-    </section>
-    <div class="h-[1px] w-3/4 mx-auto bg-gray-200 dark:bg-gray-700"></div>
-    <section id="about" ref="aboutRef" aria-label="Sobre mí y Experiencia" class="pt-12">
-      <Titles :title="$t('home.about.title')" :subtitle="$t('home.about.subtitle')" />
-      <!-- Experience Cards Grid -->
-      <div class="w-full max-w-7xl mx-auto mt-12 md:mt-16 mb-24 px-4 sm:px-6 lg:px-8">
-        <!-- UX/UI Section (4 cards) -->
-        <div v-if="currentSection === 'Diseñador UX/UI'" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div v-for="(place, index) in projects" :key="index"
-            class="group flex flex-col bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-xl hover:border-blue-500/40 dark:hover:border-blue-400/40 transition-all duration-300 overflow-hidden hover:-translate-y-1">
+  <div class="relative mx-auto w-full max-w-[1120px] pb-[var(--space-8)]">
+    <div class="bg-dots absolute -right-[60px] -top-[40px] z-0 h-[420px] w-[420px]" />
 
-            <!-- Card Header with Image -->
-            <div class="h-36 bg-cover bg-center relative overflow-hidden"
-              :style="{ backgroundImage: `url(${place.bgImage})` }">
-              <div class="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-950/40 to-transparent group-hover:scale-105 transition-transform duration-500"></div>
-              <div class="absolute bottom-3 left-4 right-4 text-white flex items-center space-x-3">
-                <div class="p-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shadow-sm flex items-center justify-center">
-                  <Icon :name="place.icon" size="24px" class="text-white drop-shadow" />
-                </div>
-                <h3 class="font-bold text-lg drop-shadow tracking-tight truncate">{{ place.site }}</h3>
-              </div>
-            </div>
+    <div class="relative z-[1]">
+      <div class="px-[var(--space-8)]">
+        <Masthead />
+      </div>
 
-            <!-- Card Body -->
-            <div class="p-5 flex-1 flex flex-col justify-between bg-white dark:bg-gray-800">
-              <ul class="space-y-2 text-sm">
-                <li v-for="(project, pIndex) in place.projects" :key="pIndex">
-                  <a v-if="project.src" :href="project.src" target="_blank" rel="noopener noreferrer"
-                    class="group/link flex items-center justify-between py-1.5 px-2.5 -mx-2.5 rounded-lg text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50/60 dark:hover:bg-gray-700/60 transition-all">
-                    <span class="truncate font-medium">{{ project.title }}</span>
-                    <Icon name="ph:arrow-up-right" size="14px" class="opacity-0 group-hover/link:opacity-100 transition-opacity ml-1.5 flex-shrink-0 text-blue-500" />
-                  </a>
-                  <div v-else class="flex items-center py-1.5 px-2.5 -mx-2.5 text-gray-600 dark:text-gray-400 font-medium">
-                    <span class="truncate">{{ project.title }}</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
+      <div v-magnet-scope class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-auto">
+        <div v-magnet class="seg flex items-center p-1.5 bg-[var(--color-bg)]/85 backdrop-blur-xl border border-[var(--color-divider)] shadow-2xl rounded-full transition-all duration-300 hover:shadow-accent/20">
+          <label
+            class="seg-opt !border-l-0 flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer select-none"
+            :class="edition === 'design' ? 'bg-[var(--color-accent)] text-white shadow-md scale-[1.02]' : 'text-[var(--color-neutral-700)] hover:text-[var(--color-text)] hover:bg-black/5 dark:hover:bg-white/5'"
+          >
+            <input type="radio" name="edicion-home" value="design" :checked="edition === 'design'" @change="setEdition('design')">
+            <Icon name="ph:palette" size="18px" />
+            <span>{{ $t('home.editionSwitch.design') }}</span>
+          </label>
+
+          <label
+            class="seg-opt !border-l-0 flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer select-none"
+            :class="edition === 'code' ? 'bg-[var(--color-accent)] text-white shadow-md scale-[1.02]' : 'text-[var(--color-neutral-700)] hover:text-[var(--color-text)] hover:bg-black/5 dark:hover:bg-white/5'"
+          >
+            <input type="radio" name="edicion-home" value="code" :checked="edition === 'code'" @change="setEdition('code')">
+            <Icon name="ph:code" size="18px" />
+            <span>{{ $t('home.editionSwitch.code') }}</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 items-start gap-[var(--space-6)] px-[var(--space-8)] pt-[var(--space-6)]">
+        <div v-reveal="{ delay: 120 }" class="relative col-span-4">
+          <div class="avatar-halo" style="left:-8%;right:-8%;top:-4%;bottom:6%" />
+          <FaceTracker :alt="$t('home.avatar.alt')" />
         </div>
 
-        <!-- Development Section (2 cards centered) -->
-        <div v-else class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          <div v-for="(place, index) in projectsDevelopment" :key="index"
-            class="group flex flex-col bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-xl hover:border-blue-500/40 dark:hover:border-blue-400/40 transition-all duration-300 overflow-hidden hover:-translate-y-1">
+        <div id="sobre-mi" v-reveal="{ delay: 180 }" class="col-span-5 scroll-mt-8">
+          <div class="mb-[var(--space-2)] text-[11px] uppercase tracking-[.16em]" style="color:var(--color-accent-700)">
+            {{ $t('home.about.kicker') }}
+          </div>
+          <p class="m-0 mb-[var(--space-3)] text-[26px] leading-[1.28]" style="text-wrap:pretty">{{ $t('home.about.lead') }}</p>
+          <p class="m-0 text-[15px] leading-[1.62]" style="color:var(--color-neutral-800);text-wrap:pretty">{{ $t('home.about.body') }}</p>
+          <!-- <div class="mt-[var(--space-4)] flex gap-[var(--space-4)]">
+            <NuxtLink v-magnet :to="localePath('/cv?print=1')" class="btn btn-primary">{{ $t('home.about.cvButton') }}</NuxtLink>
+            <NuxtLink v-magnet :to="localePath('/cv')" class="btn btn-ghost">{{ $t('home.about.cvGhost') }}</NuxtLink>
+          </div> -->
+        </div>
 
-            <!-- Card Header with Image -->
-            <div class="h-36 bg-cover bg-center relative overflow-hidden"
-              :style="{ backgroundImage: `url(${place.bgImage})` }">
-              <div class="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-950/40 to-transparent group-hover:scale-105 transition-transform duration-500"></div>
-              <div class="absolute bottom-3 left-4 right-4 text-white flex items-center space-x-3">
-                <div class="p-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shadow-sm flex items-center justify-center">
-                  <Icon :name="place.icon" size="24px" class="text-white drop-shadow" />
-                </div>
-                <h3 class="font-bold text-lg drop-shadow tracking-tight truncate">{{ place.site }}</h3>
-              </div>
-            </div>
+        <div v-reveal="{ delay: 240 }" class="col-span-3">
+          <div class="mb-[var(--space-2)] text-[11px] uppercase tracking-[.16em]" style="color:var(--color-neutral-700)">
+            {{ $t('home.availability.kicker') }}
+          </div>
+          <CmykNum :value="$t('home.availability.value')" />
+          <p class="mt-[var(--space-3)] text-[14px] leading-[1.55]" style="color:var(--color-neutral-800)">{{ $t('home.availability.body') }}</p>
+          <div class="mt-[var(--space-3)] flex flex-wrap gap-[var(--space-1)]">
+            <span
+              v-for="(tag, i) in $tm('home.availability.tags')"
+              :key="i"
+              class="tag"
+              :class="'tag-outline'"
+            >{{ rt(tag) }}</span>
+          </div>
+        </div>
+      </div>
 
-            <!-- Card Body -->
-            <div class="p-5 flex-1 flex flex-col justify-between bg-white dark:bg-gray-800">
-              <ul class="space-y-2 text-sm">
-                <li v-for="(project, pIndex) in place.projects" :key="pIndex">
-                  <a v-if="project.src" :href="project.src" target="_blank" rel="noopener noreferrer"
-                    class="group/link flex items-center justify-between py-1.5 px-2.5 -mx-2.5 rounded-lg text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50/60 dark:hover:bg-gray-700/60 transition-all">
-                    <span class="truncate font-medium">{{ project.title }}</span>
-                    <div class="flex items-center space-x-1.5 flex-shrink-0 ml-1.5">
-                      <span v-if="project.status === 'Private'" class="inline-flex items-center text-xs px-2 py-0.5 rounded-full bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-700/40">
-                        <Icon name="ph:lock" size="12px" class="mr-1" /> Privado
-                      </span>
-                      <Icon name="ph:arrow-up-right" size="14px" class="opacity-0 group-hover/link:opacity-100 transition-opacity text-blue-500" />
-                    </div>
-                  </a>
-                  <div v-else class="flex items-center justify-between py-1.5 px-2.5 -mx-2.5 text-gray-600 dark:text-gray-400 font-medium">
-                    <span class="truncate">{{ project.title }}</span>
-                    <span v-if="project.status === 'Private'" class="inline-flex items-center text-xs px-2 py-0.5 rounded-full bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-700/40">
-                      <Icon name="ph:lock" size="12px" class="mr-1" /> Privado
-                    </span>
-                  </div>
-                </li>
-              </ul>
+      <div id="proyectos" class="scroll-mt-8 px-[var(--space-8)] pt-[var(--space-8)]">
+        <div class="flex items-baseline justify-between pt-[var(--space-2)]" style="border-top:3px solid var(--color-text)">
+          <h2 class="m-0 text-[34px]">{{ $t('home.projects.heading') }}</h2>
+          <span class="text-[12px] uppercase tracking-[.14em]" style="color:var(--color-neutral-700)">
+            {{ $t('home.projects.count', { count: projects.length, edition: editionLabel }) }}
+          </span>
+        </div>
+        <div ref="projectsGrid" v-magnet-scope class="mt-[var(--space-4)] grid grid-cols-6 gap-[var(--space-4)]">
+          <ProjectCard
+            v-for="(project, i) in projects"
+            :key="project.id"
+            :project="project"
+            :to="projectRoute(project.id)"
+            :delay="i * 70"
+          />
+        </div>
+      </div>
+
+      <div class="pt-[var(--space-8)]">
+        <div class="px-[var(--space-8)] text-[11px] uppercase tracking-[.16em]" style="color:var(--color-neutral-700)">
+          {{ $t('home.tools.heading') }} · {{ editionLabel }}
+        </div>
+        <div class="mt-[var(--space-2)] overflow-hidden py-[var(--space-3)]" style="border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
+          <div class="marquee-track">
+            <span class="whitespace-nowrap pr-6 text-[30px] italic">{{ toolsRun }}</span>
+            <span class="whitespace-nowrap pr-6 text-[30px] italic" aria-hidden="true">{{ toolsRun }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 items-start gap-[var(--space-6)] px-[var(--space-8)] pt-[var(--space-8)]">
+        <div v-reveal class="col-span-7">
+          <h2 class="m-0 mb-[var(--space-3)] pt-[var(--space-2)] text-[30px]" style="border-top:3px solid var(--color-text)">
+            {{ $t('home.experience.heading') }}
+          </h2>
+          <table class="table" style="font-size:14.5px">
+            <tbody>
+              <tr v-for="row in experienceRows" :key="row.role">
+                <td class="w-[150px] align-top" style="color:var(--color-neutral-700)">{{ row.date }}</td>
+                <td>
+                  <strong>{{ row.role }}</strong>
+                  <div style="color:var(--color-neutral-700)">{{ row.detail }}</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="estudios" v-reveal="{ delay: 80 }" class="col-span-5 scroll-mt-8">
+          <h2 class="m-0 mb-[var(--space-3)] pt-[var(--space-2)] text-[30px]" style="border-top:3px solid var(--color-text)">
+            {{ $t('home.studies.heading') }}
+          </h2>
+          <div class="flex flex-col gap-[var(--space-3)]">
+            <div v-for="item in studiesItems" :key="item.institution">
+              <div class="text-[19px]">{{ item.institution }}</div>
+              <div class="text-[14px]" style="color:var(--color-neutral-700)">{{ item.meta }}</div>    <div class="mt-[var(--space-4)] flex gap-[var(--space-2)]">
+            <a v-if="item.link" v-magnet class="tag tag-outline" :href="item.link" target="_blank" rel="noopener">
+              {{ $t('home.studies.certificatesLink') }}
+            </a>
+          </div>
             </div>
           </div>
         </div>
       </div>
 
-      <article class="tools-section">
-        <TitlesH2 :title="$t('home.about.tools.title')" />
-        <div class="logo-carousel-container py-12">
-          <div class="logo-carousel" :class="{ 'animate-scroll': isMobile }">
-            <div class="logo-track">
-              <div v-for="(logo, index) in displayLogos" :key="index" class="logo-item">
-                <NuxtImg :src="logo.src" :alt="logo.alt" class="logo-image" width="150" height="150" quality="70"
-                  format="webp" />
-                <span>{{ logo.alt }}</span>
-              </div>
-            </div>
-          </div>
+      <div v-reveal class="mx-[var(--space-8)] mt-[var(--space-8)] flex items-center justify-between gap-[var(--space-6)] pt-[var(--space-4)]" style="border-top:6px solid var(--color-text)">
+        <div>
+          <div class="text-[11px] uppercase tracking-[.16em]" style="color:var(--color-neutral-700)">{{ $t('home.contact.kicker') }}</div>
+          <div class="mt-1.5 text-[40px] leading-[1.1]">{{ $t('home.contact.title') }}</div>
         </div>
-        <div class="logo-carousel-container py-12">
-          <div class="logo-carousel" :class="{ 'animate-scroll': isMobile }">
-            <div class="logo-track">
-              <div v-for="(logo, index) in displayToolsDev" :key="index" class="logo-item">
-                <NuxtImg :src="logo.src" :alt="logo.alt" class="logo-image" width="150" height="150" quality="70" />
-                <span>{{ logo.alt }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="pt-12 dark:bg-gray-700 bg-blue-50">
-        <TitlesH2 :title="$t('home.about.studies.title')" />
-        <SectionStudies v-if="currentSection === 'Diseñador UX/UI'" :studies="studies" />
-        <SectionStudies v-else :studies="studiesDev" />
-      </article>
-    </section>
-  </main>
-
-  <footer>
-  </footer>
+        <NuxtLink v-magnet :to="localePath('/contact')" class="btn btn-primary" style="font-size:17px;padding:14px 26px">
+          {{ $t('home.contact.cta') }}
+        </NuxtLink>
+      </div>
+    </div>
+  </div>
 </template>
-<script setup>
-import { ref, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
 
-const { t: $t, tm: $tm, locale } = useI18n()
+<script setup>
+import Masthead from '@/components/broadsheet/Masthead.vue'
+import ProjectCard from '@/components/broadsheet/ProjectCard.vue'
+import CmykNum from '@/components/broadsheet/CmykNum.vue'
+
+const { t, tm, rt } = useI18n()
+const route = useRoute()
+const localePath = useLocalePath()
+const { edition, setEdition, initEdition, restoreEdition } = useEdition()
+
+// Deterministic from the URL — safe during SSR, keeps hydration consistent.
+initEdition(route.query.edicion)
+
 useSeoMeta({
   title: 'Isaac Quiroz Portfolio',
   titleTemplate: '%s | Isaac Quiroz Portfolio',
-  description: 'Isaac Quiroz Portfolio',
-  keywords: ['Isaac Quiroz', 'Portfolio', 'UI/UX Designer', 'Front-end Developer', 'Propiedades Cancún', 'YiApp', 'Free Learn', 'Citizen', 'Otif', 'WayaWeb', 'Wizeline'],
-  // Open Graph (Para cuando se comparte en Facebook/LinkedIn/WhatsApp)
+  description: 'Isaac Quiroz Madrigal — Diseñador UX/UI & Front-end en Cancún, México.',
   ogTitle: 'Isaac Quiroz Portfolio',
-  ogDescription: 'Isaac Quiroz Portfolio',
-  ogImage: 'https://isaacquirozmadrigal.dev/img/group.png', // IMPORTANTE: Usa URL absoluta en producción
+  ogDescription: 'Isaac Quiroz Madrigal — Diseñador UX/UI & Front-end en Cancún, México.',
+  ogImage: 'https://isaacquirozmadrigal.com/group.png',
   ogUrl: 'https://isaacquirozmadrigal.com',
   ogType: 'website',
-
-  // Twitter Card
   twitterCard: 'summary_large_image',
   twitterTitle: 'Isaac Quiroz Portfolio',
-  twitterDescription: 'Isaac Quiroz Portfolio',
-  twitterImage: 'https://isaacquirozmadrigal.dev/img/group.png',
-})
-const currentSection = ref('Diseñador UX/UI')
-// Refs para las secciones
-const projectsRef = ref(null)
-const aboutRef = ref(null)
-const contactRef = ref(null)
-const mainRef = ref(null)
-
-const carouselItems = computed(() => [
-  {
-    title: $t('home.carousel.yiapp.title'),
-    description: $t('home.carousel.yiapp.description'),
-    image: '/img/yiapp/yofrzpjwfxwjao7e2jub.webp',
-    route: '/projects/yiapp'
-  },
-  {
-    title: $t('home.carousel.freelearn.title'),
-    description: $t('home.carousel.freelearn.description'),
-    image: '/img/free/lqgrculfmexx2betqcuw.webp',
-    route: '/projects/freelearn'
-  },
-
-  {
-    title: $t('home.carousel.propiedades.title'),
-    description: $t('home.carousel.propiedades.description'),
-    image: '/img/propiedades/nvifz5egnosguvd2tmgp.webp',
-    route: '/projects/propiedades'
-  },
-  {
-    title: $t('home.carousel.otif.title'),
-    description: $t('home.carousel.otif.description'),
-    image: '/img/otif/1.webp',
-    route: '/projects/otif'
-  },
-  {
-    title: $t('home.carousel.citizen.title'),
-    description: $t('home.carousel.citizen.description'),
-    image: '/img/citizen/955shots_so.webp',
-    route: '/projects/citizen'
-  },
-])
-
-const carrouselItemsDevelopment = computed(() => [
-  {
-    title: $t('home.carouseldev.propiedades.title'),
-    description: $t('home.carouseldev.propiedades.description'),
-    image: '/img/propiedades/nvifz5egnosguvd2tmgp.webp',
-    route: '/projects/front-end/propiedades'
-  },
-  {
-    title: $t('home.carouseldev.virturecrm.title'),
-    description: $t('home.carouseldev.virturecrm.description'),
-    image: '/img/virture/dashboard.png',
-    route: '/projects/front-end/virture-crm'
-  }
-])
-
-
-const listOfExperienceUX = ref([
-  {
-    title: 'Propiedades Cancún Landing',
-    description: 'Desarrollo de landing page para agencia inmobiliaria en Cancún',
-    image: '/img/propiedades/nvifz5egnosguvd2tmgp.webp',
-    route: '/projects/propiedades'
-  }
-])
-const projects = ref([
-  {
-    site: 'Universidad',
-    icon: 'ph:student',
-    bgImage: '/img/citizen/955shots_so.webp',
-    projects: [
-      {
-        title: 'Reptiles App',
-        src: 'https://www.figma.com/design/D8iCgvKvfDTVVTFbvEkZeh/Borrador-inicial?node-id=0-1&t=fX6tJ7IFU9mERCEc-1'
-      },
-      {
-        title: 'Plataforma de documentación de estadias',
-      }
-    ]
-  },
-  {
-    site: 'Personal Projects',
-    icon: 'ph:laptop',
-    bgImage: '/img/yiapp/yofrzpjwfxwjao7e2jub.webp',
-    projects: [
-      {
-        title: 'YiApp',
-        src: 'https://www.figma.com/design/MqMinzwnlInoVGTHbYEH0w/Bengala-Mockup?node-id=911-3954&t=Ebh3NoYZ8DaWI7wv-1'
-      },
-      {
-        title: 'FreeLearn',
-        src: 'https://www.figma.com/design/pz1NeJwJIvXhYlEshiyBTl/Free-Learn?node-id=311-3301&t=Ebh3NoYZ8DaWI7wv-1'
-      },
-      {
-        title: 'Citizen',
-        src: 'https://www.figma.com/design/o8bemR8kKFtZxh66cCcxFU/Denuncia-ciudadana?node-id=0-1&t=Ebh3NoYZ8DaWI7wv-1'
-      },
-      {
-        title: 'Rosas Eterns Nineth',
-        src: 'https://www.figma.com/design/5VhB1OLm2KvtMxQkppfClZ/Nineth-Sale?t=biIL6hpsxitsh47H-1'
-      },
-      {
-        title: 'Otif - Rediseño Landing',
-        src: 'https://www.figma.com/design/ZozY2Lo9gmLmO4IeK4Of1e/Otif-Mini-Redise%C3%B1o-UX?node-id=0-1&t=biIL6hpsxitsh47H-1'
-      }
-    ]
-  },
-  {
-    site: 'Wizeline',
-    icon: 'ph:building-office',
-    bgImage: '/img/otif/1.webp',
-    projects: [
-      {
-        title: 'Plataforma de PATIO for Kudos',
-      }
-    ]
-  },
-  {
-    site: 'WayaWeb Propiedades Cancun',
-    icon: 'ph:building-office',
-    bgImage: '/img/propiedades/nvifz5egnosguvd2tmgp.webp',
-    projects: [
-      {
-        title: 'Propiedades Cancun Landing',
-        src: 'https://www.figma.com/design/Dd72HXnjoEAyoNxlNJWB5V/Propiedades-Canc%C3%BAn?node-id=0-1&t=WhZY8LFASa4EtrxM-1'
-      },
-      {
-        title: 'Virture App and CRM',
-        src: 'https://www.figma.com/design/RDYH5lbQMg2LrcocLxEPqe/Virture-web?node-id=0-1&t=AvXCTcIAVcChWyZI-1'
-      }
-    ]
-  }
-])
-const projectsDevelopment = ref([
-  {
-    site: 'Wizeline',
-    icon: 'ph:building-office',
-    bgImage: '/img/otif/1.webp',
-    projects: [
-      {
-        title: 'Plataforma de PATIO for Kudos',
-        status: 'Private'
-      }
-    ]
-  },
-  {
-    site: 'WayaWeb Propiedades Cancun',
-    icon: 'ph:building-office',
-    bgImage: '/img/propiedades/nvifz5egnosguvd2tmgp.webp',
-    projects: [
-      {
-        title: 'Propiedades Cancun Landing',
-        src: 'https://www.figma.com/design/Dd72HXnjoEAyoNxlNJWB5V/Propiedades-Canc%C3%BAn?node-id=0-1&t=WhZY8LFASa4EtrxM-1',
-        status: 'Private'
-      },
-      {
-        title: 'Virture App and CRM',
-        src: 'https://www.figma.com/design/RDYH5lbQMg2LrcocLxEPqe/Virture-web?node-id=0-1&t=AvXCTcIAVcChWyZI-1',
-        status: 'Private'
-      }
-    ]
-  }
-])
-const isMobile = ref(false)
-
-// Define tus logos aquí
-const logos = ref([
-  { src: '/adobeXd.png', alt: 'Adobe XD' },
-  { src: '/framex.jpg', alt: 'framex' },
-  { src: '/figma.png', alt: 'Figma' },
-  { src: '/balsamiq.png', alt: 'balsamiq' },
-  { src: '/photoshop.png', alt: 'Photoshop' },
-  { src: '/lightroom.png', alt: 'lightroom' },
-  // Agrega más logos según necesites
-])
-const toolsDev = ref([
-  { src: '/img/toolsdev/javascript-logo-svgrepo-com.svg', alt: 'JavaScript' },
-  { src: '/img/toolsdev/html5-svgrepo-com.svg', alt: 'HTML5' },
-  { src: '/img/toolsdev/css3-svgrepo-com.svg', alt: 'CSS3' },
-  { src: '/img/toolsdev/vue.svg', alt: 'VueJs' },
-  { src: '/img/toolsdev/Pinialogo.svg', alt: 'Pinia' },
-  { src: '/img/toolsdev/icon-green.svg', alt: 'NuxtJs' },
-  { src: '/img/toolsdev/react-svgrepo-com.svg', alt: 'ReactJs' },
-  { src: '/img/toolsdev/nextjs.svg', alt: 'NextJs' },
-  { src: '/img/toolsdev/tailwind-svgrepo-com.svg', alt: 'TailwindCSS' },
-  { src: '/img/toolsdev/Daco_1407237.png', alt: 'Sass' },
-  { src: '/img/toolsdev/storybook-svgrepo-com.svg', alt: 'Storybook' },
-  { src: '/img/toolsdev/Google Tag Manager.svg', alt: 'Google Tag Manager' },
-  { src: '/img/toolsdev/pngegg.png', alt: 'Google Search Console' },
-  { src: '/img/toolsdev/cdnlogo.com_analytics.svg', alt: 'Google Analytics' },
-  { src: '/img/toolsdev/cdnlogo.com_google-lighthouse-icon-may-2019.svg', alt: 'Google Lighthouse' },
-])
-
-// Duplica los logos para el efecto infinito en móvil
-const displayLogos = computed(() => {
-  return isMobile.value ? [...logos.value, ...logos.value] : logos.value
+  twitterDescription: 'Isaac Quiroz Madrigal — Diseñador UX/UI & Front-end en Cancún, México.',
+  twitterImage: 'https://isaacquirozmadrigal.com/group.png',
 })
 
-const displayToolsDev = computed(() => {
-  return isMobile.value ? [...toolsDev.value, ...toolsDev.value] : toolsDev.value
-})
-const checkMobile = () => {
-  isMobile.value = window.innerWidth < 768
+// tm() returns compiled message AST nodes for every string leaf, not raw
+// strings — only rt() evaluates a leaf back into text. Anything from tm()
+// that's used as more than display text (object keys, v-bind values, grid
+// spans) must be resolved through this before use, or it crashes on access.
+const resolveMessageDeep = (val) => {
+  if (Array.isArray(val)) return val.map(resolveMessageDeep)
+  if (val && typeof val === 'object') {
+    if (typeof val.type === 'number' && val.loc !== undefined) return rt(val)
+    return Object.fromEntries(Object.entries(val).map(([k, v]) => [k, resolveMessageDeep(v)]))
+  }
+  return val
 }
+
+const editionLabel = computed(() => t(`home.masthead.editionLabel.${edition.value}`))
+const projects = computed(() => resolveMessageDeep(tm(`home.projects.${edition.value}`)))
+const toolsRun = computed(() => t(`home.tools.${edition.value}`))
+const experienceRows = computed(() => resolveMessageDeep(tm('home.experience.rows')))
+const studiesItems = computed(() => resolveMessageDeep(tm('home.studies.items')))
+
+const PROJECT_ROUTES = {
+  yiapp: '/projects/yiapp',
+  freelearn: '/projects/freelearn',
+  citizen: '/projects/citizen',
+  otif: '/projects/otif',
+  propiedades: '/projects/propiedades',
+  propiedadesDev: '/projects/front-end/propiedades',
+  virturecrm: '/projects/front-end/virture-crm',
+  estancias: '/projects/front-end/estancias',
+  zooapp: '/projects/front-end/zoo-app',
+}
+const projectRoute = (id) => localePath(PROJECT_ROUTES[id] || '/projects')
+
+const projectsGrid = ref(null)
+
+const reducedMotion = () => import.meta.client && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+const replate = () => {
+  if (reducedMotion()) return
+  const grid = projectsGrid.value
+  if (!grid) return
+  ;[...grid.children].forEach((el, i) => {
+    el.style.animation = 'none'
+    // eslint-disable-next-line no-void
+    void el.offsetWidth
+    el.style.animation = `bs-replate .6s ${i * 45}ms cubic-bezier(.2,.8,.2,1) both`
+  })
+}
+
+watch(edition, async () => {
+  await nextTick()
+  replate()
+})
 
 onMounted(() => {
-  checkMobile()
-  window.addEventListener('resize', checkMobile)
+  restoreEdition(route.query.edicion)
 })
-
-onUnmounted(() => {
-  window.removeEventListener('resize', checkMobile)
-})
-
-const studies = computed(() => [
-  {
-    institution: $t('home.studies.upqroo.institution'),
-    degree: $t('home.studies.upqroo.degree'),
-    year: $t('home.studies.upqroo.year'),
-    photos: [
-      '/certificado_de_estudios.jpg',
-      '/titulo.jpg'
-    ],
-    experience: $tm('home.studies.upqroo.experience')
-  },
-  {
-    institution: $t('home.studies.google.institution'),
-    degree: $t('home.studies.google.degree'),
-    year: $t('home.studies.google.year'),
-    photos: [
-      '/coursera.jpg',
-    ],
-    experience: $tm('home.studies.google.experience')
-  }
-])
-const studiesDev = computed(() => [
-  {
-    institution: $t('home.studies_dev.upqroo.institution'),
-    degree: $t('home.studies_dev.upqroo.degree'),
-    year: $t('home.studies_dev.upqroo.year'),
-    photos: [
-      '/certificado_de_estudios.jpg',
-      '/titulo.jpg'
-    ],
-    experience: $tm('home.studies_dev.upqroo.experience')
-  }
-])
 </script>
-<style scoped>
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.5s ease-out forwards;
-}
-
-.perspective-1000 {
-  perspective: 1000px;
-}
-
-.logo-carousel-container {
-  width: 100%;
-  overflow: hidden;
-
-}
-
-.logo-carousel {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.logo-track {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 3rem;
-}
-
-/* En desktop: logos centrados sin animación */
-@media (min-width: 768px) {
-  .logo-track {
-    flex-wrap: wrap;
-  }
-}
-
-/* En móvil: animación infinita */
-@media (max-width: 767px) {
-  .logo-carousel.animate-scroll .logo-track {
-    animation: scroll 20s linear infinite;
-    flex-wrap: nowrap;
-  }
-}
-
-.logo-item {
-  flex-shrink: 0;
-  width: 120px;
-  height: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo-image {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  filter: grayscale(100%) brightness(1.2);
-  opacity: 0.6;
-  transition: all 0.3s ease;
-}
-
-.logo-image:hover {
-  filter: grayscale(0%) brightness(1);
-  opacity: 1;
-  transform: scale(1.1);
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* Pausa la animación al hacer hover en móvil */
-@media (max-width: 767px) {
-  .logo-carousel.animate-scroll:hover .logo-track {
-    animation-play-state: paused;
-  }
-}
-</style>

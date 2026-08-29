@@ -243,6 +243,8 @@
 import HeaderProject from '@/components/HeaderProject.vue'
 import { computed } from 'vue';
 
+definePageMeta({ layout: 'project' })
+
 const { t, rt } = useI18n()
 
 useSeoMeta({

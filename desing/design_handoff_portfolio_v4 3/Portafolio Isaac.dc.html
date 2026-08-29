@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/broadsheet-9eed87e6-d0e9-4432-ab71-d34a62bd6c71/styles.css">
+<script src="_ds/broadsheet-9eed87e6-d0e9-4432-ab71-d34a62bd6c71/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+:root{
+--color-accent:#10855a;
+--color-accent-100:#e9f7ee;--color-accent-200:#c9ecd6;--color-accent-300:#9adcb5;--color-accent-400:#63c08f;--color-accent-500:#34a26c;--color-accent-600:#0d8450;--color-accent-700:#00663c;--color-accent-800:#00482a;--color-accent-900:#0b301e;
+--color-accent-2:#6e8c0d;
+--color-accent-2-100:#f3f7e2;--color-accent-2-200:#e3eebe;--color-accent-2-300:#cbe08f;--color-accent-2-400:#a9c65a;--color-accent-2-500:#8aa92c;--color-accent-2-600:#6e8c0d;--color-accent-2-700:#536b00;--color-accent-2-800:#3b4c00;--color-accent-2-900:#283300;
+--color-process-yellow:#c8d62b;
+}
+body{margin:0;background:#e6e4e1}
+a{color:var(--color-accent-700);text-decoration:none}
+a:hover{color:var(--color-accent-2-700)}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}
+.dv-tname{font:600 13px/1.2 var(--font-body);color:#1a1a1a}
+.dv-opts{display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 var(--font-body);color:rgba(0,0,0,.55)}
+.dv-card{max-width:100%;background:var(--color-bg);box-shadow:0 12px 40px rgba(0,0,0,.14);overflow:hidden}
+.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}
+.dv-next{margin:22px 0 0;font:12px/1.5 var(--font-body);color:rgba(0,0,0,.5)}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes drift{0%{transform:translate(0,0)}50%{transform:translate(-6px,4px)}100%{transform:translate(0,0)}}
+@keyframes jitter{0%{transform:translate(0,0)}33%{transform:translate(1.5px,-1px)}66%{transform:translate(-1px,1.5px)}100%{transform:translate(0,0)}}
+@keyframes wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes caret{0%,100%{border-right-color:var(--color-accent)}50%{border-right-color:transparent}}
+@keyframes replate{0%{transform:translate(-6px,4px);opacity:.25}45%{transform:translate(4px,-3px);opacity:.75}100%{transform:none;opacity:1}}
+@keyframes press{0%{transform:translateY(0)}12%{transform:translateY(3px)}30%{transform:translateY(0)}100%{transform:translateY(0)}}
+[data-night="on"]{
+--color-bg:#131412;--color-surface:#1c1e1b;--color-text:#efece5;
+--color-divider:rgba(239,236,229,.2);
+--color-neutral-100:#1c1e1b;--color-neutral-200:#252723;--color-neutral-300:#33352f;
+--color-neutral-400:#4a4c45;--color-neutral-500:#6e706a;--color-neutral-600:#928f88;
+--color-neutral-700:#b0aca4;--color-neutral-800:#d4d0c8;--color-neutral-900:#f0ede6;
+--color-accent:#3fc98a;
+--color-accent-100:#0f2e21;--color-accent-200:#153a29;--color-accent-300:#1e5b3f;
+--color-accent-400:#2c8158;--color-accent-500:#34a26c;--color-accent-600:#3fc98a;
+--color-accent-700:#8fe3b7;--color-accent-800:#b9f0d3;--color-accent-900:#ddf8e9;
+--color-accent-2:#a9c65a;
+--color-accent-2-100:#22290e;--color-accent-2-200:#2b3512;--color-accent-2-300:#3f4d18;
+--color-accent-2-400:#5c7020;--color-accent-2-500:#8aa92c;--color-accent-2-600:#a9c65a;
+--color-accent-2-700:#cbe08f;--color-accent-2-800:#e0edb8;--color-accent-2-900:#f0f6dc;
+--color-process-yellow:#6d7420;
+}
+[data-night="on"] .card{background:var(--color-surface)}
+</style>
+</helmet>
+
+<section class="dv-turn" id="t2">
+<div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">Páginas de destino de la home <a class="dv-oid" href="#1a">1a</a></span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="2a">
+<div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a>Contacto — formulario tipográfico a lo Radnaabazar, con columna de datos y botón con estados</div>
+<div class="dv-card" data-night="{{ night }}" style="width:1120px;padding-bottom:var(--space-8)">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4) var(--space-8) var(--space-3);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-700)">
+<a href="#2a">← Isaac Quiroz Madrigal</a><span>Contacto</span><span>ES · <span style="opacity:.45">EN · PT</span></span>
+</div>
+<div style="height:3px;background:var(--color-text);margin:0 var(--space-8)"></div>
+
+<div style="display:grid;grid-template-columns:1.25fr .75fr;gap:var(--space-8);padding:var(--space-8) var(--space-8) 0;align-items:start">
+<div>
+<h1 data-typewriter style="margin:0;font-size:92px;line-height:.86;letter-spacing:-.03em">Hablemos<span style="color:var(--color-accent-700)">.</span></h1>
+<p style="margin:var(--space-4) 0 var(--space-6);max-width:44ch;font-size:18px;line-height:1.6;color:var(--color-neutral-800);text-wrap:pretty">Cuéntame qué estás construyendo. Si es un proyecto de diseño, de front-end o los dos, contesto con una propuesta de alcance y tiempos.</p>
+
+<div style="display:grid;gap:var(--space-4);max-width:640px">
+<div class="field"><label for="c-name" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-700)">Nombre</label><input class="input" id="c-name" placeholder="Cómo te llamas" style="font-size:22px;padding:var(--space-2) 0;background:transparent;border:0;border-bottom:1px solid var(--color-divider);border-radius:0" style-focus="border-bottom-color:var(--color-accent)"></div>
+<div class="field"><label for="c-mail" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-700)">Correo</label><input class="input" id="c-mail" type="email" placeholder="tu@correo.com" style="font-size:22px;padding:var(--space-2) 0;background:transparent;border:0;border-bottom:1px solid var(--color-divider);border-radius:0" style-focus="border-bottom-color:var(--color-accent)"></div>
+<div class="field"><label for="c-msg" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-700)">Proyecto</label><textarea class="input" id="c-msg" rows="4" placeholder="Qué necesitas, para cuándo y con qué presupuesto aproximado" style="font-size:20px;line-height:1.5;padding:var(--space-2) 0;background:transparent;border:0;border-bottom:1px solid var(--color-divider);border-radius:0;resize:vertical" style-focus="border-bottom-color:var(--color-accent)"></textarea></div>
+<div style="display:flex;flex-wrap:wrap;gap:var(--space-2);align-items:center">
+<span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-700);width:100%">Tipo</span>
+<span class="tag tag-accent">Freelance</span><span class="tag tag-outline">Tiempo completo</span><span class="tag tag-outline">Consultoría UX</span><span class="tag tag-outline">Front-end</span>
+</div>
+<div style="display:flex;align-items:center;gap:var(--space-4);margin-top:var(--space-2)">
+<button type="button" class="btn btn-primary" onClick="{{ send }}" style="font-size:18px;padding:14px 28px;min-width:230px;justify-content:center;transition:opacity .3s">{{ sendLabel }}</button>
+<span style="{{ sentStyle }}">{{ sentNote }}</span>
+</div>
+</div>
+</div>
+
+<div style="border-left:1px solid var(--color-divider);padding-left:var(--space-6);display:grid;gap:var(--space-6);animation:rise .8s .15s cubic-bezier(.2,.8,.2,1) both">
+<div><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-700)">Dónde estoy</div><div style="font-size:21px;margin-top:6px">Cancún, Quintana Roo<br>México · GMT−5</div></div>
+<div><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-700)">Idiomas</div><div style="font-size:21px;margin-top:6px">Español · Inglés · Portugués</div></div>
+<div><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-700)">Respuesta</div><div class="cmyk-num" style="font-size:52px;font-weight:600;margin-top:6px"><span class="paper">24h</span><span class="plate plate-c" aria-hidden="true">24h</span><span class="plate plate-m" aria-hidden="true">24h</span><span class="plate plate-y" aria-hidden="true">24h</span></div></div>
+<div><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-700)">Directo</div><div style="font-size:19px;margin-top:6px;display:grid;gap:2px"><a href="#2a">correo@isaacquirozmadrigal.com</a><a href="#2a">LinkedIn</a><a href="#2a">GitHub</a><a href="#2a">Behance</a></div></div>
+</div>
+</div>
+
+<div style="margin:var(--space-8) var(--space-8) 0;border-top:6px solid var(--color-text);padding-top:var(--space-3);display:flex;justify-content:space-between;align-items:baseline">
+<div style="font-size:15px;color:var(--color-neutral-700)">O agenda 15 minutos si prefieres hablarlo.</div>
+<a class="btn btn-secondary" href="#2a">Agendar llamada →</a>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="2b">
+<div class="dv-olabel"><a class="dv-oid" href="#2b">2b</a>Caso de estudio — plantilla para los seis proyectos, imágenes sin filtro</div>
+<div class="dv-card" data-night="{{ night }}" style="width:1120px;padding-bottom:var(--space-8)">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4) var(--space-8) var(--space-3);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-700)">
+<a href="#2b">← Proyectos</a><span>Caso 01 de 04 · front-end</span><span>Marzo 2024 – actualidad</span>
+</div>
+<div style="height:3px;background:var(--color-text);margin:0 var(--space-8)"></div>
+
+<div style="padding:var(--space-6) var(--space-8) 0">
+<h1 data-typewriter style="margin:0;font-size:74px;line-height:.9;letter-spacing:-.025em">Propiedades Cancún</h1>
+<p style="margin:var(--space-3) 0 0;max-width:56ch;font-size:24px;line-height:1.35;font-style:italic;color:var(--color-neutral-800);text-wrap:pretty">Cómo aumenté el tráfico orgánico un 25% optimizando la arquitectura del sitio.</p>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4);margin-top:var(--space-6);border-top:1px solid var(--color-text);padding-top:var(--space-3)">
+<div><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-700)">Rol</div><div style="font-size:17px;margin-top:4px">Diseño + front-end</div></div>
+<div><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-700)">Empresa</div><div style="font-size:17px;margin-top:4px">WayaWeb</div></div>
+<div><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-700)">Stack</div><div style="font-size:17px;margin-top:4px">Nuxt · Tailwind · GA4</div></div>
+<div><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-700)">Línea de tiempo</div><div style="font-size:17px;margin-top:4px">Marzo 2024 – actualidad</div></div>
+</div>
+</div>
+
+<div style="margin:var(--space-6) 0 0;background:var(--color-surface)">
+<img alt="Propiedades Cancún — vista general" data-src="public/img/propiedades/nvifz5egnosguvd2tmgp.webp" ref="{{ setImg }}" style="width:100%;display:block;aspect-ratio:16/7;object-fit:cover">
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);padding:var(--space-8) var(--space-8) 0">
+<div>
+<h2 style="margin:0 0 var(--space-2);font-size:28px">El problema</h2>
+<p style="margin:0;font-size:16px;line-height:1.65;color:var(--color-neutral-800);text-wrap:pretty">En el mercado inmobiliario de la Riviera Maya una página lenta o mal estructurada pierde clientes. El reto era equilibrar la carga visual de propiedades de lujo con un rendimiento técnico impecable, y que el sitio fuera además una máquina de conversión.</p>
+</div>
+<div>
+<h2 style="margin:0 0 var(--space-2);font-size:28px">Qué hice</h2>
+<ul style="margin:0;padding-left:1.1em;font-size:16px;line-height:1.7;color:var(--color-neutral-800)">
+<li>Refactoricé los componentes visuales con principios de Gestalt y contraste.</li>
+<li>Rendimiento: conversión automática de imágenes y CSS crítico en línea para el LCP.</li>
+<li>URLs semánticas por intención de búsqueda, evitando canibalismo de keywords.</li>
+<li>Metadatos automáticos por propiedad, robots.txt y redirecciones 301.</li>
+</ul>
+</div>
+</div>
+
+<blockquote style="margin:var(--space-8) var(--space-8) 0;padding:0;border-top:1px solid var(--color-text);border-bottom:1px solid var(--color-text)">
+<p style="margin:0;padding:var(--space-4) 0;font-size:34px;line-height:1.25;font-style:italic;max-width:34ch">La ingeniería y el marketing no son disciplinas separadas: son partes del mismo código.</p>
+</blockquote>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);padding:var(--space-6) var(--space-8) 0">
+<figure style="margin:0;background:var(--color-surface)"><img alt="Interfaz de múltiples URLs" data-src="public/img/propiedades/vwzl4wciljwsqlyas4kl.webp" ref="{{ setImg }}" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover"><figcaption style="font-size:13px;color:var(--color-neutral-700);padding-top:var(--space-2)">Interfaz limpia donde cada elemento guía hacia la acción.</figcaption></figure>
+<figure style="margin:0;background:var(--color-surface)"><img alt="Bloques por zona" data-src="public/img/propiedades/wgjcjzt4otaaxzn2ipgl.webp" ref="{{ setImg }}" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover"><figcaption style="font-size:13px;color:var(--color-neutral-700);padding-top:var(--space-2)">Filtro principal que redirige a búsquedas más específicas.</figcaption></figure>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6);padding:var(--space-8) var(--space-8) 0;border-top:3px solid var(--color-text);margin:var(--space-8) var(--space-8) 0;padding-left:0;padding-right:0">
+<div><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent-700)">Resultado</div><p style="margin:6px 0 0;font-size:16px;line-height:1.6">+25% de tráfico orgánico y las páginas transaccionales clave posicionadas entre el ranking 3 y 10.</p></div>
+<div><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent-700)">Cómo</div><p style="margin:6px 0 0;font-size:16px;line-height:1.6">CSS crítico en línea para el contenido visible, imágenes convertidas y aligeradas, URLs semánticas sin canibalismo y metadatos generados por propiedad.</p></div>
+<div><div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent-700)">Aprendizaje</div><p style="margin:6px 0 0;font-size:16px;line-height:1.6">Ingeniería y marketing no son disciplinas separadas: son partes del mismo código.</p></div>
+</div>
+
+<a href="#2b" style="display:flex;align-items:baseline;justify-content:space-between;margin:var(--space-8) var(--space-8) 0;border-top:6px solid var(--color-text);padding-top:var(--space-3);color:var(--color-text);transition:padding-left .35s cubic-bezier(.2,.8,.2,1)" style-hover="padding-left:12px;color:var(--color-accent-700)">
+<span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-700)">Siguiente caso</span><span style="font-size:40px">Virture CRM →</span>
+</a>
+</div>
+</div>
+
+<div class="dv-opt" id="2c">
+<div class="dv-olabel"><a class="dv-oid" href="#2c">2c</a>Vista CV — el mismo contenido en una hoja, lista para exportar a PDF</div>
+<div class="dv-card" data-night="{{ night }}" style="width:816px;padding:var(--space-8) 56px">
+<div style="height:6px;background:var(--color-text)"></div>
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:var(--space-4);padding:var(--space-3) 0 var(--space-2)">
+<h1 data-typewriter style="margin:0;font-size:44px;line-height:.95">Isaac Quiroz Madrigal</h1>
+<div style="text-align:right;font-size:12.5px;line-height:1.5;color:var(--color-neutral-800)">Cancún, QR · México<br>correo@isaacquirozmadrigal.com<br>isaacquirozmadrigal.com</div>
+</div>
+<div style="height:1px;background:var(--color-text)"></div>
+<div style="display:flex;justify-content:space-between;padding:var(--space-2) 0;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700)"><span>Diseñador UX/UI &amp; Desarrollador front-end</span><span>ES · EN · PT</span></div>
+<div style="height:3px;background:var(--color-text)"></div>
+
+<p style="margin:var(--space-4) 0 0;font-size:14.5px;line-height:1.6;text-wrap:pretty">Diseño y construyo producto digital: research e interfaz en Figma, implementación en Vue/Nuxt. Experiencia en plataformas internas, landings en producción y apps móviles.</p>
+
+<div style="display:grid;grid-template-columns:96px 1fr;gap:var(--space-3) var(--space-4);margin-top:var(--space-6)">
+<div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700);padding-top:3px">Experiencia</div>
+<div style="display:grid;gap:var(--space-3)">
+<div><div style="font-size:17px">WayaWeb — Propiedades Cancún · Diseño + front-end</div><div style="font-size:12.5px;color:var(--color-neutral-700)">Marzo 2024 – actualidad · Landing, Virture App y CRM</div><div style="font-size:14px;line-height:1.55;margin-top:2px">Landing en producción con +25% de tráfico orgánico: CSS crítico, URLs semánticas, metadatos automáticos y medición con GA4 y Lighthouse. CRM en Vue con formularios multicampo reorganizados por categorías.</div></div>
+<div><div style="font-size:17px">Wizeline — Diseño y front-end</div><div style="font-size:12.5px;color:var(--color-neutral-700)">PATIO for Kudos (plataforma interna, privado)</div><div style="font-size:14px;line-height:1.55;margin-top:2px">Componentes de interfaz y flujos de la plataforma; trabajo con equipo distribuido en inglés.</div></div>
+<div><div style="font-size:17px">UPQROO — Proyectos y estadías</div><div style="font-size:12.5px;color:var(--color-neutral-700)">Reptiles App, sistema de Estancias y Estadías</div></div>
+</div>
+
+<div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700);padding-top:3px">Proyectos</div>
+<div style="font-size:14px;line-height:1.7">YiApp e-commerce · Free Learn · Denuncia Ciudadana · Rediseño Landing OTIF · Estancias y Estadías · BioAprendizaje México · Reptiles App</div>
+
+<div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700);padding-top:3px">Educación</div>
+<div style="display:grid;gap:var(--space-2)">
+<div><div style="font-size:16px">Universidad Politécnica de Quintana Roo</div><div style="font-size:12.5px;color:var(--color-neutral-700)">Ingeniería en Software · 2020–2023</div></div>
+<div><div style="font-size:16px">Google UX Design — Certificado profesional</div><div style="font-size:12.5px;color:var(--color-neutral-700)">Coursera · 2024</div></div>
+</div>
+
+<div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700);padding-top:3px">Diseño</div>
+<div style="font-size:14px;line-height:1.7">Figma · Adobe XD · Photoshop · Lightroom · Balsamiq · Framer · Research · Design systems</div>
+
+<div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700);padding-top:3px">Código</div>
+<div style="font-size:14px;line-height:1.7">JavaScript · Vue · Nuxt · Pinia · React · Next · Tailwind · Sass · Storybook · GA4 · Tag Manager · Search Console · Lighthouse</div>
+</div>
+
+<div style="margin-top:var(--space-6);border-top:1px solid var(--color-text);padding-top:var(--space-2);display:flex;justify-content:space-between;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700)"><span>Una hoja · exportable a PDF</span><span>Actualizado 2026</span></div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Prueba: "el contacto de <a class="dv-oid" href="#2a">2a</a> pero a pantalla completa" · "en <a class="dv-oid" href="#2b">2b</a> quiero galería de 3 imágenes" · "haz el CV de <a class="dv-oid" href="#2c">2c</a> exportable de verdad"</p>
+</section>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Home elegida — portada bento sobre la retícula de periódico de Broadsheet</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Portada bento — módulos de distinto peso, cabecera con filetes, avatar 3D y switch de edición</div>
+<div class="dv-card" data-night="{{ night }}" style="width:1120px;position:relative;padding:0 0 var(--space-8)">
+
+<div style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0">
+<div style="position:absolute;top:-40px;right:-60px;width:420px;height:420px;background-image:radial-gradient(circle,var(--color-accent-300) 30%,transparent 32%),radial-gradient(circle,var(--color-accent-2-300) 30%,transparent 32%);background-size:7px 7px,7px 7px;background-position:0 0,3px 3px;opacity:.5;animation:drift 14s ease-in-out infinite"></div>
+</div>
+
+<div style="padding:var(--space-4) var(--space-8) 0;position:relative;z-index:1">
+<div style="height:6px;background:var(--color-text);animation:wipe .9s cubic-bezier(.16,1,.3,1) both"></div>
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:var(--space-6);padding:var(--space-3) 0 var(--space-2)">
+<h1 style="margin:0;font-size:76px;line-height:.86;letter-spacing:-.02em;display:grid;justify-items:start">
+<span data-typewriter>Isaac Quiroz</span>
+<span data-typewriter data-typewriter-after="1">Madrigal</span>
+</h1>
+<div style="text-align:right;font-size:14px;line-height:1.5;color:var(--color-neutral-800);animation:rise .7s .08s cubic-bezier(.2,.8,.2,1) both">
+<div style="font-style:italic;font-size:19px;color:var(--color-text)">Diseñador UX/UI &amp; Front-end</div>
+<div>Cancún, Quintana Roo · México</div>
+<div>isaacquirozmadrigal.com</div>
+</div>
+</div>
+<div style="height:1px;background:var(--color-text);animation:wipe 1s .25s cubic-bezier(.16,1,.3,1) both"></div>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:var(--space-2) 0;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700)">
+<span>Edición {{ editionLabel }} · 2026</span>
+<span style="display:flex;gap:var(--space-3)"><a href="#1a">Proyectos</a><a href="#1a">Sobre mí</a><a href="#1a">Estudios</a><a href="#1a">CV</a><a href="#1a" style="color:var(--color-accent-2-700)">Contacto</a></span>
+<span style="display:flex;align-items:center;gap:var(--space-3);letter-spacing:.1em">
+<span>ES · <span style="opacity:.45">EN</span> · <span style="opacity:.45">PT</span></span>
+<button type="button" onClick="{{ toggleNight }}" data-magnet style="appearance:none;background:transparent;border:1px solid var(--color-divider);border-radius:var(--radius-md);color:var(--color-text);font:inherit;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;cursor:pointer;display:flex;align-items:center;gap:7px;transition:border-color .3s,color .3s" style-hover="border-color:var(--color-accent);color:var(--color-accent-700)">
+<span style="width:9px;height:9px;border-radius:50%;background:var(--color-text);transition:background .3s"></span>{{ nightLabel }}
+</button>
+</span>
+</div>
+<div style="height:3px;background:var(--color-text);animation:wipe 1.1s .4s cubic-bezier(.16,1,.3,1) both"></div>
+</div>
+
+<div style="display:flex;gap:var(--space-2);padding:var(--space-4) var(--space-8) 0;position:relative;z-index:1;align-items:center" data-magnet-scope="1a">
+<div class="seg" data-magnet>
+<label class="seg-opt"><input type="radio" name="edicion-1a" value="design" checked="{{ isDesign }}" onChange="{{ setDesign }}">Edición Diseño</label>
+<label class="seg-opt"><input type="radio" name="edicion-1a" value="code" checked="{{ isCode }}" onChange="{{ setCode }}">Edición Código</label>
+</div>
+<span style="margin-left:auto;align-self:center;font-size:12.5px;font-style:italic;color:var(--color-neutral-700)">Cambia la portada completa: proyectos, herramientas y estudios.</span>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(12,1fr);gap:var(--space-6);padding:var(--space-6) var(--space-8) 0;align-items:start;position:relative;z-index:1">
+
+<div style="grid-column:span 4;position:relative;animation:rise .8s .12s cubic-bezier(.2,.8,.2,1) both">
+<div style="position:absolute;left:-8%;right:-8%;top:-4%;bottom:6%;background:radial-gradient(circle at 50% 45%,var(--color-accent-200),transparent 68%);animation:drift 13s ease-in-out infinite;pointer-events:none"></div>
+<div style="position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:var(--radius-md);background:var(--color-surface)">
+<img alt="Isaac Quiroz Madrigal" data-src="public/group.png" ref="{{ setImg }}" style="width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.03)">
+</div>
+<div style="margin-top:var(--space-2);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700)">Retrato temporal · aquí va el avatar 3D</div>
+</div>
+
+<div style="grid-column:span 5;animation:rise .8s .18s cubic-bezier(.2,.8,.2,1) both">
+<div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:var(--space-2)">Sobre mí</div>
+<p style="margin:0 0 var(--space-3);font-size:26px;line-height:1.28;text-wrap:pretty">Diseño productos y luego los construyo: research, interfaz y código de producción.</p>
+<p style="margin:0;font-size:15px;line-height:1.62;color:var(--color-neutral-800);text-wrap:pretty">He trabajado en Wizeline y WayaWeb, y en proyectos propios como YiApp, FreeLearn y Citizen. Mi ventaja es entregar la pantalla y el componente: el mismo criterio en Figma y en el repositorio.</p>
+<div style="display:flex;gap:var(--space-4);margin-top:var(--space-4)">
+<a class="btn btn-primary" href="#1a" data-magnet>Descargar CV</a>
+<a class="btn btn-ghost" href="#1a" data-magnet>Ver como CV →</a>
+</div>
+</div>
+
+<div style="grid-column:span 3;animation:rise .8s .24s cubic-bezier(.2,.8,.2,1) both">
+<div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:var(--space-2)">Disponibilidad</div>
+<div class="cmyk-num" style="font-size:64px;font-weight:600"><span class="paper">24h</span><span class="plate plate-c" aria-hidden="true">24h</span><span class="plate plate-m" aria-hidden="true">24h</span><span class="plate plate-y" aria-hidden="true">24h</span></div>
+<p style="margin:var(--space-3) 0 0;font-size:14px;line-height:1.55;color:var(--color-neutral-800)">Respuesta a propuestas. Abierto a freelance y equipos de producto, remoto o Cancún (GMT−5).</p>
+<div style="display:flex;flex-wrap:wrap;gap:var(--space-1);margin-top:var(--space-3)">
+<span class="tag tag-accent">Freelance</span><span class="tag tag-outline">Remoto</span><span class="tag tag-outline">ES/EN/PT</span>
+</div>
+</div>
+</div>
+
+<div style="padding:var(--space-8) var(--space-8) 0">
+<div style="display:flex;align-items:baseline;justify-content:space-between;border-top:3px solid var(--color-text);padding-top:var(--space-2)">
+<h2 style="margin:0;font-size:34px">Proyectos destacados</h2>
+<span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700)">{{ projectCount }} piezas · edición {{ editionLabel }}</span>
+</div>
+<div data-press-grid style="display:grid;grid-template-columns:repeat(6,1fr);gap:var(--space-4);margin-top:var(--space-4)" data-magnet-scope="1a">
+<sc-for list="{{ projects }}" as="p" hint-placeholder-count="4">
+<a class="card" href="#1a" data-magnet style="{{ p.cardStyle }}" style-hover="box-shadow:var(--shadow-lg);transform:translateY(-4px)">
+<div style="aspect-ratio:16/10;overflow:hidden;background:var(--color-surface);position:relative;display:flex;align-items:center;justify-content:center">
+<img alt="{{ p.title }}" data-src="{{ p.image }}" ref="{{ setImg }}" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.8,.2,1)" style-hover="transform:scale(1.06)">
+<span data-screen style="position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,var(--color-text) 46%,transparent 48%);background-size:5px 5px;opacity:.9;transition:opacity 1.1s cubic-bezier(.2,.8,.2,1),background-size 1.1s cubic-bezier(.2,.8,.2,1)"></span>
+<span style="position:absolute;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-700);text-align:center;padding:0 var(--space-3)">{{ p.mediaLabel }}</span>
+</div>
+<div style="padding:var(--space-3)">
+<div class="card-kicker" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent-700)">{{ p.kicker }}</div>
+<div class="card-title" style="font-size:22px;margin-top:4px">{{ p.title }}</div>
+<div class="card-body" style="font-size:14px;line-height:1.5;color:var(--color-neutral-800);margin-top:6px">{{ p.blurb }}</div>
+</div>
+</a>
+</sc-for>
+</div>
+</div>
+
+<div style="padding:var(--space-8) 0 0">
+<div style="padding:0 var(--space-8);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-700)">Herramientas · {{ editionLabel }}</div>
+<div style="overflow:hidden;margin-top:var(--space-2);border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider);padding:var(--space-3) 0">
+<div style="display:flex;width:max-content;animation:marquee 26s linear infinite">
+<span style="font-size:30px;font-style:italic;white-space:nowrap;padding-right:24px">{{ toolsRun }}</span>
+<span style="font-size:30px;font-style:italic;white-space:nowrap;padding-right:24px" aria-hidden="true">{{ toolsRun }}</span>
+</div>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(12,1fr);gap:var(--space-6);padding:var(--space-8) var(--space-8) 0;align-items:start">
+<div style="grid-column:span 7">
+<h2 style="margin:0 0 var(--space-3);font-size:30px;border-top:3px solid var(--color-text);padding-top:var(--space-2)">Experiencia</h2>
+<table class="table" style="width:100%;font-size:14.5px">
+<tbody>
+<tr><td style="width:150px;color:var(--color-neutral-700)">Mar 2024 – hoy</td><td><strong>WayaWeb · Propiedades Cancún</strong> — Diseñador UX y desarrollador web<div style="color:var(--color-neutral-700)">Landing en producción, Virture App y CRM</div></td></tr>
+<tr><td style="color:var(--color-neutral-700)">Wizeline</td><td><strong>PATIO for Kudos</strong> — plataforma interna<div style="color:var(--color-neutral-700)">Diseño y front-end (proyecto privado)</div></td></tr>
+<tr><td style="color:var(--color-neutral-700)">Universidad</td><td><strong>UPQROO</strong> — proyectos y estadías<div style="color:var(--color-neutral-700)">Reptiles App, sistema de Estancias y Estadías</div></td></tr>
+</tbody>
+</table>
+</div>
+<div style="grid-column:span 5">
+<h2 style="margin:0 0 var(--space-3);font-size:30px;border-top:3px solid var(--color-text);padding-top:var(--space-2)">Estudios</h2>
+<div style="display:flex;flex-direction:column;gap:var(--space-3)">
+<div><div style="font-size:19px">Universidad Politécnica de Quintana Roo</div><div style="font-size:14px;color:var(--color-neutral-700)">Ingeniería en Software · 2020–2023</div></div>
+<div><div style="font-size:19px">Google UX Design</div><div style="font-size:14px;color:var(--color-neutral-700)">Certificado profesional · 2024</div></div>
+</div>
+<div style="display:flex;gap:var(--space-2);margin-top:var(--space-4)">
+<a class="tag tag-outline" href="#1a">Ver certificados</a><a class="tag tag-accent-2" href="#1a">Fotografía</a>
+</div>
+</div>
+</div>
+
+<div style="margin:var(--space-8) var(--space-8) 0;border-top:6px solid var(--color-text);padding-top:var(--space-4);display:flex;align-items:center;justify-content:space-between;gap:var(--space-6)">
+<div>
+<div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-700)">Contacto</div>
+<div style="font-size:40px;line-height:1.1;margin-top:6px">¿Construimos algo?</div>
+</div>
+<a class="btn btn-primary" href="#1a" data-magnet style="font-size:17px;padding:14px 26px">Ir a contacto →</a>
+</div>
+
+<div data-magnet-cursor style="position:fixed;top:0;left:0;width:34px;height:34px;pointer-events:none;opacity:0;transition:opacity .25s,transform .12s cubic-bezier(.2,.8,.2,1),width .25s,height .25s;z-index:60">
+<span style="position:absolute;inset:0;border:1px solid var(--color-accent);border-radius:inherit"></span>
+<span style="position:absolute;left:50%;top:-7px;bottom:-7px;width:1px;background:var(--color-accent);opacity:.65"></span>
+<span style="position:absolute;top:50%;left:-7px;right:-7px;height:1px;background:var(--color-accent);opacity:.65"></span>
+</div>
+</div>
+</div>
+
+<p class="dv-next">Variante elegida. Las alternativas 1b (índice editorial) y 1c (hoja de pruebas) quedaron fuera; si quieres recuperar algo de ellas, dímelo.</p>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const P = {
+  design: [
+    {title:'YiApp', kicker:'E-commerce · app móvil', blurb:'Ropa multimarca: checkout de varios pasos en una sola vista.', image:'public/img/yiapp/yofrzpjwfxwjao7e2jub.webp', span:3},
+    {title:'Free Learn', kicker:'Plataforma educativa', blurb:'Red social de aprendizaje: todo un tema en un solo lugar.', image:'public/img/free/lqgrculfmexx2betqcuw.webp', span:3},
+    {title:'Denuncia Ciudadana', kicker:'Servicios públicos', blurb:'Inconformidades de Benito Juárez, con seguimiento.', image:'public/img/citizen/955shots_so.webp', span:2},
+    {title:'Rediseño OTIF', kicker:'Logística internacional', blurb:'Rediseño de la navegación principal de la plataforma.', image:'public/img/otif/1.webp', span:2},
+    {title:'Propiedades Cancún', kicker:'Inmobiliaria', blurb:'Filtro principal que lleva a búsquedas específicas.', image:'public/img/propiedades/nvifz5egnosguvd2tmgp.webp', span:2}
+  ],
+  code: [
+    {title:'Propiedades Cancún Landing', kicker:'Landing · front-end', blurb:'+25% de tráfico orgánico: CSS crítico, URLs semánticas y metadatos automáticos.', image:'public/img/propiedades/nvifz5egnosguvd2tmgp.webp', span:3},
+    {title:'Virture CRM', kicker:'Web app · CRM', blurb:'CRM para agencias inmobiliarias: formularios multicampo por categorías.', image:'public/img/virture/dashboard.png', span:3},
+    {title:'Estancias y Estadías', kicker:'Universidad · full-stack', blurb:'Carga y validación de documentación con roles RBAC y estatus en tiempo real.', image:'public/img/estancias/estancias-estadias.png', span:3},
+    {title:'BioAprendizaje México', kicker:'App Android · Kotlin', blurb:'Biología para educación básica, con mapas de la CONABIO.', image:'public/img/zooapp/detalle.png', span:3}
+  ]
+};
+const TOOLS = {
+  design: 'Figma · Adobe XD · Photoshop · Lightroom · Balsamiq · Framer · Research · Design systems · ',
+  code: 'JavaScript · Vue · Nuxt · Pinia · React · Next · Tailwind · Sass · Storybook · GA4 · Lighthouse · '
+};
+const SHEET = [
+  {title:'YiApp', tag:'E-commerce', image:'public/img/yiapp/yofrzpjwfxwjao7e2jub.webp', blurb:'Tienda de ropa multimarca con múltiples direcciones y métodos de pago: el checkout de varios pasos resuelto en una sola vista.', role:'UX/UI', year:'Ene–Abr 2023', deliverables:'Research · Flujos · UI kit · Prototipo'},
+  {title:'Free Learn', tag:'Educación', image:'public/img/free/lqgrculfmexx2betqcuw.webp', blurb:'Red social educativa: todo el aprendizaje de un tema en un solo lugar, en texto, video, imagen y directo.', role:'UX/UI', year:'1 mes', deliverables:'IA de contenido · UI · Prototipo'},
+  {title:'Propiedades Cancún', tag:'Inmobiliaria', image:'public/img/propiedades/nvifz5egnosguvd2tmgp.webp', blurb:'Landing en producción: +25% de tráfico orgánico con CSS crítico, URLs semánticas y metadatos automáticos.', role:'Diseño + código', year:'Mar 2024 – hoy', deliverables:'Diseño · Nuxt · GA4 · Lighthouse'},
+  {title:'Virture CRM', tag:'CRM', image:'public/img/virture/dashboard.png', blurb:'CRM para agencias y brokers: formularios multicampo divididos por categorías y componentes multimodales.', role:'Front-end', year:'2024', deliverables:'Vue · Pinia · Componentes'},
+  {title:'Denuncia Ciudadana', tag:'Cívico', image:'public/img/citizen/955shots_so.webp', blurb:'App para presentar inconformidades sobre servicios públicos en Benito Juárez y darles seguimiento.', role:'UX/UI', year:'Ene–Feb 2024', deliverables:'Concepto · Flujos · UI'},
+  {title:'OTIF', tag:'Logística', image:'public/img/otif/1.webp', blurb:'Rediseño de la navegación principal de una plataforma de logística internacional.', role:'UX', year:'2024', deliverables:'Auditoría · Rediseño'}
+];
+
+class Component extends DCLogic {
+  state = { edition: 'design', open: 0, sending: 'idle', night: false };
+
+  reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // the plates re-register: cards land misaligned and settle, like a fresh print run
+  reprint() {
+    if (this.reduced()) return;
+    const grid = document.querySelector('[data-press-grid]');
+    if (!grid) return;
+    [...grid.children].forEach((el, i) => {
+      el.style.animation = 'none';
+      void el.offsetWidth;
+      el.style.animation = 'replate .6s ' + (i * 45) + 'ms cubic-bezier(.2,.8,.2,1) both';
+    });
+  }
+
+  setEdition(edition) {
+    this.setState({ edition }, () => requestAnimationFrame(() => this.reprint()));
+  }
+
+  // headline types itself in, letter by letter, with a blinking caret
+  typewriter() {
+    const els = document.querySelectorAll('[data-typewriter]');
+    if (!els.length || this.reduced()) return;
+    const start = (el, delay) => {
+      const chars = (el.textContent || '').trim().length || 1;
+      const w = el.getBoundingClientRect().width;
+      if (!w) return;
+      Object.assign(el.style, {
+        display: 'inline-block', overflow: 'hidden', whiteSpace: 'nowrap',
+        verticalAlign: 'bottom', borderRight: '5px solid var(--color-accent)',
+        paddingRight: '8px', width: '0px'
+      });
+      const anim = el.animate(
+        [{ width: '0px' }, { width: w + 'px' }],
+        { duration: Math.max(650, chars * 105), delay: delay || 0, easing: 'steps(' + chars + ', end)', fill: 'forwards' }
+      );
+      anim.finished.then(() => {
+        el.style.width = '';
+        el.style.animation = 'caret .85s step-end 5';
+        setTimeout(() => { el.style.borderRight = 'none'; el.style.paddingRight = ''; el.style.animation = ''; }, 4300);
+      }).catch(() => {});
+    };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        // a line marked "after" waits for the line above it to finish
+        const after = parseInt(e.target.dataset.typewriterAfter || '0', 10);
+        const prev = after ? e.target.previousElementSibling : null;
+        const wait = prev ? Math.max(650, (prev.textContent || '').trim().length * 105) + 90 : 0;
+        start(e.target, wait);
+      });
+    }, { threshold: 0.55 });
+    els.forEach((el) => io.observe(el));
+  }
+
+  // the newsprint dot screen resolves into the photograph as it comes into view
+  screens() {
+    const els = document.querySelectorAll('[data-screen]');
+    if (!els.length) return;
+    if (this.reduced()) { els.forEach((el) => { el.style.opacity = '0'; }); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.style.backgroundSize = '11px 11px';
+        e.target.style.opacity = '0';
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.35 });
+    els.forEach((el) => io.observe(el));
+  }
+
+  send = () => {
+    if (this.state.sending !== 'idle') return;
+    this.setState({ sending: 'sending' });
+    setTimeout(() => this.setState({ sending: 'sent' }), 1100);
+    setTimeout(() => this.setState({ sending: 'idle' }), 4600);
+  };
+
+  componentDidMount() {
+    this.magnet();
+    this.screens();
+    this.typewriter();
+  }
+
+  magnet() {
+    const cursor = document.querySelector('[data-magnet-cursor]');
+    if (!cursor || this.reduced() || !window.matchMedia('(hover: hover)').matches) return;
+    const move = (e) => {
+      cursor.style.transform = 'translate(' + (e.clientX - 17) + 'px,' + (e.clientY - 17) + 'px)';
+    };
+    document.querySelectorAll('[data-magnet-scope],[data-magnet]').forEach((scope) => {
+      scope.addEventListener('mousemove', move);
+    });
+    document.querySelectorAll('[data-magnet]').forEach((el) => {
+      el.addEventListener('mouseenter', () => {
+        const r = el.getBoundingClientRect();
+        cursor.style.opacity = '1';
+        cursor.style.width = r.width + 10 + 'px';
+        cursor.style.height = r.height + 10 + 'px';
+        cursor.style.borderRadius = r.height > 90 ? '2px' : '999px';
+        cursor.style.transform = 'translate(' + (r.left - 5) + 'px,' + (r.top - 5) + 'px)';
+      });
+      el.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; });
+    });
+  }
+
+  renderVals() {
+    const ed = this.state.edition;
+    const list = P[ed].map((p) => ({
+      ...p,
+      mediaLabel: p.mediaLabel || '',
+      cardStyle: 'grid-column:span ' + p.span + ';display:block;color:var(--color-text);overflow:hidden;transition:box-shadow .35s,transform .35s cubic-bezier(.2,.8,.2,1);animation:rise .7s both'
+    }));
+    const o = SHEET[this.state.open] || SHEET[0];
+    const setImg = (el) => {
+      if (!el) return;
+      const src = el.dataset.src;
+      if (src && src.indexOf('{{') === -1 && el.getAttribute('src') !== src) el.setAttribute('src', src);
+    };
+    const st = this.state.sending;
+    return {
+      setImg,
+      send: this.send,
+      sendLabel: st === 'sending' ? 'Enviando…' : st === 'sent' ? 'Enviado ✓' : 'Enviar mensaje →',
+      sentNote: st === 'sent' ? 'Te contesto en menos de 24 horas.' : '',
+      sentStyle: 'font-size:14px;font-style:italic;color:var(--color-accent-700);opacity:' + (st === 'sent' ? '1' : '0') + ';transition:opacity .4s',
+      editionLabel: ed === 'design' ? 'Diseño' : 'Código',
+      projectCount: P[ed].length,
+      projects: list,
+      toolsRun: TOOLS[ed],
+      setDesign: () => this.setEdition('design'),
+      setCode: () => this.setEdition('code'),
+      night: this.state.night ? 'on' : 'off',
+      nightLabel: this.state.night ? 'Edición nocturna' : 'Edición matutina',
+      toggleNight: () => this.setState((s) => ({ night: !s.night })),
+      isDesign: ed === 'design',
+      isCode: ed === 'code',
+      sheet: SHEET.map((s, i) => ({
+        ...s,
+        open: () => this.setState({ open: i }),
+        tileStyle: 'appearance:none;border:0;padding:0;background:transparent;text-align:left;font:inherit;color:inherit;cursor:pointer;transition:transform .4s cubic-bezier(.2,.8,.2,1);animation:rise .7s both;outline-offset:3px' + (this.state.open === i ? ';transform:translateY(-5px)' : '')
+      })),
+      panelStyle: 'margin-top:var(--space-6);border-top:3px solid var(--color-text);animation:rise .5s both',
+      openTitle: o.title,
+      openBlurb: o.blurb,
+      openRole: o.role,
+      openYear: o.year,
+      openDeliverables: o.deliverables
+    };
+  }
+}
+
+</script>
+</body>
+</html>
