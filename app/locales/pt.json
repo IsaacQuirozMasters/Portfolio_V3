@@ -233,6 +233,104 @@
             }
         }
     },
+    "cv": {
+        "location": "Cancún, QR · México",
+        "sections": {
+            "experience": "Experiência",
+            "projects": "Projetos",
+            "education": "Educação",
+            "skills": "Habilidades",
+            "languages": "Idiomas"
+        },
+        "editions": {
+            "design": {
+                "role": "UX Designer",
+                "summary": "Desenvolvedor Front-End com 3 anos de experiência e 4 anos de trajetória técnica. Sou especialista em criar soluções centradas no usuário, com atenção aos detalhes e decisões baseadas em dados. Gosto de aprender, compartilhar conhecimento e colaborar em equipe para agregar valor e impulsionar a melhoria contínua.",
+                "experience": [
+                    {
+                        "role": "UX/UI Design & Desenvolvimento Frontend",
+                        "meta": "WayaWeb · Propiedades Cancún · 2024 – atualidade",
+                        "bullets": [
+                            "Tradução de requisitos de negócio e pain points dos usuários (pesquisados por meio de entrevistas) em interfaces estéticas e usáveis.",
+                            "Design de sketches, wireframes e telas de alta fidelidade no Figma em nível avançado.",
+                            "Criação de mockups e protótipos baseados no mapa do site, garantindo consistência visual em cada fluxo.",
+                            "Design de componentes com o princípio mobile-first, garantindo compatibilidade em qualquer dispositivo.",
+                            "Otimização do desempenho de carregamento e navegação, alcançando até 40% mais velocidade.",
+                            "Design de mockups e wireframes de alta fidelidade com aplicação e manutenção rigorosa do Design System do produto.",
+                            "Criação de componentes usáveis, testáveis e adaptáveis ao sistema de cores para manter a consistência visual em todas as telas.",
+                            "Conexão de protótipos completos e animações para testes interativos.",
+                            "Condução de pesquisa de UX e participação em testes de usabilidade com usuários finais para sintetizar melhorias contínuas."
+                        ]
+                    }
+                ],
+                "skills": [
+                    { "label": "Soft skills", "value": "Autonomia, proatividade e inovação, atenção aos detalhes, comunicação eficaz, adaptabilidade à mudança." },
+                    { "label": "Design UX/UI", "value": "Figma (nível avançado), wireframes e protótipos de alta fidelidade, criação e aplicação de Design Systems, consistência visual." },
+                    { "label": "IA e ferramentas", "value": "Ferramentas de IA para ideação e geração de UI/copy, Adobe XD, Photoshop, Illustrator." },
+                    { "label": "Desenvolvimento", "value": "Front-end avançado: Vue, Nuxt, React, Next." }
+                ],
+                "education": [
+                    { "institution": "Universidade Politécnica de Quintana Roo", "meta": "Engenharia de Software · 2020–2023" },
+                    { "institution": "Universidad Internacional de La Rioja", "meta": "Mestrado em Inteligência Artificial · em andamento (2026–2027)" },
+                    { "institution": "Google UX Design — Certificado profissional", "meta": "Coursera · 2023" }
+                ],
+                "languages": [
+                    { "name": "Espanhol", "level": "Língua nativa" },
+                    { "name": "Inglês", "level": "Nível A2" }
+                ]
+            },
+            "code": {
+                "role": "Desenvolvedor Front-End",
+                "summary": "Desenvolvedor Front-End com 3 anos de experiência e 5 anos de trajetória técnica. Sou especialista em criar soluções com atenção aos detalhes e na tomada de decisões baseada em dados. Gosto de aprender, compartilhar conhecimento e colaborar em equipe para agregar valor e impulsionar a melhoria contínua.",
+                "experience": [
+                    {
+                        "role": "Desenvolvimento Frontend",
+                        "meta": "Propiedades Cancún · 2024 – atualidade",
+                        "bullets": [
+                            "Desenvolvi telas de interface completas consumindo endpoints do backend otimizado.",
+                            "Redesenhei e reformulei mockups e protótipos de componentes antigos para melhorar a experiência do usuário.",
+                            "Analisei páginas com maior tráfego no Search Console para melhorar a retenção, aumentando-a em até 15% em 3 meses.",
+                            "Desenhei componentes seguindo o princípio mobile-first, garantindo compatibilidade com qualquer tela.",
+                            "Analisei e corrigi vulnerabilidades identificadas pelo WebInspect.",
+                            "Refatorei componentes para atender aos padrões de segurança e qualidade.",
+                            "Otimizei o desempenho e a navegação da página de carregamento em até 40% mais rápido.",
+                            "Testei cada componente antes de enviá-lo para produção, com aprovação do stakeholder.",
+                            "Testei e aprovei as mudanças de outros desenvolvedores no projeto.",
+                            "Participei do planejamento da arquitetura frontend, contribuindo com ideias para melhorar o SEO.",
+                            "Reduzi o tempo de desenvolvimento de componentes integrando IA ao fluxo de trabalho, mantendo a revisão técnica de cada resultado."
+                        ]
+                    },
+                    {
+                        "role": "Frontend Developer Intern",
+                        "meta": "Wizeline · 2023 – 2024",
+                        "bullets": [
+                            "Desenvolvi componentes responsivos adaptáveis a telas de computador e celular.",
+                            "Identifiquei e implementei soluções web dinâmicas de acordo com os padrões da empresa e as melhores práticas.",
+                            "Desenhei mais de 10 componentes para integração seguindo o princípio SOLID.",
+                            "Realizei testes nos componentes antes de integrá-los.",
+                            "Colaborei em reuniões de equipe contribuindo com ideias."
+                        ]
+                    }
+                ],
+                "skills": [
+                    { "label": "Soft skills", "value": "Comunicação eficaz, adaptabilidade à mudança." },
+                    { "label": "UX/UI", "value": "UX Research, UX Writing, Design Thinking, Wireframing, Mockups, Prototyping." },
+                    { "label": "Frontend", "value": "JavaScript, TypeScript, HTML5, CSS3, Vue.js, Laravel, Nuxt.js, Tailwind CSS." },
+                    { "label": "Ferramentas de desenvolvimento", "value": "Storybook, Vite, Jest, Claude Code." },
+                    { "label": "SEO e analytics", "value": "SEO técnico, Google Search Console, Google Analytics, Screaming Frog, Lighthouse." }
+                ],
+                "education": [
+                    { "institution": "Universidade Politécnica de Quintana Roo", "meta": "Engenharia de Software · 2020–2023" },
+                    { "institution": "Google UX Design — Certificado profissional", "meta": "Coursera · 2023" }
+                ],
+                "languages": []
+            }
+        },
+        "footer": {
+            "note1": "Uma folha · exportável para PDF",
+            "note2": "Atualizado em 2026"
+        }
+    },
     "projects": {
         "otif": {
             "title": "Redesign Landing OTIF",

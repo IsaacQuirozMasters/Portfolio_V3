@@ -41,10 +41,10 @@
           </div>
           <p class="m-0 mb-[var(--space-3)] text-[26px] leading-[1.28]" style="text-wrap:pretty">{{ $t('home.about.lead') }}</p>
           <p class="m-0 text-[15px] leading-[1.62]" style="color:var(--color-neutral-800);text-wrap:pretty">{{ $t('home.about.body') }}</p>
-          <!-- <div class="mt-[var(--space-4)] flex gap-[var(--space-4)]">
-            <NuxtLink v-magnet :to="localePath('/cv?print=1')" class="btn btn-primary">{{ $t('home.about.cvButton') }}</NuxtLink>
-            <NuxtLink v-magnet :to="localePath('/cv')" class="btn btn-ghost">{{ $t('home.about.cvGhost') }}</NuxtLink>
-          </div> -->
+          <div v-magnet-scope class="mt-[var(--space-4)] flex gap-[var(--space-4)]">
+            <NuxtLink v-magnet :to="localePath(`/cv?print=1&edicion=${editionQuery}`)" class="btn btn-primary">{{ $t('home.about.cvButton') }}</NuxtLink>
+            <NuxtLink v-magnet :to="localePath(`/cv?edicion=${editionQuery}`)" class="btn btn-ghost">{{ $t('home.about.cvGhost') }}</NuxtLink>
+          </div>
         </div>
 
         <div v-reveal="{ delay: 240 }" class="col-span-3">
@@ -183,6 +183,7 @@ const resolveMessageDeep = (val) => {
 }
 
 const editionLabel = computed(() => t(`home.masthead.editionLabel.${edition.value}`))
+const editionQuery = computed(() => (edition.value === 'code' ? 'codigo' : 'diseno'))
 const projects = computed(() => resolveMessageDeep(tm(`home.projects.${edition.value}`)))
 const toolsRun = computed(() => t(`home.tools.${edition.value}`))
 const experienceRows = computed(() => resolveMessageDeep(tm('home.experience.rows')))

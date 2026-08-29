@@ -91,3 +91,7 @@ html { scroll-behavior: smooth; }
   .cmyk-num .plate { animation: none; }
   .magnet-cursor { display: none; }
 }
+
+@media print {
+  .magnet-cursor, .scroll-top, .contact-sticky { display: none !important; }
+}
