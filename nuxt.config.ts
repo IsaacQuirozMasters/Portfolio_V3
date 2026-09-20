@@ -74,7 +74,7 @@ export default defineNuxtConfig({
 
   // ... resto de tu configuración (colorMode, icon, etc.)
   colorMode: {
-    classSuffix: '',
+    classSuffix: '-mode',
     preference: 'system',
     fallback: 'light',
     globalName: 'colorMode',
