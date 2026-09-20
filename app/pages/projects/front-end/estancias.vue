@@ -1,38 +1,58 @@
 <template>
     <div class="container">
         <header-project :infoProject="aboutProject" />
-
-        <article class="max-w-3xl mx-auto px-4 py-8 dark:bg-slate-900">
+        <article class="max-w-4xl mx-auto px-4 py-8">
             <header class="mb-10">
                 <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">
                     {{ caseStudy.header.title }}
                 </h1>
-                <p class="text-xl text-gray-500 italic" v-html="caseStudy.header.subtitle" />
+                <p class="text-xl text-gray-500 dark:text-gray-400 italic">
+                    {{ caseStudy.header.subtitle }}
+                </p>
             </header>
 
             <hr class="border-gray-200 dark:border-gray-700 mb-10" />
 
-            <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
-                {{ caseStudy.intro }}
-            </p>
-
-            <section v-for="(section, index) in caseStudy.sections" :key="index" class="mb-10">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                    {{ rt(section.title) }}
-                </h2>
-                <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4" v-html="rt(section.content)">
+            <!-- Summary -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{{ t('projectsDev.estanciasEstadias.caseStudy.labels.summary') }}</h2>
+                <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                    {{ caseStudy.summary }}
                 </p>
-                <div
-                    class="inline-block bg-blue-50 dark:bg-blue-900/30 px-3 py-1 rounded text-blue-600 dark:text-blue-400 font-medium border border-blue-100 dark:border-blue-800">
-                    {{ rt(section.highlight) }}
+            </section>
+
+            <!-- Results -->
+            <section v-if="caseStudy.results && caseStudy.results.length" class="mb-10 flex flex-wrap gap-4">
+                <div v-for="(result, i) in caseStudy.results" :key="i"
+                    class="flex-1 min-w-[200px] bg-indigo-50 dark:bg-indigo-900/30 rounded-lg p-5 text-center">
+                    <p class="text-3xl font-extrabold text-indigo-600 dark:text-indigo-400">{{ result.value }}</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{{ result.label }}</p>
                 </div>
             </section>
 
-            <footer class="mt-12 border-l-4 border-blue-500 pl-6 py-4 bg-blue-50/50 dark:bg-gray-800/50 rounded-r-lg">
-                <p class="text-xl italic text-gray-800 dark:text-gray-100">
-                    "{{ caseStudy.footer }}"
-                </p>
-            </footer>
+            <!-- Sections with categories & items -->
+            <section v-for="(section, index) in caseStudy.sections" :key="index" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                    {{ section.category }}
+                </h2>
+                <ul class="space-y-3 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                    <li v-for="(item, j) in section.items" :key="j" class="flex items-start gap-3">
+                        <span class="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-indigo-500" />
+                        <span>{{ item }}</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Stack -->
+            <section v-if="caseStudy.stack && caseStudy.stack.length" class="mt-12 border-t border-gray-200 dark:border-gray-700 pt-8">
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">{{ t('projectsDev.estanciasEstadias.caseStudy.labels.stack') }}</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span v-for="(tech, i) in caseStudy.stack" :key="i"
+                        class="inline-block bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium px-3 py-1 rounded-full">
+                        {{ tech }}
+                    </span>
+                </div>
+            </section>
         </article>
     </div>
 </template>
@@ -45,6 +65,17 @@ definePageMeta({ layout: 'project' })
 
 const { t, rt, tm } = useI18n()
 
+// tm() returns compiled AST nodes, not raw strings.
+// resolveMessageDeep recursively resolves every leaf so we get plain strings.
+const resolveMessageDeep = (val) => {
+    if (Array.isArray(val)) return val.map(resolveMessageDeep)
+    if (val && typeof val === 'object') {
+        if (typeof val.type === 'number' && val.loc !== undefined) return rt(val)
+        return Object.fromEntries(Object.entries(val).map(([k, v]) => [k, resolveMessageDeep(v)]))
+    }
+    return val
+}
+
 // Mapeo de datos para el componente HeaderProject
 const aboutProject = computed(() => ({
     projectType: t('projectsDev.estanciasEstadias.projectType'),
@@ -52,7 +83,7 @@ const aboutProject = computed(() => ({
     myRole: t('projectsDev.estanciasEstadias.myRole'),
     timeline: t('projectsDev.estanciasEstadias.timeline'),
     title: t('projectsDev.estanciasEstadias.title'),
-    image: '/img/estancias/estancias-estadias.png', // Reemplazar con imagen real
+    image: '/img/estancias/estancias-estadias.png',
     description: t('projectsDev.estanciasEstadias.description'),
     largeDescription: ''
 }))
@@ -62,9 +93,10 @@ const caseStudy = computed(() => ({
         title: t('projectsDev.estanciasEstadias.caseStudy.header.title'),
         subtitle: t('projectsDev.estanciasEstadias.caseStudy.header.subtitle')
     },
-    intro: t('projectsDev.estanciasEstadias.caseStudy.intro'),
-    sections: tm('projectsDev.estanciasEstadias.caseStudy.sections'),
-    footer: t('projectsDev.estanciasEstadias.caseStudy.footer')
+    summary: t('projectsDev.estanciasEstadias.caseStudy.summary'),
+    results: resolveMessageDeep(tm('projectsDev.estanciasEstadias.caseStudy.results')),
+    sections: resolveMessageDeep(tm('projectsDev.estanciasEstadias.caseStudy.sections')),
+    stack: resolveMessageDeep(tm('projectsDev.estanciasEstadias.caseStudy.stack'))
 }))
 </script>
 
@@ -73,14 +105,5 @@ const caseStudy = computed(() => ({
     max-width: 900px;
     margin: 2rem auto;
     padding: 20px;
-}
-
-:deep(strong) {
-    font-weight: 700;
-    color: #111827;
-}
-
-:global(.dark) :deep(strong) {
-    color: #ffffff;
 }
 </style>

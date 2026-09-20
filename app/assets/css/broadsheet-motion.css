@@ -61,8 +61,59 @@ html { scroll-behavior: smooth; }
   animation: bs-drift 13s ease-in-out infinite;
 }
 
-/* — tools marquee — */
-.marquee-track { display: flex; width: max-content; animation: bs-marquee 26s linear infinite; }
+/* — tools marquee & interactive hover expansion — */
+.marquee-track { display: flex; width: max-content; animation: bs-marquee 32s linear infinite; }
+
+.tools-container {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tools-container:hover {
+  overflow: visible !important;
+}
+
+.tools-container:hover .tools-marquee-wrapper {
+  animation: none !important;
+  transform: none !important;
+  width: 100% !important;
+  flex-wrap: wrap !important;
+  white-space: normal !important;
+  padding-left: var(--space-8);
+  padding-right: var(--space-8);
+}
+
+.tools-container:hover .tools-track {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  white-space: normal !important;
+  width: 100% !important;
+  row-gap: 0.6rem;
+  column-gap: 0.2rem;
+}
+
+.tools-container:hover .tools-track-dup {
+  display: none !important;
+}
+
+.tool-item {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease, opacity 0.2s ease;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.tool-item:hover {
+  transform: scale(1.35) translateY(-2px);
+  color: var(--color-accent) !important;
+  font-style: normal !important;
+  font-weight: 700;
+  z-index: 30;
+  position: relative;
+}
+
+.tools-track:has(.tool-item:hover) .tool-item:not(:hover) {
+  opacity: 0.55;
+}
 
 /* — edition switch replate on the project grid — */
 .replate-item { animation: bs-rise .7s both; }

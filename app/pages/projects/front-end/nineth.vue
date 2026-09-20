@@ -15,7 +15,7 @@
 
             <!-- Summary -->
             <section class="mb-10">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{{ t('projectsDev.virturecrm.caseStudy.labels.summary') }}</h2>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{{ t('projectsDev.nineth.caseStudy.labels.summary') }}</h2>
                 <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                     {{ caseStudy.summary }}
                 </p>
@@ -41,11 +41,19 @@
                         <span>{{ item }}</span>
                     </li>
                 </ul>
+
+                <figure v-for="(image, k) in section.images" :key="k" class="my-6">
+                    <NuxtImg :src="image.src" :alt="image.caption" format="webp" loading="lazy"
+                        class="w-full h-auto rounded-lg shadow-lg" />
+                    <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-2 text-center italic">
+                        {{ image.caption }}
+                    </figcaption>
+                </figure>
             </section>
 
             <!-- Stack -->
             <section v-if="caseStudy.stack && caseStudy.stack.length" class="mt-12 border-t border-gray-200 dark:border-gray-700 pt-8">
-                <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">{{ t('projectsDev.virturecrm.caseStudy.labels.stack') }}</h2>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">{{ t('projectsDev.nineth.caseStudy.labels.stack') }}</h2>
                 <div class="flex flex-wrap gap-2">
                     <span v-for="(tech, i) in caseStudy.stack" :key="i"
                         class="inline-block bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium px-3 py-1 rounded-full">
@@ -78,25 +86,25 @@ const resolveMessageDeep = (val) => {
 
 // Datos del proyecto - usando computed para reactividad con el idioma
 const aboutProject = computed(() => ({
-    projectType: t('projectsDev.virturecrm.projectType'),
-    contribution: t('projectsDev.virturecrm.contribution'),
-    myRole: t('projectsDev.virturecrm.myRole'),
-    timeline: t('projectsDev.virturecrm.timeline'),
-    title: t('projectsDev.virturecrm.title'),
-    image: '/img/virture/dashboard.png',
-    description: t('projectsDev.virturecrm.description'),
+    projectType: t('projectsDev.nineth.projectType'),
+    contribution: t('projectsDev.nineth.contribution'),
+    myRole: t('projectsDev.nineth.myRole'),
+    timeline: t('projectsDev.nineth.timeline'),
+    title: t('projectsDev.nineth.title'),
+    image: '/img/nineth/nineth_dashboard.png',
+    description: t('projectsDev.nineth.description'),
     largeDescription: ''
 }))
 
 const caseStudy = computed(() => ({
     header: {
-        title: t('projectsDev.virturecrm.caseStudy.header.title'),
-        subtitle: t('projectsDev.virturecrm.caseStudy.header.subtitle')
+        title: t('projectsDev.nineth.caseStudy.header.title'),
+        subtitle: t('projectsDev.nineth.caseStudy.header.subtitle')
     },
-    summary: t('projectsDev.virturecrm.caseStudy.summary'),
-    results: resolveMessageDeep(tm('projectsDev.virturecrm.caseStudy.results')),
-    sections: resolveMessageDeep(tm('projectsDev.virturecrm.caseStudy.sections')),
-    stack: resolveMessageDeep(tm('projectsDev.virturecrm.caseStudy.stack'))
+    summary: t('projectsDev.nineth.caseStudy.summary'),
+    results: resolveMessageDeep(tm('projectsDev.nineth.caseStudy.results')),
+    sections: resolveMessageDeep(tm('projectsDev.nineth.caseStudy.sections')),
+    stack: resolveMessageDeep(tm('projectsDev.nineth.caseStudy.stack'))
 }))
 </script>
 <style scoped>

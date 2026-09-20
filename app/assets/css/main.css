@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@variant dark (&:where(.dark, .dark *, [data-night="on"], [data-night="on"] *));
 
 /* =============================================
    Custom Theme — migrated from tailwind.config.ts

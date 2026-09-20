@@ -48,17 +48,17 @@
         </div>
 
         <div v-reveal="{ delay: 240 }" class="col-span-3">
-          <div class="mb-[var(--space-2)] text-[11px] uppercase tracking-[.16em]" style="color:var(--color-neutral-700)">
+          <div class="mb-[var(--space-2)] text-[11px] uppercase tracking-[.16em] transition-colors duration-300" style="color:var(--color-neutral-700)">
             {{ $t('home.availability.kicker') }}
           </div>
-          <CmykNum :value="$t('home.availability.value')" />
-          <p class="mt-[var(--space-3)] text-[14px] leading-[1.55]" style="color:var(--color-neutral-800)">{{ $t('home.availability.body') }}</p>
+          <CmykNum :value="$t('home.availability.value')" :class="edition === 'code' ? 'cmyk-code' : 'cmyk-design'" />
+          <p class="mt-[var(--space-3)] text-[14px] leading-[1.55] transition-colors duration-300" style="color:var(--color-neutral-800)">{{ $t('home.availability.body') }}</p>
           <div class="mt-[var(--space-3)] flex flex-wrap gap-[var(--space-1)]">
             <span
               v-for="(tag, i) in $tm('home.availability.tags')"
               :key="i"
-              class="tag"
-              :class="'tag-outline'"
+              class="tag transition-all duration-300"
+              :class="edition === 'code' ? 'tag-accent-2' : 'tag-outline'"
             >{{ rt(tag) }}</span>
           </div>
         </div>
@@ -86,10 +86,28 @@
         <div class="px-[var(--space-8)] text-[11px] uppercase tracking-[.16em]" style="color:var(--color-neutral-700)">
           {{ $t('home.tools.heading') }} · {{ editionLabel }}
         </div>
-        <div class="mt-[var(--space-2)] overflow-hidden py-[var(--space-3)]" style="border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
-          <div class="marquee-track">
-            <span class="whitespace-nowrap pr-6 text-[30px] italic">{{ toolsRun }}</span>
-            <span class="whitespace-nowrap pr-6 text-[30px] italic" aria-hidden="true">{{ toolsRun }}</span>
+        <div class="tools-container group relative mt-[var(--space-2)] overflow-hidden py-[var(--space-3)] transition-all duration-300" style="border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
+          <div class="tools-marquee-wrapper marquee-track flex flex-nowrap">
+            <div class="tools-track flex flex-nowrap items-center whitespace-nowrap">
+              <template v-for="(tool, index) in toolsList" :key="index">
+                <span class="tool-item-wrap inline-flex items-center">
+                  <span class="tool-item inline-block text-[28px] sm:text-[32px] italic cursor-pointer px-1 py-0.5">
+                    {{ tool }}
+                  </span>
+                  <span class="tool-separator pr-5 text-[22px] opacity-40 select-none">·</span>
+                </span>
+              </template>
+            </div>
+            <div class="tools-track-dup flex flex-nowrap items-center whitespace-nowrap" aria-hidden="true">
+              <template v-for="(tool, index) in toolsList" :key="'dup-' + index">
+                <span class="tool-item-wrap inline-flex items-center">
+                  <span class="tool-item inline-block text-[28px] sm:text-[32px] italic cursor-pointer px-1 py-0.5">
+                    {{ tool }}
+                  </span>
+                  <span class="tool-separator pr-5 text-[22px] opacity-40 select-none">·</span>
+                </span>
+              </template>
+            </div>
           </div>
         </div>
       </div>
@@ -186,6 +204,11 @@ const editionLabel = computed(() => t(`home.masthead.editionLabel.${edition.valu
 const editionQuery = computed(() => (edition.value === 'code' ? 'codigo' : 'diseno'))
 const projects = computed(() => resolveMessageDeep(tm(`home.projects.${edition.value}`)))
 const toolsRun = computed(() => t(`home.tools.${edition.value}`))
+const toolsList = computed(() =>
+  toolsRun.value
+    ? toolsRun.value.split('·').map((s) => s.trim()).filter(Boolean)
+    : []
+)
 const experienceRows = computed(() => resolveMessageDeep(tm('home.experience.rows')))
 const studiesItems = computed(() => resolveMessageDeep(tm('home.studies.items')))
 
@@ -199,6 +222,7 @@ const PROJECT_ROUTES = {
   virturecrm: '/projects/front-end/virture-crm',
   estancias: '/projects/front-end/estancias',
   zooapp: '/projects/front-end/zoo-app',
+  nineth: '/projects/front-end/nineth',
 }
 const projectRoute = (id) => localePath(PROJECT_ROUTES[id] || '/projects')
 

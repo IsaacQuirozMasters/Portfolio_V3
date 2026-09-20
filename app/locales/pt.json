@@ -110,6 +110,8 @@
                     "title": "Propiedades Cancún Landing",
                     "blurb": "+25% de tráfego orgânico: CSS crítico, URLs semânticas e metadados automáticos.",
                     "image": "/img/propiedades/nvifz5egnosguvd2tmgp.webp",
+                    "tags": ["Nuxt", "NestJS"],
+                    "link": { "url": "https://propiedadescancun.mx", "type": "live" },
                     "span": 3
                 },
                 {
@@ -118,6 +120,8 @@
                     "title": "Virture CRM",
                     "blurb": "CRM centralizado para agências imobiliárias e corretores de imóveis",
                     "image": "/img/virture/dashboard.png",
+                    "tags": ["Vue", "NestJS"],
+                    "link": { "url": "https://app.virture.io/", "type": "live" },
                     "span": 3
                 },
                 {
@@ -126,6 +130,8 @@
                     "title": "Estancias y Estadías",
                     "blurb": "Página web para gerenciar documentos de Estágios e Estadias da universidade",
                     "image": "/img/estancias/estancias-estadias.png",
+                    "tags": ["Laravel", "PHP"],
+                    "link": { "url": "https://gestionvinculacion.upqroo.edu.mx/", "type": "live" },
                     "span": 3
                 },
                 {
@@ -134,6 +140,18 @@
                     "title": "BioAprendizaje México",
                     "blurb": "Aplicativo móvel de Zoologia educativa para crianças",
                     "image": "/img/zooapp/detalle.png",
+                    "tags": ["Kotlin"],
+                    "private": true,
+                    "span": 3
+                },
+                {
+                    "id": "nineth",
+                    "kicker": "Freelance · Full stack",
+                    "title": "Detalles Nineth",
+                    "blurb": "Catálogo, painel administrativo e API construídos de ponta a ponta para um negócio de arranjos florais artesanais.",
+                    "image": "/img/nineth/nineth_dashboard.png",
+                    "tags": ["Next.js", "NestJS"],
+                    "link": { "url": "https://detallesnineth.com", "type": "live" },
                     "span": 3
                 }
             ]
@@ -264,19 +282,46 @@
                     }
                 ],
                 "skills": [
-                    { "label": "Soft skills", "value": "Autonomia, proatividade e inovação, atenção aos detalhes, comunicação eficaz, adaptabilidade à mudança." },
-                    { "label": "Design UX/UI", "value": "Figma (nível avançado), wireframes e protótipos de alta fidelidade, criação e aplicação de Design Systems, consistência visual." },
-                    { "label": "IA e ferramentas", "value": "Ferramentas de IA para ideação e geração de UI/copy, Adobe XD, Photoshop, Illustrator." },
-                    { "label": "Desenvolvimento", "value": "Front-end avançado: Vue, Nuxt, React, Next." }
+                    {
+                        "label": "Soft skills",
+                        "value": "Autonomia, proatividade e inovação, atenção aos detalhes, comunicação eficaz, adaptabilidade à mudança."
+                    },
+                    {
+                        "label": "Design UX/UI",
+                        "value": "Figma (nível avançado), wireframes e protótipos de alta fidelidade, criação e aplicação de Design Systems, consistência visual."
+                    },
+                    {
+                        "label": "IA e ferramentas",
+                        "value": "Ferramentas de IA para ideação e geração de UI/copy, Adobe XD, Photoshop, Illustrator."
+                    },
+                    {
+                        "label": "Desenvolvimento",
+                        "value": "Front-end avançado: Vue, Nuxt, React, Next."
+                    }
                 ],
                 "education": [
-                    { "institution": "Universidade Politécnica de Quintana Roo", "meta": "Engenharia de Software · 2020–2023" },
-                    { "institution": "Universidad Internacional de La Rioja", "meta": "Mestrado em Inteligência Artificial · em andamento (2026–2027)" },
-                    { "institution": "Google UX Design — Certificado profissional", "meta": "Coursera · 2023" }
+                    {
+                        "institution": "Universidade Politécnica de Quintana Roo",
+                        "meta": "Engenharia de Software · 2020–2023"
+                    },
+                    {
+                        "institution": "Universidad Internacional de La Rioja",
+                        "meta": "Mestrado em Inteligência Artificial · em andamento (2026–2027)"
+                    },
+                    {
+                        "institution": "Google UX Design — Certificado profissional",
+                        "meta": "Coursera · 2023"
+                    }
                 ],
                 "languages": [
-                    { "name": "Espanhol", "level": "Língua nativa" },
-                    { "name": "Inglês", "level": "Nível A2" }
+                    {
+                        "name": "Espanhol",
+                        "level": "Língua nativa"
+                    },
+                    {
+                        "name": "Inglês",
+                        "level": "Nível A2"
+                    }
                 ]
             },
             "code": {
@@ -313,15 +358,36 @@
                     }
                 ],
                 "skills": [
-                    { "label": "Soft skills", "value": "Comunicação eficaz, adaptabilidade à mudança." },
-                    { "label": "UX/UI", "value": "UX Research, UX Writing, Design Thinking, Wireframing, Mockups, Prototyping." },
-                    { "label": "Frontend", "value": "JavaScript, TypeScript, HTML5, CSS3, Vue.js, Laravel, Nuxt.js, Tailwind CSS." },
-                    { "label": "Ferramentas de desenvolvimento", "value": "Storybook, Vite, Jest, Claude Code." },
-                    { "label": "SEO e analytics", "value": "SEO técnico, Google Search Console, Google Analytics, Screaming Frog, Lighthouse." }
+                    {
+                        "label": "Soft skills",
+                        "value": "Comunicação eficaz, adaptabilidade à mudança."
+                    },
+                    {
+                        "label": "UX/UI",
+                        "value": "UX Research, UX Writing, Design Thinking, Wireframing, Mockups, Prototyping."
+                    },
+                    {
+                        "label": "Frontend",
+                        "value": "JavaScript, TypeScript, HTML5, CSS3, Vue.js, Laravel, Nuxt.js, Tailwind CSS."
+                    },
+                    {
+                        "label": "Ferramentas de desenvolvimento",
+                        "value": "Storybook, Vite, Jest, Claude Code."
+                    },
+                    {
+                        "label": "SEO e analytics",
+                        "value": "SEO técnico, Google Search Console, Google Analytics, Screaming Frog, Lighthouse."
+                    }
                 ],
                 "education": [
-                    { "institution": "Universidade Politécnica de Quintana Roo", "meta": "Engenharia de Software · 2020–2023" },
-                    { "institution": "Google UX Design — Certificado profissional", "meta": "Coursera · 2023" }
+                    {
+                        "institution": "Universidade Politécnica de Quintana Roo",
+                        "meta": "Engenharia de Software · 2020–2023"
+                    },
+                    {
+                        "institution": "Google UX Design — Certificado profissional",
+                        "meta": "Coursera · 2023"
+                    }
                 ],
                 "languages": []
             }
@@ -631,47 +697,185 @@
     "projectsDev": {
         "propiedadesCancun": {
             "title": "Propiedades Cancún Landing Page",
-            "description": "Propiedades Cancún Landing Page",
-            "projectType": "Landing Page",
+            "description": "Otimizei o desempenho, a arquitetura de SEO e a experiência do usuário de um portal imobiliário, alcançando um aumento de 25% no tráfego orgânico e posicionando as páginas de imóveis na primeira página do Google.",
+            "projectType": "Portal imobiliário",
             "myRole": "Desenvolvedor Front-end",
-            "contribution": "Desenvolvimento Front-end",
-            "outcome": "Landing Page para Propiedades Cancún",
+            "contribution": "Desenvolvimento Front-end, SEO técnico e desempenho web",
+            "outcome": "25% mais tráfego orgânico",
             "timeline": "Março 2024 - Atual",
-            "largeDescription": "<article class=\"max-w-3xl mx-auto px-4 py-8 dark:bg-slate-900 transition-colors duration-300\"><header class=\"mb-10\"><h1 class=\"text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-tight mb-4\">Como aumentei o tráfego orgânico em 25% otimizando a arquitetura da Propiedades Cancún</h1><p class=\"text-xl text-gray-500 dark:text-gray-400 font-medium italic\">Um estudo de caso sobre desempenho web, SEO técnico e experiência do usuário.</p></header><hr class=\"border-gray-200 dark:border-gray-700 mb-10\" /><section class=\"mb-8\"><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6\">No competitivo mercado imobiliário da Riviera Maya, uma página web lenta ou mal estruturada é sinônimo de perder clientes. Quando assumi o desafio de desenvolver a landing page para <strong class=\"font-bold text-gray-900 dark:text-white\">Propiedades Cancún</strong>, meu objetivo não era apenas entregar um design atraente, mas construir uma máquina de conversão eficiente.</p><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed\">O desafio principal era equilibrar a carga visual das propriedades de luxo com um desempenho técnico impecável. A seguir, detalho como transformei a experiência digital através de engenharia de software e estratégia SEO.</p></section><section class=\"mb-10\"><h2 class=\"text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4\">1. Design UX: Além da estética</h2><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6\">O primeiro passo foi refatorar os componentes visuais. Não me limitei a diagramar; apliquei princípios da <strong class=\"font-semibold text-gray-900 dark:text-white\">Psicologia da Gestalt</strong> e teorias do contraste para guiar o olho do usuário de maneira natural para os botões de ação.</p><img src=\"/img/propiedades/multiURLsInterface.webp\" alt=\"Interface de múltiplas URLs\" class=\"w-full h-auto rounded-lg shadow-lg my-6\" /><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed\">O resultado foi uma interface limpa onde cada elemento tem um propósito, melhorando a retenção do usuário desde o primeiro segundo.</p></section><section class=\"mb-10\"><h2 class=\"text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4\">2. Engenharia de Desempenho (WPO)</h2><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4\">Sabemos que o Google penaliza a lentidão. Para alcançar pontuações excelentes no <strong class=\"font-semibold text-gray-900 dark:text-white\">Lighthouse</strong> e otimizar o <em>LCP</em>, implementei várias estratégias agressivas:</p><ul class=\"list-disc pl-6 space-y-3 text-lg text-gray-700 dark:text-gray-300 leading-relaxed\"><li><strong class=\"font-bold text-gray-900 dark:text-white\">Otimização de Imagens:</strong> Automatizei a conversão de formatos e ajustei a qualidade para reduzir o peso drasticamente sem perder nitidez.</li><li><strong class=\"font-bold text-gray-900 dark:text-white\">Critical Path Rendering:</strong> Uma das melhorias mais técnicas foi a otimização do CSS. Injetei o CSS crítico <em>in-line</em> para que o navegador pudesse renderizar o conteúdo visível (\"above the fold\") nos primeiros bytes.</li></ul></section><section class=\"mb-10\"><h2 class=\"text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4\">3. Arquitetura SEO e Automação</h2><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6\">A parte mais estratégica do desenvolvimento foi a reestruturação do backend para favorecer o posicionamento orgânico:</p><div class=\"space-y-6\"><div><h3 class=\"text-xl font-bold text-gray-800 dark:text-gray-200 mb-2\">URLs Inteligentes e Prevenção de Canibalismo</h3><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed\">Projetei uma nova estrutura de URLs semânticas que respondem à intenção de busca do usuário. Fui cuidadoso para evitar o <strong class=\"font-medium text-indigo-600 dark:text-indigo-400\">canibalismo de palavras-chave</strong>, garantindo que cada página dinâmica tivesse sua própria autoridade.</p><img src=\"/img/propiedades/canonicalURLSourceCode.webp\" alt=\"Código fonte de canonical URL\" class=\"w-full h-auto rounded-lg shadow-lg my-4\" /></div><div><h3 class=\"text-xl font-bold text-gray-800 dark:text-gray-200 mb-2\">Automação de Metadados</h3><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed\">Para escalar o projeto, programei a geração automática de <strong class=\"font-medium text-indigo-600 dark:text-indigo-400\">títulos e metadescrições únicos</strong> para cada propriedade, garantindo a relevância na indexação.</p></div><div><h3 class=\"text-xl font-bold text-gray-800 dark:text-gray-200 mb-2\">Gestão de Autoridade</h3><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed\">Otimizei o arquivo <code class=\"text-sm font-mono bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-pink-600 dark:text-pink-400\">robots.txt</code> para melhorar o orçamento de rastreamento e configurei redirecionamentos 301 inteligentes para proteger o \"link juice\" do domínio.</p></div></div></section><section class=\"mt-12\"><h2 class=\"text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6\">O Resultado: Impacto no Negócio</h2><blockquote class=\"border-l-4 border-indigo-500 dark:border-indigo-400 pl-6 py-4 bg-gray-50 dark:bg-gray-800/50 rounded-r-lg\"><p class=\"text-xl md:text-2xl font-medium text-gray-800 dark:text-gray-100 italic leading-normal\">\"Alcançamos um <span class=\"text-indigo-600 dark:text-indigo-400 font-bold\">aumento do tráfego orgânico de 25%</span> e posicionamos as páginas transacionais mais importantes no ranking 3 ao 10.\"</p></blockquote><p class=\"text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-6\">Este projeto demonstrou que no desenvolvimento web moderno, a engenharia e o marketing não são disciplinas separadas, mas partes de um mesmo código.</p></section></article>",
-            "tools": ""
+            "caseStudy": {
+                "labels": {
+                    "summary": "Resumo",
+                    "stack": "Stack"
+                },
+                "header": {
+                    "title": "Como aumentei o tráfego orgânico em 25% otimizando a arquitetura da Propiedades Cancún",
+                    "subtitle": "Portal imobiliário · Função: Desenvolvedor Front-end · Equipe de desenvolvimento"
+                },
+                "summary": "Otimizei o desempenho, a arquitetura de SEO e a experiência do usuário de um portal imobiliário, alcançando um aumento de 25% no tráfego orgânico e posicionando as páginas de imóveis na primeira página do Google.",
+                "results": [
+                    {
+                        "value": "25%",
+                        "label": "Mais tráfego orgânico"
+                    },
+                    {
+                        "value": "3-10",
+                        "label": "Posições no Google das principais páginas transacionais (primeira página)"
+                    },
+                    {
+                        "value": "25%→65%",
+                        "label": "Usuários que permanecem mais de 3 segundos no site"
+                    },
+                    {
+                        "value": "-40%",
+                        "label": "Peso das imagens"
+                    },
+                    {
+                        "value": "100%",
+                        "label": "Pontuação de SEO no Lighthouse"
+                    }
+                ],
+                "sections": [
+                    {
+                        "category": "UX e design de interface",
+                        "items": [
+                            "Refatorei os componentes visuais aplicando princípios da Gestalt e de contraste para direcionar a atenção para os botões de ação.",
+                            "Simplifiquei a interface para que cada elemento tivesse um propósito claro. Os usuários que permanecem mais de 3 segundos passaram de 25% para 65%, e os que chegam a um minuto aumentaram 50%."
+                        ]
+                    },
+                    {
+                        "category": "Desempenho web",
+                        "items": [
+                            "Automatizei a conversão de imagens para os formatos WebP e ajustei sua qualidade, reduzindo o peso em 40% sem perda visível.",
+                            "Injetei o CSS crítico inline para renderizar primeiro o conteúdo visível e reduzir o LCP.",
+                            "Melhorei a pontuação de SEO no Lighthouse para 100%.",
+                            "Medi os tempos de resposta HTTP com o Screaming Frog para validar as melhorias."
+                        ]
+                    },
+                    {
+                        "category": "Arquitetura de SEO",
+                        "items": [
+                            "Projetei URLs semânticas baseadas na intenção de busca, evitando a canibalização de palavras-chave entre páginas dinâmicas.",
+                            "Automatizei a geração de títulos e metadescrições únicos para cada imóvel, facilitando a indexação em escala.",
+                            "Otimizei o robots.txt para reduzir o orçamento de rastreamento e configurei redirecionamentos 301 para preservar a autoridade do domínio."
+                        ]
+                    },
+                    {
+                        "category": "Algoritmo de recomendação",
+                        "items": [
+                            "Desenvolvi um algoritmo que prioriza os imóveis mais relevantes combinando o ranking definido pelo administrador com as buscas mais frequentes no Google Analytics e no Search Console dentro de uma janela de tempo curta, sem cargas adicionais no servidor."
+                        ]
+                    },
+                    {
+                        "category": "Integração e implantação contínuas (CI/CD)",
+                        "items": [
+                            "Configurei pipelines no GitHub Actions que executam os testes com Vitest, validam o build e implantam automaticamente a cada mudança, evitando que erros cheguem à produção e agilizando as entregas."
+                        ]
+                    }
+                ],
+                "stack": [
+                    "Nuxt",
+                    "NestJS",
+                    "Node.js",
+                    "Vitest",
+                    "GitHub Actions",
+                    "Google Analytics",
+                    "Google Search Console",
+                    "Lighthouse",
+                    "Screaming Frog"
+                ]
+            }
         },
         "virturecrm": {
             "title": "Virture CRM",
-            "description": "CRM centralizado para agências imobiliárias e corretores de imóveis",
-            "projectType": "Aplicação Web - CRM",
-            "myRole": "Desenvolvedor Front-end",
-            "contribution": "Arquitetura, Otimização de Formulários",
-            "outcome": "Fluxo de Dados Otimizado",
-            "timeline": "2024",
+            "description": "Participei da construção do Virture CRM do zero, da pesquisa de usuários à implantação, criando uma interface responsiva, acessível, segura e testada.",
+            "projectType": "CRM Product",
+            "myRole": "Frontend Developer / UX",
+            "contribution": "UX, Arquitetura Frontend, QA, Segurança & APIs NestJS",
+            "outcome": "40% menos requisições & 40 componentes no Storybook",
+            "timeline": "6 meses (Scrum) · Versão 1",
             "caseStudy": {
-                "header": {
-                    "title": "Como melhorei a velocidade de entrega de formulário multicampos",
-                    "subtitle": "Estratégias de <strong>arquitetura frontend</strong> para otimizar grandes volumes de dados."
+                "labels": {
+                    "summary": "Resumo",
+                    "stack": "Stack"
                 },
-                "intro": "No desenvolvimento de <strong>aplicações ricas em dados</strong>, os <strong>formulários extensos</strong> costumam ser o gargalo. Meu objetivo foi transformar a captura de dados em uma experiência fluida.",
-                "sections": [
+                "header": {
+                    "title": "Como melhorei a experiência e a arquitetura do Virture de ponta a ponta",
+                    "subtitle": "CRM PRODUCT · Função: Frontend Developer / UX · Scrum · 6 meses - Versão 1 · Equipe: cliente, design e desenvolvimento"
+                },
+                "summary": "Participei da construção do Virture CRM do zero, da pesquisa de usuários à implantação. Meu trabalho concentrou-se em criar uma interface responsiva, acessível, segura e testada e em acelerar as entregas da equipe.",
+                "results": [
                     {
-                        "title": "1. Dividindo e Vencendo",
-                        "content": "Consegui dividir um único <strong>bloco monolítico</strong> de uma só coluna para <strong>organizar a informação por categorias</strong> para torná-los processáveis.",
-                        "highlight": "Organização por categorias"
+                        "value": "40%",
+                        "label": "Menos requisições ao servidor através de cache no cliente"
                     },
                     {
-                        "title": "2. Criando e Multiplicando",
-                        "content": "Criei <strong>componentes multimodais</strong> que tinham a função principal parecida, como o componente <strong>select</strong> com lógica para <strong>seleção simples e múltipla</strong>.",
-                        "highlight": "Componentes inteligentes"
-                    },
-                    {
-                        "title": "3. Alcançando Desafios",
-                        "content": "Realizamos uma estratégia para adaptar dados de campos de <strong>texto rico</strong> com etiquetas antigas para visualizá-los corretamente na nova interface.",
-                        "highlight": "Estratégia de adaptação"
+                        "value": "40+",
+                        "label": "Componentes documentados e testados, reutilizados no projeto"
                     }
                 ],
-                "footer": "A otimização não foi apenas visual; foi uma reestruturação de como os <strong>dados fluem</strong>."
+                "sections": [
+                    {
+                        "category": "Produto e UX",
+                        "items": [
+                            "Pesquisei concorrentes e os pontos de dor dos usuários para definir os módulos prioritários.",
+                            "Trabalhei em ciclos de Scrum com reuniões contínuas com o cliente, design e desenvolvimento, iterando em módulos funcionais.",
+                            "Validei os designs e casos de uso antes da implementação para evitar retrabalho."
+                        ]
+                    },
+                    {
+                        "category": "Desenvolvimento Frontend",
+                        "items": [
+                            "Desenvolvi módulos respeitando a arquitetura e as convenções do projeto para manter a consistência do código.",
+                            "Refinei componentes até torná-los uma versão estável e reutilizável, documentando suas variantes no Storybook.",
+                            "Apliquei as diretrizes WCAG 2.1 AA para operação total por teclado e leitores de tela.",
+                            "Desenvolvi uma interface responsiva com foco mobile first para dispositivos móveis, tablets e desktop."
+                        ]
+                    },
+                    {
+                        "category": "Qualidade",
+                        "items": [
+                            "Criei testes unitários e de integração com Vitest cobrindo acessibilidade, armazenamento, resposta, tipos de dados e segurança, e testes E2E com Cypress."
+                        ]
+                    },
+                    {
+                        "category": "Segurança e Desempenho",
+                        "items": [
+                            "Apliquei práticas da OWASP Top 10, como higienização de HTML para prevenir injeção de código (XSS).",
+                            "Implementei cache no cliente para preservar formulários não salvos e reduzir em 40% as requisições ao servidor."
+                        ]
+                    },
+                    {
+                        "category": "IA e Automação",
+                        "items": [
+                            "Automatizei respostas aos usuários com fluxos no n8n conectados a APIs de LLM.",
+                            "Em entregas urgentes utilizei Cursor, Claude Code e v0 para prototipar componentes e validar usabilidade antes da integração, reduzindo o tempo de entrega."
+                        ]
+                    },
+                    {
+                        "category": "Apoio ao Backend",
+                        "items": [
+                            "Desenvolvi e otimizei APIs com NestJS, Prisma e MongoDB quando a equipe necessitou de suporte em backend.",
+                            "Refatorei APIs existentes aplicando princípios SOLID, reduzindo o código e facilitando testes."
+                        ]
+                    }
+                ],
+                "stack": [
+                    "Vue",
+                    "Pinia",
+                    "TypeScript",
+                    "Tailwind",
+                    "Vitest",
+                    "Storybook",
+                    "n8n",
+                    "API LLM",
+                    "NestJS",
+                    "Prisma",
+                    "MongoDB",
+                    "WCAG 2.1 AA",
+                    "OWASP Top 10",
+                    "Cypress"
+                ]
             }
         },
         "biologiaEduApp": {
@@ -710,36 +914,184 @@
         },
         "estanciasEstadias": {
             "title": "Sistema de Gestão de Estágios e Estadias",
-            "description": "Plataforma universitária para o upload, validação e acompanhamento de documentação oficial.",
-            "projectType": "Aplicação Web - Ferramenta Universitária",
-            "myRole": "Desenvolvedor Full-stack",
-            "contribution": "Otimização de Banco de Dados & Refatoração UI",
-            "outcome": "Lançamento bem-sucedido em tempo recorde para fim de semestre",
+            "description": "Desenvolvi, junto com a equipe, um sistema para que os estudantes enviassem os documentos de seus estágios e estadias, e para que os administradores os revisassem e acompanhassem por turma e por curso. O sistema precisava estar pronto antes do fechamento do semestre e suportar o envio simultâneo de 300 alunos.",
+            "projectType": "Sistema de gestão documental universitária",
+            "myRole": "Desenvolvedor Full Stack (Laravel)",
+            "contribution": "Desenvolvimento Backend (Laravel), banco de dados, segurança e QA",
+            "outcome": "500 alunos de 4 cursos usando o sistema",
             "timeline": "Final de Semestre (Tempo Recorde)",
             "caseStudy": {
-                "header": {
-                    "title": "Otimização Documental: Da saturação à eficiência administrativa",
-                    "subtitle": "Gestão de arquivos em grande escala com <strong>arquitetura modular</strong> e <strong>metodologia Agile</strong>."
+                "labels": {
+                    "summary": "Resumo",
+                    "stack": "Stack"
                 },
-                "intro": "O desafio era ambicioso: reconstruir o sistema de documentação universitária pouco antes do fechamento do semestre. Devíamos garantir que centenas de alunos pudessem subir arquivos simultaneamente enquanto os administradores avaliavam em tempo real.",
-                "sections": [
+                "header": {
+                    "title": "Como digitalizei o recebimento de documentos de estágios e estadias universitárias com Laravel",
+                    "subtitle": "Sistema de gestão documental universitária · Função: Desenvolvedor Full Stack (Laravel) · Equipe de desenvolvimento · Metodologia ágil"
+                },
+                "summary": "Desenvolvi, junto com a equipe, um sistema para que os estudantes enviassem os documentos de seus estágios e estadias, e para que os administradores os revisassem e acompanhassem por turma e por curso. O sistema precisava estar pronto antes do fechamento do semestre e suportar o envio simultâneo de 300 alunos.",
+                "results": [
                     {
-                        "title": "1. Desafios de Engenharia e Tempo",
-                        "content": "Otimizamos o <strong>banco de dados</strong> e suas conexões para suportar o fluxo massivo de arquivos. Implementamos um sistema de <strong>status em tempo real</strong> para documentos, permitindo um acompanhamento preciso por grupo e carreira sob um limite de tempo estrito.",
-                        "highlight": "Otimização de Banco de Dados"
+                        "value": "100%",
+                        "label": "Sistema entregue antes do fechamento do semestre"
                     },
                     {
-                        "title": "2. Criatividade e Inovação Técnica",
-                        "content": "Separamos a lógica de negócio em <strong>funções pequenas e reutilizáveis</strong>. Implementamos <strong>listas ordenáveis</strong>, filtros avançados e otimizamos as <strong>chamadas às APIs</strong>. Além disso, usamos um sistema de <strong>papéis (RBAC)</strong> para lidar com múltiplas permissões nos mesmos endpoints.",
-                        "highlight": "Arquitetura Modular e RBAC"
+                        "value": "500",
+                        "label": "Alunos de 4 cursos usando o sistema"
                     },
                     {
-                        "title": "3. Código Limpo e QA",
-                        "content": "Aplicamos <strong>Clean Code</strong> e realizamos <strong>testes de usabilidade</strong>, <strong>testes A/B</strong> e <strong>testes de caixa preta</strong>. Documentamos cada processo sob a <strong>metodologia Agile</strong>, garantindo que o código fosse sustentável para futuras gerações de estudantes.",
-                        "highlight": "Testes e Clean Code"
+                        "value": "300",
+                        "label": "Envios simultâneos de arquivos suportados"
                     }
                 ],
-                "footer": "Alcançamos a meta em tempo recorde: uma ferramenta funcional onde o fluxo entre aluno e administrador agora é impecável."
+                "sections": [
+                    {
+                        "category": "Banco de dados e backend",
+                        "items": [
+                            "Projetei e otimizei consultas SQL e os relacionamentos do banco de dados para suportar o envio simultâneo de arquivos durante o fechamento do semestre.",
+                            "Estruturei a lógica de negócio em serviços reutilizáveis usando o contêiner de serviços do Laravel e a programação orientada a objetos.",
+                            "Validei o tipo, o tamanho e o formato dos arquivos com Form Requests antes de armazená-los.",
+                            "Usei as collections do Laravel para filtrar e agrupar as informações por turma, curso e status.",
+                            "Padronizei as respostas do backend usando os resources da API."
+                        ]
+                    },
+                    {
+                        "category": "Segurança e permissões",
+                        "items": [
+                            "Implementei a autenticação com JWT e os middlewares para proteger as rotas.",
+                            "Configurei um controle de acesso baseado em papéis (RBAC) com políticas do Laravel, para que cada aluno acessasse apenas seus próprios documentos e os administradores gerenciassem os de sua área através dos mesmos endpoints."
+                        ]
+                    },
+                    {
+                        "category": "Funcionalidades",
+                        "items": [
+                            "Desenvolvi os formulários de envio de documentos para os estudantes.",
+                            "Construí o CRUD de listas de coleta, com ordenação e filtros avançados por turma e curso.",
+                            "Implementei o fluxo de status de cada documento (pendente, em revisão, aprovado, rejeitado) com respostas do administrador ao aluno.",
+                            "Desenvolvi os lembretes para que os alunos enviassem seus documentos a tempo, por e-mail, com notificações programadas."
+                        ]
+                    },
+                    {
+                        "category": "Qualidade",
+                        "items": [
+                            "Criei testes unitários com PHPUnit e especificações de comportamento com PhpSpec.",
+                            "Apliquei princípios de Clean Code para que o sistema fosse sustentável em futuros semestres."
+                        ]
+                    }
+                ],
+                "stack": [
+                    "PHP",
+                    "Laravel",
+                    "MySQL",
+                    "JWT",
+                    "PHPUnit",
+                    "PhpSpec"
+                ]
+            }
+        },
+        "nineth": {
+            "title": "Detalles Nineth",
+            "description": "Desenvolvi de forma independente, do design à implantação, a plataforma de um negócio de arranjos florais artesanais: um catálogo público otimizado para SEO, um painel administrativo para que a cliente gerencie seus produtos sem depender de um desenvolvedor, e a API que conecta os dois.",
+            "projectType": "Catálogo web + painel administrativo + API",
+            "myRole": "Full Stack Developer",
+            "contribution": "Design de produto, desenvolvimento full stack e implantação",
+            "outcome": "30+ produtos gerenciados pela cliente sem intervenção técnica",
+            "timeline": "3 meses · Projeto freelance",
+            "caseStudy": {
+                "labels": {
+                    "summary": "Resumo",
+                    "stack": "Stack"
+                },
+                "header": {
+                    "title": "Como construí de ponta a ponta o catálogo online e o painel administrativo da Detalles Nineth",
+                    "subtitle": "Projeto freelance · Catálogo web + painel administrativo + API · Função: Full Stack Developer · 3 meses · Site em produção: detallesnineth.com"
+                },
+                "summary": "Desenvolvi de forma independente, do design à implantação, a plataforma de um negócio de arranjos florais artesanais: um catálogo público otimizado para SEO, um painel administrativo para que a cliente gerencie seus produtos sem depender de um desenvolvedor, e a API que conecta os dois.",
+                "results": [
+                    {
+                        "value": "30+",
+                        "label": "Produtos gerenciados diretamente pela cliente, em produção"
+                    },
+                    {
+                        "value": "0",
+                        "label": "Intervenções técnicas necessárias para a cliente atualizar o catálogo"
+                    },
+                    {
+                        "value": "3 meses",
+                        "label": "Do design à implantação em produção, sozinho"
+                    }
+                ],
+                "sections": [
+                    {
+                        "category": "Design de produto",
+                        "items": [
+                            "Defini com a cliente o escopo do produto para priorizar o necessário na primeira versão.",
+                            "Prototipei a interface com Claude Design para iterar rapidamente e refinei os detalhes visuais no Figma.",
+                            "Validei no Figma os fluxos e os estados esperados antes de desenvolvê-los, para evitar retrabalho."
+                        ]
+                    },
+                    {
+                        "category": "Arquitetura e backend",
+                        "items": [
+                            "Projetei a arquitetura do projeto, separando o catálogo público, o painel administrativo e a API.",
+                            "Desenvolvi APIs RESTful com NestJS, seguindo sua estrutura modular de controllers, services e DTOs, além da validação de dados.",
+                            "Modelei o banco de dados em MongoDB com coleções para produtos, categorias e usuários administradores, e índices por categoria para agilizar os filtros do catálogo.",
+                            "Implementei um Backend for Frontend (BFF) em Next.js para centralizar as chamadas à API e não expô-la diretamente ao navegador.",
+                            "Testei os endpoints com Postman e criei testes unitários e de integração com Jest."
+                        ]
+                    },
+                    {
+                        "category": "Catálogo web",
+                        "items": [
+                            "Construí o catálogo com Next.js e SSR para que cada produto seja indexado corretamente no Google.",
+                            "Implementei filtros por categoria para navegar pelo catálogo sem recarregar a página.",
+                            "Integrei um botão de contato via WhatsApp que envia uma mensagem com o nome e o preço do produto, facilitando a cotação.",
+                            "Configurei metadados de SEO e Open Graph para melhorar o posicionamento e a pré-visualização ao compartilhar nas redes sociais.",
+                            "Otimizei as imagens em formato WebP e as servi a partir de um subdomínio de mídia com Cloudflare para reduzir os tempos de carregamento.",
+                            "Desenvolvi uma interface responsiva, pensada principalmente para dispositivos móveis, já que os clientes chegam principalmente pelas redes sociais."
+                        ],
+                        "images": [
+                            {
+                                "src": "/img/nineth/nineth_catalog.png",
+                                "caption": "Catálogo público da Detalles Nineth, otimizado para SEO e com filtros por categoria."
+                            },
+                            {
+                                "src": "/img/nineth/nineth_detail.png",
+                                "caption": "Vista de detalhe do produto com botão de contato direto via WhatsApp."
+                            },
+                            {
+                                "src": "/img/nineth/nineth_responsive.png",
+                                "caption": "Interface responsiva pensada para os clientes que chegam pelas redes sociais."
+                            }
+                        ]
+                    },
+                    {
+                        "category": "Painel administrativo",
+                        "items": [
+                            "Desenvolvi o painel para que a cliente crie, edite e exclua produtos, preços, categorias e imagens de forma autônoma.",
+                            "Implementei autenticação e rotas protegidas para restringir o acesso ao painel."
+                        ]
+                    },
+                    {
+                        "category": "Implantação e infraestrutura",
+                        "items": [
+                            "Implantei o frontend na Vercel e o backend na Railway.",
+                            "Configurei o Cloudflare para a gestão do domínio, o DNS e a entrega de imagens."
+                        ]
+                    }
+                ],
+                "stack": [
+                    "Next.js",
+                    "NestJS",
+                    "MongoDB",
+                    "Jest",
+                    "Postman",
+                    "Vercel",
+                    "Railway",
+                    "Cloudflare",
+                    "Figma",
+                    "Claude Design"
+                ]
             }
         }
     },
@@ -766,6 +1118,9 @@
             "outcome": "Resultado",
             "timeline": "Linha do Tempo"
         },
-        "moreAbout": "Mais sobre mim"
+        "moreAbout": "Mais sobre mim",
+        "viewSite": "Site",
+        "viewCode": "GitHub",
+        "private": "Privado"
     }
 }
